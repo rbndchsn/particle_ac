@@ -365,7 +365,7 @@ def build():
         group = [p for p in pages if p["folder"] == folder]
         if not group:
             continue
-        cards.append(f'<div class="card-group"><h3>{html.escape(label)}</h3>')
+        cards.append(f'<div class="card-group"><h3>{html.escape(label)}</h3><div class="cards">')
         for p in group:
             t = p["tiers"]
             chips = "".join(
@@ -376,11 +376,11 @@ def build():
                 f'<span class="c-title">{html.escape(str(p["meta"].get("title", p["slug"])))}</span>'
                 f'<span class="c-tiers">{chips}</span>'
                 f'<span class="c-sub">{html.escape(str(p["meta"].get("subtitle","")))}</span></a>')
-        cards.append("</div>")
+        cards.append("</div></div>")
     missing = [l for f, l in SECTIONS if not any(p["folder"] == f for p in pages)]
     pending = (f'<div class="pending"><h3>In progress</h3><p>{", ".join(missing)}.</p></div>'
                if missing else "")
-    content, _ = add_anchors_and_toc(wrap_tables(render_md(ibody)))
+    content, htoc = add_anchors_and_toc(wrap_tables(render_md(ibody)))
     hero = (
         f'<div class="hero"><div class="shell">'
         f'<p class="eyebrow">Research archive · {len(pages)} documents</p>'
@@ -390,7 +390,18 @@ def build():
         f'<span>{html.escape(str(imeta.get("date","")))}</span>'
         f'<span>{sum(sum(p["tiers"].values()) for p in pages)} tier-labelled claims</span>'
         f'</div></div></div>')
-    body = (f'{hero}<main class="shell home"><article>{content}</article>'
+    home_toc = "".join(
+        f'<li><a href="#{s}">{html.escape(t)}</a></li>' for lvl, s, t in htoc if lvl == 2)
+    rail_docs = "".join(
+        f'<li><a href="{p["slug"]}.html">{html.escape(str(p["meta"].get("title", p["slug"])))}</a></li>'
+        for p in pages)
+    rail = (f'<aside class="home-rail">'
+            f'<div class="rail-block"><p class="toc-head">On this page</p>'
+            f'<ol class="rail-list">{home_toc}</ol></div>'
+            f'<div class="rail-block"><p class="toc-head">Documents</p>'
+            f'<ol class="rail-list">{rail_docs}</ol></div></aside>')
+    body = (f'{hero}<main class="shell home">'
+            f'<div class="home-grid"><article>{content}</article>{rail}</div>'
             f'<section class="doclist"><h2>The documents</h2>{"".join(cards)}{pending}</section>'
             f'</main>')
     (OUT / "index.html").write_text(PAGE.format(

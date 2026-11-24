@@ -3,7 +3,8 @@
   "use strict";
 
   /* Table-of-contents scrollspy. */
-  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
+  var links = Array.prototype.slice.call(
+    document.querySelectorAll(".toc a, .home-rail .rail-block:first-child .rail-list a"));
   if (links.length && "IntersectionObserver" in window) {
     var byId = {};
     var targets = links.map(function (a) {

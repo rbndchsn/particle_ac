@@ -47,10 +47,10 @@
   --fs-4xl:  3.5rem;
 
   /* layout */
-  --measure: 66ch;
-  --rail: 14rem;
-  --shell: 74rem;
-  --col: 50rem;
+  --measure: 78ch;
+  --rail: 15rem;
+  --shell: 90rem;
+  --col: 62rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -96,15 +96,17 @@ body {
 .shell { max-width: var(--shell); margin: 0 auto; padding: 0 2rem; }
 
 .with-rail { display: grid; grid-template-columns: var(--rail) minmax(0, var(--col));
-  gap: 3.5rem; align-items: start; justify-content: center; }
-.no-rail { max-width: 62rem; margin: 0 auto; }
+  gap: 4rem; align-items: start; justify-content: center; }
+.no-rail { max-width: var(--col); margin: 0 auto; }
 
 /* Prose keeps a reading measure; evidence uses the whole column. */
 article > .tablewrap, article > figure.fig, article > .stats { max-width: none; }
 
-/* Landing page: one 58rem column. Prose sits at the reading measure inside it;
-   figures, data and statement blocks span the full column. */
-main.home { max-width: 58rem; }
+/* Landing page: wide content column with a sticky index rail, so the canvas is
+   used for structure rather than for longer lines of prose. */
+main.home { max-width: 83.5rem; }
+.home-grid { display: grid; grid-template-columns: minmax(0, 56rem) 19rem; gap: 4.5rem;
+  justify-content: center; align-items: start; }
 main.home article { max-width: none; width: 100%;
   display: grid; grid-template-columns: min(var(--measure), 100%) 1fr; }
 main.home article > * { grid-column: 1; }
@@ -113,8 +115,21 @@ main.home article > .stats,
 main.home article > .tablewrap,
 main.home article > .concede,
 main.home article > .thesis { grid-column: 1 / -1; max-width: none; width: 100%; }
-main.home > .doclist, main.home > .findings { max-width: none; }
-.hero .shell { max-width: 58rem; margin: 0 auto; }
+
+.home-rail { position: sticky; top: 5rem; font-family: var(--sans); font-size: var(--fs-sm);
+  max-height: calc(100vh - 7rem); overflow-y: auto; }
+.rail-block + .rail-block { margin-top: 2.2rem; }
+.rail-list { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--rule); }
+.rail-list li { margin: 0; }
+.rail-list a { display: block; padding: 0.32rem 0 0.32rem 0.9rem; margin-left: -1px;
+  color: var(--ink-faint); border: 0; border-left: 1px solid transparent; line-height: 1.4; }
+.rail-list a:hover { color: var(--ink); border-left-color: var(--rule); }
+.rail-list a.active { color: var(--accent); border-left-color: var(--accent); }
+
+/* Document cards go two-up on a wide canvas. */
+main.home > .doclist { max-width: none; margin: 3.5rem 0 0; }
+.card-group > div.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr)); gap: 0.6rem; }
+.hero .shell { max-width: 83.5rem; margin: 0 auto; }
 main { padding-bottom: 6rem; }
 
 article { max-width: var(--measure); }
@@ -212,8 +227,8 @@ sup { line-height: 0; }
   font-family: var(--sans); font-size: var(--fs-xs); font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 1.4rem;
 }
-.hero h1 { font-size: var(--fs-4xl); max-width: 16ch; margin-bottom: 1.6rem; }
-.hero .standfirst { font-size: var(--fs-lg); color: var(--ink-dim); max-width: 54ch; line-height: 1.55; margin: 0 0 2rem; }
+.hero h1 { font-size: var(--fs-4xl); max-width: 22ch; margin-bottom: 1.6rem; }
+.hero .standfirst { font-size: var(--fs-lg); color: var(--ink-dim); max-width: 62ch; line-height: 1.55; margin: 0 0 2rem; }
 .hero .byline {
   font-family: var(--sans); font-size: var(--fs-xs); color: var(--ink-dim);
   letter-spacing: 0.04em; display: flex; gap: 1.6rem; flex-wrap: wrap;
@@ -388,6 +403,10 @@ footer p { font-family: var(--sans); font-size: var(--fs-xs); line-height: 1.7; 
 
 /* ------------------------------------------------------------- responsive */
 
+@media (max-width: 82rem) {
+  .home-grid { grid-template-columns: minmax(0,1fr); gap: 0; }
+  .home-rail { display: none; }
+}
 @media (max-width: 62rem) {
   .with-rail { grid-template-columns: 1fr; gap: 0; }
   main.home article { display: block; }
