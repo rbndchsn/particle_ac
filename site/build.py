@@ -272,7 +272,7 @@ PAGE = """<!DOCTYPE html>
 <body>
 <header class="masthead">
   <div class="masthead-inner">
-    <a class="wordmark" href="index.html">The Instrument &amp; Its Blind Spot</a>
+    <a class="wordmark" href="index.html">Particle Acceleration</a>
     <nav>
         {nav}
     </nav>
@@ -298,7 +298,12 @@ def slugify_path(folder, path):
     return f"{folder.split('_', 1)[0]}-{stem}".replace("_", "-")
 
 
+SITE_NAME = [""]
+
+
 def build():
+    SITE_NAME[0] = str((split_frontmatter(
+        (SITE / "content" / "index.md").read_text(encoding="utf-8"))[0]).get("title", ""))
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "assets").mkdir(exist_ok=True)
     shutil.copy(SITE / "assets" / "style.css", OUT / "assets" / "style.css")
@@ -356,13 +361,14 @@ def build():
             f'<div>{header}{summary_panel(summaries.get(p["key"]))}{filters}'
             f'<article>{content}</article></div></div></main>')
         (OUT / f'{p["slug"]}.html').write_text(PAGE.format(
-            title=f'{m.get("title", p["slug"])} — The Instrument and Its Blind Spot',
+            title=f'{m.get("title", p["slug"])} — {SITE_NAME[0]}',
             ogtitle=html.escape(str(m.get("title", p["slug"]))),
             desc=html.escape(str(m.get("subtitle", ""))[:180]),
             nav=nav_html(p["slug"], pages), body=body), encoding="utf-8")
 
     # ---- landing page
     imeta, ibody = split_frontmatter((SITE / "content" / "index.md").read_text(encoding="utf-8"))
+    site_title = str(imeta.get("title", ""))
     cards = []
     for folder, label in SECTIONS:
         group = [p for p in pages if p["folder"] == folder]
@@ -408,8 +414,8 @@ def build():
             f'<section class="doclist"><h2>The documents</h2>{"".join(cards)}{pending}</section>'
             f'</main>')
     (OUT / "index.html").write_text(PAGE.format(
-        title="The Instrument and Its Blind Spot — particle accelerators and what the field cannot see",
-        ogtitle="The Instrument and Its Blind Spot",
+        title=site_title,
+        ogtitle=site_title,
         desc=html.escape(str(imeta.get("subtitle", ""))[:180]),
         nav=nav_html("index", pages), body=body), encoding="utf-8")
 

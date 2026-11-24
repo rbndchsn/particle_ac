@@ -1,5 +1,5 @@
 ---
-title: The Instrument and Its Blind Spot
+title: "Particle Acceleration: The Instrument and Its Blind Spot"
 subtitle: Particle physics counts what it keeps and not what it discards. In four separate domains, the quantity that would measure the difference has never been computed.
 author: Robin
 date: 2026-11-24
