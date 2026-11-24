@@ -4,7 +4,7 @@ subtitle: Mechanisms, engineering limits, and open problems across laboratory an
 author: Robin
 date: 2026-11-24
 version: v1
-status: active — seeded from opening session, unverified citations
+status: active — references verified against primary sources 2026-11-24
 source_files: none yet (v1 seeded from chat session 2026-11-24)
 ---
 
@@ -172,35 +172,63 @@ Candidate directions for v2. Not yet researched.
 | Version | Date | Status | Change |
 |---|---|---|---|
 | v1 | 2026-11-24 | active | Initial seed. Core principle, engineered and astrophysical mechanisms, two ceilings, open threads. Citations unverified. |
+| v1 | 2026-11-24 | active | Reference verification pass. All 12 entries checked component by component (authors, year, title, journal, volume, pages, DOI) against publisher records, the DOI resolver, NASA ADS and INSPIRE-HEP. Page ranges and DOIs/ADS bibcodes added throughout. Entry 3 split into the distinct Veksler 1944 Doklady and 1945 J. Phys. (USSR) papers. Entry 5 replaced: the unverifiable 1946 Phys. Rev. 70, 799 meeting abstract gave way to Alvarez et al. 1955, Rev. Sci. Instrum. 26, 111. Entry 6 title restored to the published spelling ("Synchroton"). Entry 9 titles supplied and the Axford et al. proceedings venue and 1977/1978 date discrepancy noted. Entry 11 Russian original added. No entries removed; in-text numbering unchanged. |
 
 # References
 
-**Status: recall-based, pending verification against primary sources.** Do not cite
-onward from this list until checked.
+**Verified against primary sources on 2026-11-24** — publisher records, the DOI resolver,
+NASA ADS and INSPIRE-HEP. One entry could not be verified: the Alvarez item usually cited
+as *Physical Review*, 70, 799 (1946), which is a meeting abstract rather than a paper, has
+no registered DOI and no record in Crossref/OpenAlex, INSPIRE-HEP or any reachable
+publisher archive; it has been replaced in entry 5 by the full Berkeley drift-tube linac
+paper. Every other entry is confirmed.
 
 1. Wideröe, R. (1928). Über ein neues Prinzip zur Herstellung hoher Spannungen. *Archiv
-   für Elektrotechnik*, 21, 387.
+   für Elektrotechnik*, 21(4), 387–406. DOI: 10.1007/BF01656341
 2. Lawrence, E.O. & Livingston, M.S. (1932). The Production of High Speed Light Ions
-   Without the Use of High Voltages. *Physical Review*, 40, 19.
-3. Veksler, V.I. (1944/1945). A new method of acceleration of relativistic particles.
-   *Journal of Physics (USSR)*, 9, 153.
-4. McMillan, E.M. (1945). The Synchrotron — A Proposed High Energy Particle Accelerator.
-   *Physical Review*, 68, 143.
-5. Alvarez, L.W. (1946). The design of a proton linear accelerator. *Physical Review*,
-   70, 799.
-6. Courant, E.D., Livingston, M.S. & Snyder, H.S. (1952). The Strong-Focusing Synchrotron
-   — A New High Energy Accelerator. *Physical Review*, 88, 1190.
+   Without the Use of High Voltages. *Physical Review*, 40(1), 19–35.
+   DOI: 10.1103/PhysRev.40.19
+3. Two distinct papers, commonly conflated. Veksler, V.I. (1944). A new method of
+   accelerating relativistic particles. *Comptes Rendus (Doklady) de l'Académie des
+   Sciences de l'URSS*, 43(8), 329–331 — the Russian edition carries the same paper at
+   *Doklady Akademii Nauk SSSR*, 43, 346, and a second 1944 note at *Dokl. Akad. Nauk
+   SSSR*, 44, 393. Veksler, V.I. (1945). A new method of acceleration of relativistic
+   particles. *Journal of Physics (USSR)*, 9, 153–158.
+4. McMillan, E.M. (1945). The Synchrotron—A Proposed High Energy Particle Accelerator.
+   *Physical Review*, 68(5–6), 143–144. DOI: 10.1103/PhysRev.68.143
+5. Alvarez, L.W., Bradner, H., Franck, J.V., Gordon, H., Gow, J.D., Marshall, L.C.,
+   Oppenheimer, F., Panofsky, W.K.H., Richman, C. & Woodyard, J.R. (1955). Berkeley Proton
+   Linear Accelerator. *Review of Scientific Instruments*, 26(2), 111–133.
+   DOI: 10.1063/1.1771253 — this is the citable record of the resonant drift-tube
+   structure, and replaces the unverifiable 1946 *Physical Review* abstract.
+6. Courant, E.D., Livingston, M.S. & Snyder, H.S. (1952). The Strong-Focusing
+   Synchroton [sic — the misspelling is in the published title]—A New High Energy
+   Accelerator. *Physical Review*, 88(5), 1190–1196. DOI: 10.1103/PhysRev.88.1190
 7. Tajima, T. & Dawson, J.M. (1979). Laser Electron Accelerator. *Physical Review
-   Letters*, 43, 267.
-8. Fermi, E. (1949). On the Origin of the Cosmic Radiation. *Physical Review*, 75, 1169.
-9. Diffusive shock acceleration, independent derivations: Krymskii, G.F. (1977), *Doklady
-   Akademii Nauk SSSR*, 234, 1306; Axford, W.I., Leer, E. & Skadron, G. (1977), *Proc.
-   15th ICRC*, 11, 132; Bell, A.R. (1978), *MNRAS*, 182, 147; Blandford, R.D. &
-   Ostriker, J.P. (1978), *ApJ*, 221, L29.
+   Letters*, 43(4), 267–270. DOI: 10.1103/PhysRevLett.43.267
+8. Fermi, E. (1949). On the Origin of the Cosmic Radiation. *Physical Review*, 75(8),
+   1169–1174. DOI: 10.1103/PhysRev.75.1169
+9. Diffusive shock acceleration, four independent derivations:
+   Krymskii, G.F. (1977). A regular mechanism for the acceleration of charged particles on
+   the front of a shock wave. *Doklady Akademii Nauk SSSR*, 234, 1306. ADS bibcode:
+   1977DoSSR.234.1306K.
+   Axford, W.I., Leer, E. & Skadron, G. (1977). The acceleration of cosmic rays by shock
+   waves. *Proceedings of the 15th International Cosmic Ray Conference* (Plovdiv,
+   13–26 August 1977), Vol. 11, 132–137 — a conference proceedings, not a journal paper;
+   ADS dates the published volume 1978 (bibcode 1978ICRC...11..132A), so some reference
+   lists give the year as 1978.
+   Bell, A.R. (1978). The acceleration of cosmic rays in shock fronts — I. *Monthly
+   Notices of the Royal Astronomical Society*, 182(2), 147–156.
+   DOI: 10.1093/mnras/182.2.147
+   Blandford, R.D. & Ostriker, J.P. (1978). Particle Acceleration by Astrophysical Shocks.
+   *The Astrophysical Journal Letters*, 221, L29–L32. DOI: 10.1086/182658
 10. Hillas, A.M. (1984). The Origin of Ultra-High-Energy Cosmic Rays. *Annual Review of
-    Astronomy and Astrophysics*, 22, 425.
-11. Greisen, K. (1966). End to the Cosmic-Ray Spectrum? *Physical Review Letters*, 16,
-    748; Zatsepin, G.T. & Kuz'min, V.A. (1966). Upper Limit of the Spectrum of Cosmic
-    Rays. *JETP Letters*, 4, 78.
+    Astronomy and Astrophysics*, 22, 425–444. DOI: 10.1146/annurev.aa.22.090184.002233
+11. Two separate papers in two journals in the same year. Greisen, K. (1966). End to the
+    Cosmic-Ray Spectrum? *Physical Review Letters*, 16(17), 748–750.
+    DOI: 10.1103/PhysRevLett.16.748. Zatsepin, G.T. & Kuz'min, V.A. (1966). Upper Limit of
+    the Spectrum of Cosmic Rays. *JETP Letters*, 4, 78–80 — Russian original *Pis'ma v Zh.
+    Eksp. Teor. Fiz.*, 4, 114–117; ADS bibcode 1966JETPL...4...78Z.
 12. Blandford, R.D. & Znajek, R.L. (1977). Electromagnetic extraction of energy from Kerr
-    black holes. *MNRAS*, 179, 433.
+    black holes. *Monthly Notices of the Royal Astronomical Society*, 179(3), 433–456.
+    DOI: 10.1093/mnras/179.3.433
