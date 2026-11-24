@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Particle Acceleration — Research Archive — Particle Accelerators</title>
+<meta name="description" content="Mechanisms, engineering limits, and open problems across laboratory and astrophysical accelerators">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="wordmark" href="index.html">The Instrument and Its Blind Spot</a>
+  <nav>
+      <a href="index.html">Thesis</a>
+      <a href="00-research-frame.html">Method</a>
+      <a href="01-particle-acceleration-research.html" class="active">Foundations</a>
+      <a href="02-theoretical-weaknesses.html">Theory</a>
+      <a href="03-trigger-data-destruction.html">Hardware</a>
+      <a href="04-software-stack-bias.html">Software</a>
+      <a href="05-publication-governance.html">Publication</a>
+  </nav>
+</header>
+<main class="doc">
+<div class="docmeta"><h1>Particle Acceleration — Research Archive</h1><dl><div class="m-row"><dt>subtitle</dt><dd>Mechanisms, engineering limits, and open problems across laboratory and astrophysical accelerators</dd></div><div class="m-row"><dt>version</dt><dd>v1</dd></div><div class="m-row"><dt>status</dt><dd>active — seeded from opening session, unverified citations</dd></div><div class="m-row"><dt>date</dt><dd>2026-11-24</dd></div><div class="m-row"><dt>author</dt><dd>Robin</dd></div></dl></div>
+<article>
+<h1 id="purpose-and-working-protocol">Purpose and Working Protocol</h1>
+<p>This file is the running archive for the particle acceleration research thread. It carries
+forward as <code>particle_acceleration_research_v[x].md</code> in this folder.</p>
+<p>Versioning convention:</p>
+<ul>
+<li>One file per working version. Do not edit a closed version in place.</li>
+<li>When a session adds material that changes structure or conclusions, write the next
+  integer version and log what changed in the Version Log below.</li>
+<li>Small corrections and additions inside an open session go into the current version.</li>
+<li><code>status</code> in the YAML header marks whether the version is open (<code>active</code>) or closed
+  (<code>superseded by v[x+1]</code>).</li>
+<li>Citations flagged unverified are recall-based and must be checked against primary
+  sources before any version is treated as closed.</li>
+</ul>
+<h1 id="scope">Scope</h1>
+<p>Two domains share one physics and almost nothing else operationally:</p>
+<ol>
+<li><strong>Engineered accelerators</strong> — linacs, cyclotrons, synchrotrons, colliders, light
+   sources, plasma wakefield devices.</li>
+<li><strong>Astrophysical accelerators</strong> — shock fronts, magnetic reconnection regions, pulsar
+   magnetospheres, relativistic jets.</li>
+</ol>
+<p>The archive treats them together because the limiting physics is the same and the
+contrast is informative: nature reaches energies ~10^7 times beyond the LHC using
+mechanisms no engineer would choose.</p>
+<h1 id="core-principle">Core Principle</h1>
+<p>Only electric fields do work on a charged particle. The magnetic force is always
+perpendicular to the velocity, so magnetic fields bend, steer, and focus, but never
+change energy. Every accelerator — built or natural — is therefore a scheme for placing a
+particle in an accelerating electric field <em>repeatedly and in phase</em>. The entire
+engineering history is contained in the word "repeatedly."</p>
+<p>Static potentials cap out at a few tens of MV before dielectric breakdown. Everything
+beyond that is some form of repeated exposure to a time-varying or motion-induced field.</p>
+<h1 id="engineered-accelerators">Engineered Accelerators</h1>
+<h2 id="radio-frequency-acceleration">Radio-frequency acceleration</h2>
+<p>Wideröe's principle: put the particle in an oscillating field and time its arrival so it
+always sees a forward push (1). Drift tubes lengthen down a linac so the particle stays in
+step as it speeds up; Alvarez's resonant drift-tube structure made this practical at scale
+(5).</p>
+<h2 id="the-cyclotron-and-its-relativistic-failure">The cyclotron and its relativistic failure</h2>
+<p>A cyclotron exploits the fact that orbital frequency <code>qB/m</code> is independent of radius, so a
+single fixed RF frequency keeps pace with a particle spiralling outward (2). Relativity
+breaks this: effective mass grows as <code>γ</code>, the orbital frequency drops, and the particle
+falls out of phase. Two repairs — sweep the frequency (synchrocyclotron) or shape <code>B</code> to
+rise with radius (isochronous cyclotron).</p>
+<h2 id="the-two-inventions-that-made-modern-machines-possible">The two inventions that made modern machines possible</h2>
+<p><strong>Phase stability</strong> (3, 4). A particle slightly off in energy arrives slightly off in
+phase and receives a correcting kick. The beam self-organises into stable longitudinal
+buckets rather than dispersing. Without this, synchrotrons do not work at all.</p>
+<p><strong>Strong (alternating-gradient) focusing</strong> (6). Quadrupoles focusing in one transverse
+plane defocus in the other; alternate them and the net effect is focusing in both. This
+collapsed beam apertures from metres to centimetres and is the single reason a 27 km ring
+is financially conceivable.</p>
+<p><em>Note for a later version: both of these are control-system insights, not energy-source
+insights. The field-generation problem was solved decades before the stability problem,
+and it was stability that unlocked scale. Worth examining whether this pattern — the
+binding constraint being governance of the process rather than the magnitude of the
+driving force — generalises.</em></p>
+<h2 id="the-synchrotron-radiation-ceiling">The synchrotron radiation ceiling</h2>
+<p>A bent charge radiates with power scaling as <code>γ^4 / ρ^2</code>. That exponent is the hard wall
+on circular machines:</p>
+<ul>
+<li>It ended LEP near 104 GeV per beam.</li>
+<li>It is why the same tunnel was refilled with protons for the LHC: a proton is ~1836×
+  heavier, so at a given energy its <code>γ</code> is ~1836× smaller and radiated power falls by
+  roughly that factor to the fourth.</li>
+<li>It is why any serious future <em>electron</em> collider must be linear.</li>
+</ul>
+<p>The same effect inverted is an industry: synchrotron light sources and X-ray free-electron
+lasers, which produce most of the world's protein structure determinations.</p>
+<h2 id="plasma-wakefield-acceleration">Plasma wakefield acceleration</h2>
+<p>Drive a laser pulse or dense particle bunch through plasma and ride the charge-separation
+wave behind it (7). Gradients of tens to hundreds of GV/m against roughly 100 MV/m for
+superconducting RF — a ~1000× improvement per metre.</p>
+<p>Unsolved parts are not the gradient: beam quality, emittance preservation, staging many
+modules in series, repetition rate.</p>
+<h1 id="astrophysical-acceleration">Astrophysical Acceleration</h1>
+<h2 id="no-voltages-only-moving-plasma">No voltages, only moving plasma</h2>
+<p>There are no static potentials in space. Accelerating electric fields arise from the
+motion of magnetised plasma (<code>E ≈ -v × B</code>) and from magnetic reconnection.</p>
+<h2 id="diffusive-shock-acceleration">Diffusive shock acceleration</h2>
+<p>The workhorse mechanism. Fermi's original stochastic (second-order) scheme gives a
+fractional energy gain scaling as <code>(v/c)^2</code> from scattering off moving magnetised clouds
+(8). The first-order version at shock fronts gains proportionally to <code>v/c</code> per crossing
+cycle and is far more efficient; it was derived independently by four groups in 1977–78
+(9).</p>
+<p>The structural result: a gain-per-cycle combined with an escape-probability-per-cycle
+generically produces a power law. The predicted index comes out near <code>E^-2</code>, steepening
+to the observed <code>E^-2.7</code> after propagation. Supernova remnant shocks, pulsar
+magnetospheres, relativistic jets, and black-hole-driven outflows all run variants.</p>
+<p>Rotational energy extraction from a black hole via its magnetosphere is a separate and
+powerful channel (12).</p>
+<h2 id="the-two-ceilings">The two ceilings</h2>
+<p><strong>Hillas criterion</strong> (10): maximum attainable energy scales roughly as <code>Z · B · R · β</code> —
+a particle cannot be confined once its gyroradius exceeds the accelerating region. Applied
+to the known object catalogue, almost nothing comfortably reaches 10^20 eV.</p>
+<p><strong>GZK cutoff</strong> (11): protons above roughly 5×10^19 eV lose energy to CMB photons via pion
+production, limiting source distance to ~100 Mpc.</p>
+<h2 id="the-open-problem">The open problem</h2>
+<p>Cosmic rays are observed up to ~10^20 eV — a single nucleus carrying the kinetic energy of
+a hard-hit tennis ball (~50 J). The GZK limit says such particles must come from nearby.
+Arrival directions show no compelling nearby source population. This is unresolved, not
+resolved-pending-detail.</p>
+<h1 id="threads-to-pull">Threads to Pull</h1>
+<p>Candidate directions for v2. Not yet researched.</p>
+<ol>
+<li><strong>UHECR origin.</strong> Current status of Telescope Array and Auger anisotropy results;
+   whether composition measurements (proton vs heavy nuclei) relax the Hillas problem,
+   since <code>E_max</code> scales with <code>Z</code>.</li>
+<li><strong>Wakefield staging.</strong> What the actual blocking constraint is on multi-stage
+   wakefield acceleration, and whether anyone has demonstrated a staged system with
+   preserved emittance.</li>
+<li><strong>The collider cost wall.</strong> The energy-per-generation curve grew exponentially for
+   roughly sixty years and has flattened. Worth examining as political economy rather
+   than physics: who the beneficiaries of the next machine are, how the physics case is
+   constructed when no specific discovery is guaranteed, what happened in the SSC
+   cancellation (1993, ~$2B spent), and why the ILC has stalled. The structure of the
+   justification argument is the object of study here, not the machine.</li>
+<li><strong>Mechanism transfer.</strong> Whether astrophysical mechanisms (stochastic, shock-based)
+   have any engineering analogue, or whether the separation is fundamental because
+   engineered devices require beam quality that stochastic processes cannot deliver.</li>
+<li><strong>The stability-over-magnitude pattern.</strong> Flagged above under strong focusing. Does
+   the history of this field support the general claim that scale limits are usually
+   control limits?</li>
+</ol>
+<h1 id="version-log">Version Log</h1>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Status</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1</td>
+<td>2026-11-24</td>
+<td>active</td>
+<td>Initial seed. Core principle, engineered and astrophysical mechanisms, two ceilings, open threads. Citations unverified.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="references">References</h1>
+<p><strong>Status: recall-based, pending verification against primary sources.</strong> Do not cite
+onward from this list until checked.</p>
+<ol>
+<li>Wideröe, R. (1928). Über ein neues Prinzip zur Herstellung hoher Spannungen. <em>Archiv
+   für Elektrotechnik</em>, 21, 387.</li>
+<li>Lawrence, E.O. &amp; Livingston, M.S. (1932). The Production of High Speed Light Ions
+   Without the Use of High Voltages. <em>Physical Review</em>, 40, 19.</li>
+<li>Veksler, V.I. (1944/1945). A new method of acceleration of relativistic particles.
+   <em>Journal of Physics (USSR)</em>, 9, 153.</li>
+<li>McMillan, E.M. (1945). The Synchrotron — A Proposed High Energy Particle Accelerator.
+   <em>Physical Review</em>, 68, 143.</li>
+<li>Alvarez, L.W. (1946). The design of a proton linear accelerator. <em>Physical Review</em>,
+   70, 799.</li>
+<li>Courant, E.D., Livingston, M.S. &amp; Snyder, H.S. (1952). The Strong-Focusing Synchrotron
+   — A New High Energy Accelerator. <em>Physical Review</em>, 88, 1190.</li>
+<li>Tajima, T. &amp; Dawson, J.M. (1979). Laser Electron Accelerator. <em>Physical Review
+   Letters</em>, 43, 267.</li>
+<li>Fermi, E. (1949). On the Origin of the Cosmic Radiation. <em>Physical Review</em>, 75, 1169.</li>
+<li>Diffusive shock acceleration, independent derivations: Krymskii, G.F. (1977), <em>Doklady
+   Akademii Nauk SSSR</em>, 234, 1306; Axford, W.I., Leer, E. &amp; Skadron, G. (1977), <em>Proc.
+   15th ICRC</em>, 11, 132; Bell, A.R. (1978), <em>MNRAS</em>, 182, 147; Blandford, R.D. &amp;
+   Ostriker, J.P. (1978), <em>ApJ</em>, 221, L29.</li>
+<li>Hillas, A.M. (1984). The Origin of Ultra-High-Energy Cosmic Rays. <em>Annual Review of
+    Astronomy and Astrophysics</em>, 22, 425.</li>
+<li>Greisen, K. (1966). End to the Cosmic-Ray Spectrum? <em>Physical Review Letters</em>, 16,
+    748; Zatsepin, G.T. &amp; Kuz'min, V.A. (1966). Upper Limit of the Spectrum of Cosmic
+    Rays. <em>JETP Letters</em>, 4, 78.</li>
+<li>Blandford, R.D. &amp; Znajek, R.L. (1977). Electromagnetic extraction of energy from Kerr
+    black holes. <em>MNRAS</em>, 179, 433.</li>
+</ol>
+</article>
+</main>
+<footer>
+  <p>Research archive. Every claim carries an evidence tier; rejected claims are kept on the
+  record rather than removed. Source and revision history:
+  <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a>.</p>
+</footer>
+</body>
+</html>

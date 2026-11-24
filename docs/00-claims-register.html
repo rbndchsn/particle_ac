@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claims Register — Particle Accelerators</title>
+<meta name="description" content="Every substantive claim in the archive, with tier, supporting file, and test status">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="wordmark" href="index.html">The Instrument and Its Blind Spot</a>
+  <nav>
+      <a href="index.html">Thesis</a>
+      <a href="00-research-frame.html" class="active">Method</a>
+      <a href="01-particle-acceleration-research.html">Foundations</a>
+      <a href="02-theoretical-weaknesses.html">Theory</a>
+      <a href="03-trigger-data-destruction.html">Hardware</a>
+      <a href="04-software-stack-bias.html">Software</a>
+      <a href="05-publication-governance.html">Publication</a>
+  </nav>
+</header>
+<main class="doc">
+<div class="docmeta"><h1>Claims Register</h1><dl><div class="m-row"><dt>subtitle</dt><dd>Every substantive claim in the archive, with tier, supporting file, and test status</dd></div><div class="m-row"><dt>version</dt><dd>v1</dd></div><div class="m-row"><dt>status</dt><dd>active — trigger stream resolved; six streams outstanding</dd></div><div class="m-row"><dt>date</dt><dd>2026-11-24</dd></div><div class="m-row"><dt>author</dt><dd>Robin</dd></div><div class="m-row"><dt>also in section</dt><dd><a href="00-research-frame.html">Research Frame and Evidence Standards</a></dd></div></dl></div>
+<article>
+
+<aside class="legend">
+  <h2>How to read this</h2>
+  <p>Every substantive claim in this archive carries an evidence tier. The tier is part of
+  the claim, not a disclaimer attached to it.</p>
+  <ul>
+    <li><span class="tier tier-a">A</span><strong>Documented.</strong> Acknowledged inside
+    the field — primary literature, collaboration technical documents, procurement or
+    court records.</li>
+    <li><span class="tier tier-b">B</span><strong>Contested.</strong> Disputed inside the
+    field, with named advocates on both sides, each cited from their own words.</li>
+    <li><span class="tier tier-c">C</span><strong>Inference.</strong> Follows from Tier A
+    facts but has not been assembled or tested by the field. Not a finding. States what it
+    rests on and what would falsify it.</li>
+    <li><span class="tier tier-d">D</span><strong>Rejected.</strong> Examined and not
+    supported. Kept on the record with the reason it failed.</li>
+  </ul>
+</aside>
+<h1 id="purpose">Purpose</h1>
+<p>A single register of what this archive actually asserts. Each claim has an ID, a tier, the
+file that supports it, and a status. Nothing may be carried into a published synthesis
+unless it appears here with a status of SUPPORTED or SUPPORTED-AS-INFERENCE.</p>
+<p>Status values: <code>UNTESTED</code> · <code>SUPPORTED</code> · <code>SUPPORTED-AS-INFERENCE</code> · <code>WEAKENED</code> ·
+<code>REJECTED</code></p>
+<h1 id="candidate-structural-claims">Candidate Structural Claims</h1>
+<p>These were identified before research began. They are the project's working hypotheses and
+are all currently UNTESTED. Several may not survive.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Claim</th>
+<th>Tier</th>
+<th>File</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>ATLAS and CMS are presented as mutually independent confirmation while sharing simulation toolkits, event generators, analysis frameworks and methodology, so their systematic errors are correlated and agreement between them is weaker evidence than presented</td>
+<td>C</td>
+<td>04_software_algorithmic</td>
+<td>UNTESTED</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>~~The Level-1 trigger encodes a theoretical prior at the point of irreversible data destruction, making some physics unobservable in principle rather than merely unmeasured~~</td>
+<td>C</td>
+<td>03_hardware_systems</td>
+<td><strong>REJECTED</strong> — see C2a</td>
+</tr>
+<tr>
+<td>C2a</td>
+<td>Trigger menus are built from theoretical expectation and discarded events are unrecoverable, so trigger error is structurally asymmetric: false positives cost measured, budgeted bandwidth while false negatives cost unrecoverable events and are never integrated over signature space</td>
+<td>C</td>
+<td>03_hardware_systems</td>
+<td>SUPPORTED-AS-INFERENCE</td>
+</tr>
+<tr>
+<td>C2b</td>
+<td>Trigger design has demonstrably prevented specific measurements, not merely delayed them</td>
+<td>A</td>
+<td>03_hardware_systems</td>
+<td>SUPPORTED</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Event generators are tuned to data and then used to compute the acceptance corrections through which new data is interpreted, creating a circularity in which the correction depends on the model under test</td>
+<td>C</td>
+<td>04_software_algorithmic</td>
+<td>UNTESTED</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Hyperauthorship combined with collaboration-internal pre-review makes external peer review structurally incapable of auditing a result</td>
+<td>C</td>
+<td>05_publication_governance</td>
+<td>UNTESTED</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Strategy and feasibility panels are composed substantially of prospective beneficiaries, so machine-justification documents cannot be read as independent assessment</td>
+<td>C</td>
+<td>05_publication_governance</td>
+<td>UNTESTED</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Supplier concentration in specialised components creates single points of failure, and procurement balance rules mean some technical choices are downstream of political allocation rather than technical merit</td>
+<td>C</td>
+<td>03_hardware_systems</td>
+<td>UNTESTED</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Motivating arguments whose predictions failed (naturalness, WIMP parameter space) were retired without the retirement being reflected in the justification for successor machines</td>
+<td>B</td>
+<td>02_theory_critique</td>
+<td>UNTESTED</td>
+</tr>
+</tbody>
+</table>
+<h1 id="register">Register</h1>
+<p>Populated as research files land. One row per substantive claim, tier-labelled, traceable
+to its source file and references.</p>
+<h1 id="resolution-notes">Resolution Notes</h1>
+<h2 id="c2-rejected-and-why-that-matters">C2 — rejected, and why that matters</h2>
+<p>The original claim said some physics is <strong>unobservable in principle</strong> because the trigger
+destroys data irreversibly under a theory-laden menu. That is wrong, and the research
+stream rejected it rather than defending it.</p>
+<p>Reason <span class="tier tier-a" title="Tier A — Documented">A</span>: ATLAS and CMS run zero-bias, enhanced-bias and pileup streams which are not
+selected on physics signatures. These give an effective prescale of roughly 40,000 — an
+unbiased sample of order 0.5–1 fb⁻¹, enough to set limits around the 3 fb level. Physics
+outside the menu is therefore <em>badly sampled</em>, not <em>unobservable</em>. The strong version of
+the claim is false and has been struck from the register.</p>
+<p>Three further supporting arguments were also rejected: that the bandwidth constraint is a
+hard physical limit (LHCb and ALICE abandoned hardware triggers entirely, so it is an
+engineering choice); that the astrophysical detectors face the same problem (IceCube
+archives all raw waveforms); and that the field does not acknowledge the issue (it does,
+in print).</p>
+<p>What survives is narrower, documented, and sharper — C2a and C2b above. The replacement
+claim is falsifiable by a single coverage integral over signature space with a stated
+measure. No such integral appears to exist.</p>
+<p>This resolution is the frame working as designed. A register that only accumulated
+confirmations would be worthless.</p>
+</article>
+</main>
+<footer>
+  <p>Research archive. Every claim carries an evidence tier; rejected claims are kept on the
+  record rather than removed. Source and revision history:
+  <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a>.</p>
+</footer>
+</body>
+</html>
