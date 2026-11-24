@@ -1,0 +1,99 @@
+# Per-document summary panels. Hand-written from each research stream's findings.
+# key_findings: 3-5 bullets, the strongest documented material
+# rejected: what the stream examined and struck out
+# note: optional caveat surfaced at the top of the page
+
+02_theory_critique/theoretical_weaknesses_v1.md:
+  key_findings:
+    - "Naturalness carried a <strong>pre-registered falsification condition</strong> set inside the field: an explicit sub-TeV bound published with the statement that finding no such phenomena would mean the criterion failed. The condition was met."
+    - "The same author conceded the point in 2017 — “a doctor who is unable to find the right diagnosis cannot simply declare the patient healed.”"
+    - "The 2023 US strategy report contains <strong>zero</strong> instances of “naturalness”, “hierarchy problem”, “fine-tuning” or “unnatural” across all 379,741 characters, while still paraphrasing the argument."
+    - "The fine-tuning threshold moved by stipulation across three decades (Δ=10 → Δ=20 → 100, with 1000 “or higher” acceptable) while gluino limits rose from ~310 GeV to ~2.3 TeV."
+    - "750 GeV diphoton: global significances of 2.1σ and 1.6σ were stated in the abstracts; 200–350 theory papers followed anyway."
+  rejected:
+    - "That naturalness was <em>merely</em> aesthetic — its effective-field-theory grounding is a real argument and survives."
+    - "That no-lose rhetoric is empty — the Higgs no-lose claim succeeded in 2012."
+    - "That axion research was funding-suppressed — DOE selected 4:1 WIMP:axion from 10:3 submissions, which is proportionate."
+    - "That goalposts moved only after exclusions — split SUSY abandoned naturalness in 2004, before the LHC."
+
+03_hardware_systems/trigger_data_destruction_v1.md:
+  key_findings:
+    - "40 MHz of crossings against roughly 1–3 kHz written. Full readout would be <strong>40 TB/s</strong> against about 1 GB/s stored. Rejected events are, in the field’s own words, lost forever."
+    - "Menus select events “believed in advance of being interesting… theoretical models and detailed Monte Carlo simulations guide the definition of the trigger menus.”"
+    - "CMS allocates high-level trigger rate roughly one third each to new-physics searches, measurements and flavour physics — by committee, annually."
+    - "CMS states it lacked a B→K<sup>(*)</sup>ee trigger, which “prevented the measurements of R<sub>K</sub> and R<sub>K*</sub>.” Prevented, not delayed."
+    - "Surviving claim: trigger error is structurally asymmetric. False positives cost measured, budgeted bandwidth; false negatives cost unrecoverable events and are never integrated over signature space."
+  rejected:
+    - "That some physics is <strong>unobservable in principle</strong> — false. Zero-bias and enhanced-bias streams give an effective prescale near 40,000 and an unbiased sample of 0.5–1 fb⁻¹."
+    - "That trigger bandwidth is a hard physical limit — LHCb and ALICE abandoned hardware triggers entirely."
+    - "That the astrophysical detectors share the problem — IceCube archives all raw waveforms."
+    - "That the field does not acknowledge the issue — it does, in print."
+
+03_hardware_systems/hardware_supply_chain_v1.md:
+  key_findings:
+    - "Accelerator-grade Nb₃Sn: the HL-LHC specification was met by <strong>one</strong> supplier, against eight qualified for ITER."
+    - "World RRP output is 5–10 t/yr and PIT under 1 t/yr, against projected FCC demand of 8,000–10,000 t."
+    - "Brazil holds roughly <strong>93%</strong> of world niobium mine production; one firm holds 77–90% of that. The US produces none."
+    - "“Only two companies in the world” make helium turbo-expanders of the required size."
+    - "CERN member states receive 94% of direct contracts but 77% of value added; France and Switzerland together take 58% of direct spend."
+  rejected:
+    - "That Russian crystal supply was lost after 2022 — that vendor failed commercially <em>before</em> then; the 2022 dependency was on Russian funding, not crystals."
+    - "That procurement is captured by the largest contributors — Germany and the UK are documented as poorly balanced, i.e. under-returned."
+  note: "Several supplier identities are recorded as <em>not publicly available</em> rather than inferred — foundry names, per-firm dipole contract values, per-vendor klystron and SiPM shares."
+
+04_software_algorithmic/software_stack_bias_v1.md:
+  key_findings:
+    - "Both general-purpose experiments’ nominal hadronisation descends from <strong>one</strong> manual fit whose authors describe making “(subjective) decisions” and set a shower parameter to “effectively mimic” a missing calculation."
+    - "One experiment holds those parameters fixed entirely; the other tunes ten parameters on top of them."
+    - "A published study finds the two-generator spread does not bound the spread to a third: “using only two generators would badly underestimate the true uncertainty.”"
+    - "In unfolding, the simulation’s own prediction is the regularising prior — “the dependence on the start values, typically taken to be the Monte Carlo truth, provides a regularisation.”"
+    - "By 2025 the reproducibility of some Run-1 and Run-2 searches has “already been lost within ATLAS and CMS.”"
+  rejected:
+    - "That combinations ignore inter-experiment correlation — <strong>false, and documented to the contrary.</strong> Correlation is modelled explicitly, at ρ≈0.5 for shared modelling terms, with per-category scans published."
+    - "That correlation treatment would move published results — for the top mass it is numerically immaterial."
+    - "That ROOT is bus-factor-one — 15 maintainers across 4 institutions is concentration, not key-person risk."
+    - "That open-data limits reflect suppression — the person-power explanation wins, and the damning quotes are the collaborations’ own."
+  note: "Surviving inference: the correlation coefficient appears calibrated on <em>procedural</em> difference between collaborations rather than shared model lineage, where the true value for hadronisation is plausibly near 1."
+
+05_publication_governance/publication_governance_v1.md:
+  key_findings:
+    - "The field’s own reinterpretation inventory: full statistical likelihoods released for <strong>two</strong> analyses; efficiency maps in “very few cases”; machine-learning analyses “cannot be reproduced at all outside the experimental collaboration.”"
+    - "ATLAS authorship is earned by 80 eight-hour days plus a year, after which a name appears on every paper; the Authorship Committee’s remit explicitly excludes responsibility for content."
+    - "P5 recuses four of 32 members, for national-lab employment, from a single acceptance vote. All 32 are particle or accelerator physicists. The ESPP mandate has no conflict-of-interest provisions at all."
+    - "Costs are taken from proponents; the subcommittee was barred from producing its own estimates."
+    - "FCC: ~€9bn (2019) → CHF 15.3bn (2025); tunnel 100 → 90.7 km; FCC-hh 100 → 85 TeV; operations late-2050s → early-2070s."
+  rejected:
+    - "That null results are suppressed — <strong>the reverse holds.</strong> Physics ranks 12th of 20 fields for positive-result bias; HEP publishes exclusions thoroughly."
+    - "That there is no conflict-of-interest regime — there is one, and it does recuse members."
+    - "That no panel member lacks a stake — false; at least one documented counterexample."
+    - "That critics are professionally punished — unsupported. The case usually cited was a Code of Conduct matter about gender, not collider criticism."
+  note: "Surviving inference: the exemplary null-result record and the weak external auditability have the <em>same</em> cause — the collaboration is the publishing unit, so there is no file drawer and no outside check."
+
+06_dissent_register/legitimacy_confrontations_v1.md:
+  key_findings:
+    - "<strong>60 confrontations catalogued, 1961–2026</strong>, stated as a floor with inclusion criteria: 3 validity, 21 priority/cost, 12 safety, 15 epistemic/sociological, 9 specific-result."
+    - "The ratio is the finding. <strong>Three of sixty</strong> dispute the physics — all three outside peer review, none a practising particle physicist."
+    - "All 36 scientists in the priority and epistemic categories, including five Nobel laureates, concede in writing that the machines work and the Standard Model is confirmed. The leading anti-FCC campaign says so in its own report."
+    - "Philip Anderson’s Senate testimony, 24 February 1989: HEP received roughly ten times more per capita; officials “deliberately misleading Congress.” The SSC died 282–143 on 19 October 1993, ~$2bn spent, $203m undocumented."
+    - "Seven legal proceedings across four jurisdictions produced <strong>zero merits rulings</strong>. Every court declined to reach the physics."
+    - "Volkov (2024): an independent recalculation of tenth-order QED disagrees with the standard result at 5σ, published in Physical Review D."
+  rejected:
+    - "The fabrication thesis, in every form examined."
+    - "Unzicker’s and Consa’s validity claims — Consa’s history is retained, the manipulation inference rejected."
+    - "The retaliation thesis — Krumhansl became APS President two years after testifying against the SSC."
+    - "“The courts found the LHC safe” — they did not; they declined jurisdiction."
+    - "Pickering read as a validity critic — his contingency thesis is not an error claim, and the distinction is the one this document turns on."
+
+07_epistemic_audit/known_versus_assumed_v1.md:
+  key_findings:
+    - "Electron g/2 = 1.001159652180(13) — 0.13 parts per trillion, 15 significant figures, matched to ~1 part in 10¹² by a 12,672-diagram five-loop calculation. This is the most precisely confirmed prediction in science."
+    - "Calibration point that matters: the test is limited by the <em>imported</em> value of α, and the two best determinations differ from the g/2 value by 2.1σ and 3.9σ."
+    - "The inferential chain does <strong>not</strong> turn model-dependent at calibration — ATLAS jets are calibrated to particle level at 0.3% at 300 GeV, anchored on test-beam and in-data balance."
+    - "It turns model-dependent at two later steps: the object-to-entity mapping (jet→parton, missing energy→invisible particle), and the acceptance factor computed under the hypothesis being tested."
+    - "Genuinely alive: axions, SUSY as a framework, composite Higgs, heavy sterile neutrinos. Dead or untestable: technicolor, preons, ADD, MOND-as-replacement, eV sterile neutrinos."
+    - "Real unexplained anomalies: the gallium deficit (>5σ), dark energy tension (3.1–4.2σ), neutrino-mass cosmology tension, strong CP, baryon asymmetry."
+  rejected:
+    - "Plasma cosmology, the electric universe, “quarks don’t exist”, Santilli, and all fabrication claims."
+    - "Unzicker’s falsity claims — his auditability point survives; nothing else does."
+    - "That the muon g-2 anomaly is resolved — it is <em>displaced</em>, not resolved; the two determinations remain incompatible at ~3σ."
+    - "That R(K) is a live anomaly — it dissolved, with a published cause."
