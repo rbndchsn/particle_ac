@@ -1,6 +1,6 @@
 ---
 title: The Instrument and Its Blind Spot
-subtitle: Particle physics stated the condition under which its central argument would fail. The condition was met. This is an audit of what happened next, assembled from the field's own documents.
+subtitle: Particle physics counts what it keeps and not what it discards. In four separate domains, the quantity that would measure the difference has never been computed.
 author: Robin
 date: 2026-11-24
 version: v2
@@ -28,6 +28,13 @@ This page leads with the concessions because the argument that follows only has 
 <div class="thesis">
 <p>Particle physics published, in advance and in print, the condition under which its central organising argument would fail. The condition was met. The argument was then removed from the documents that ask for the next machine — without being retracted in them.</p>
 <p>Around that absence sits a system that cannot audit what it discards: an instrument whose selection errors are measured in one direction only, a simulation stack whose shared ancestry is not reflected in how its uncertainties are combined, and a literature in which the body that publishes a result is the only one able to check it.</p>
+</div>
+
+<div class="crux">
+<p class="crux-lede">The field measures its errors in one direction.</p>
+<p>Everything it keeps is counted, budgeted and published with uncertainties. Everything it discards is acknowledged one paper at a time and integrated nowhere. A criterion fails its own published test and the failure never reaches the funding case. A trigger keeping too much costs measured bandwidth; discarding the wrong thing costs events that no longer exist. Model uncertainty is estimated from a two-point spread a published study says does not bound a third. Results that survive internal review are published thoroughly, and what nobody outside can reproduce is not represented anywhere at all.</p>
+<p>Four domains, one shape — and none of it concealed. The field writes every instance down in its own technical literature. What is missing is any mechanism carrying the local acknowledgement up into the confidence expressed at the top.</p>
+<p class="crux-kicker">In all four cases, the quantity that would measure the discarded part has never been computed. There is no coverage integral over signature space. No study scans correlation and model variance jointly. No accounting of what the abandoned criterion cost the programme it justified. The number is not disputed. It is absent.</p>
 </div>
 
 That is a narrower claim than "particle accelerators are not doing what they say." It is also harder to dismiss, because nearly every fact supporting it comes from the field's own technical documents, strategy reports and court records. This is not an argument from outside physics. It is an argument assembled out of physics' own paperwork.

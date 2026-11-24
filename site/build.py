@@ -214,7 +214,10 @@ def tier_bar(counts):
             segs.append(f'<span class="tier-{t.lower()}" style="width:{c/total*100:.2f}%"></span>')
         keys.append(f'<span><span class="tier tier-{t.lower()}">{t}</span> '
                     f'{TIER_NAMES[t]} <b>{c}</b></span>')
-    return (f'<div class="tierbar"><div class="track">{"".join(segs)}</div>'
+    return (f'<div class="tierbar">'
+            f'<p class="tierbar-head">Evidence tiers used in this document '
+            f'<span>({total} labelled claims)</span></p>'
+            f'<div class="track">{"".join(segs)}</div>'
             f'<div class="keys">{"".join(keys)}</div></div>')
 
 
