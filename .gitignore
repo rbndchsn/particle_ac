@@ -14,3 +14,7 @@
 # Editor
 .obsidian/
 *.swp
+
+# Python
+__pycache__/
+*.py[cod]
