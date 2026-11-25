@@ -41,6 +41,34 @@ SECTIONS = [
     ("09_anchoring_gradient", "Anchoring"),
     ("10_financial_investigation", "Money"),
 ]
+UI = {
+    "en": dict(overview="Overview", toc="Contents", onpage="On this page",
+               docs="Documents", thedocs="The documents", inprog="In progress",
+               refs="references", claims="tier-labelled claims", archive="Research archive",
+               found="What this stream found", struck="Examined and struck out",
+               foot1="Every claim in this archive carries an evidence tier. Claims examined and "
+                     "rejected are kept on the record rather than removed \u2014 including both "
+                     "hypotheses the project began with.",
+               foot2="Source, data and full revision history:"),
+    "fr": dict(overview="Vue d\u2019ensemble", toc="Sommaire", onpage="Sur cette page",
+               docs="Documents", thedocs="Les documents", inprog="En cours",
+               refs="r\u00e9f\u00e9rences", claims="affirmations cot\u00e9es par niveau de preuve",
+               archive="Archive de recherche",
+               found="Ce que ce volet a trouv\u00e9", struck="Examin\u00e9 et \u00e9cart\u00e9",
+               foot1="Chaque affirmation de cette archive porte un niveau de preuve. Celles qui ont "
+                     "\u00e9t\u00e9 examin\u00e9es puis rejet\u00e9es sont conserv\u00e9es au dossier plut\u00f4t "
+                     "qu\u2019effac\u00e9es \u2014 y compris les deux hypoth\u00e8ses de d\u00e9part du projet.",
+               foot2="Sources, donn\u00e9es et historique complet des r\u00e9visions :"),
+}
+
+SECTION_FR = {
+    "00_method": "M\u00e9thode", "01_foundations": "Fondements", "02_theory_critique": "Th\u00e9orie",
+    "03_hardware_systems": "Mat\u00e9riel", "04_software_algorithmic": "Logiciel",
+    "05_publication_governance": "Publication", "06_dissent_register": "Dissidence",
+    "07_epistemic_audit": "Connu vs suppos\u00e9", "08_evidential_audit": "O\u00f9 les preuves c\u00e8dent",
+    "09_anchoring_gradient": "Ancrage", "10_financial_investigation": "Argent",
+}
+
 NAV_PRIMARY = {"00_method": "research_frame", "03_hardware_systems": "trigger_data_destruction"}
 TIER_NAMES = {"A": "Documented", "B": "Contested", "C": "Inference", "D": "Rejected"}
 STATUS_CLASS = [
@@ -111,14 +139,14 @@ def count_tiers(md_text):
     return counts
 
 
-def embed_figures(md_text):
+def embed_figures(md_text, lang="en"):
     return re.sub(r"\{\{fig:([a-z0-9-]+)\}\}",
-                  lambda m: figures.render(m.group(1)), md_text)
+                  lambda m: figures.render(m.group(1), lang), md_text)
 
 
-def render_md(md_text):
+def render_md(md_text, lang="en"):
     return markdown.markdown(
-        strikethrough(badge_tiers(embed_figures(normalise_headings(md_text)))),
+        strikethrough(badge_tiers(embed_figures(normalise_headings(md_text), lang))),
         extensions=["tables", "fenced_code", "attr_list", "sane_lists", "md_in_html"],
     )
 
@@ -224,14 +252,14 @@ def tier_bar(counts):
             f'<div class="keys">{"".join(keys)}</div></div>')
 
 
-def summary_panel(summ):
+def summary_panel(summ, lang="en"):
     if not summ:
         return ""
     found = "".join(f"<li>{x}</li>" for x in summ.get("key_findings", []))
     struck = "".join(f"<li>{x}</li>" for x in summ.get("rejected", []))
     note = summ.get("note")
-    found_label = summ.get("found_label", "What this stream found")
-    struck_label = summ.get("struck_label", "Examined and struck out")
+    found_label = summ.get("found_label", UI[lang]["found"])
+    struck_label = summ.get("struck_label", UI[lang]["struck"])
     parts = [f'<div class="found"><h3>{html.escape(found_label)}</h3><ul>{found}</ul></div>']
     if struck:
         parts.append(f'<div class="struck"><h3>{html.escape(struck_label)}</h3><ul>{struck}</ul></div>')
@@ -240,18 +268,20 @@ def summary_panel(summ):
     return f'<section class="summary">{"".join(parts)}</section>'
 
 
-def toc_html(toc):
+def toc_html(toc, lang="en"):
     if len(toc) < 3:
         return ""
     items = "".join(
         f'<li class="lvl-{lvl}"><a href="#{s}">{html.escape(t)}</a></li>' for lvl, s, t in toc)
-    return (f'<nav class="toc" aria-label="Contents"><p class="toc-head">Contents</p>'
+    return (f'<nav class="toc" aria-label="{UI[lang]["toc"]}"><p class="toc-head">{UI[lang]["toc"]}</p>'
             f'<ol>{items}</ol></nav>')
 
 
-def nav_html(active_slug, pages):
-    items = ['<a href="index.html"%s>Overview</a>'
-             % (' class="active"' if active_slug == "index" else "")]
+def nav_html(active_slug, pages, lang="en"):
+    home = "index.html" if lang == "en" else "index-fr.html"
+    items = ['<a href="%s"%s>%s</a>'
+             % (home, ' class="active"' if active_slug in ("index", "index-fr") else "",
+                UI[lang]["overview"])]
     for folder, label in SECTIONS:
         group = [p for p in pages if p["folder"] == folder]
         if not group:
@@ -259,12 +289,13 @@ def nav_html(active_slug, pages):
         pref = NAV_PRIMARY.get(folder)
         target = next((p for p in group if p["stem"] == pref), group[0])
         cls = ' class="active"' if any(p["slug"] == active_slug for p in group) else ""
-        items.append(f'<a href="{target["slug"]}.html"{cls}>{html.escape(label)}</a>')
+        lbl = SECTION_FR.get(folder, label) if lang == "fr" else label
+        items.append(f'<a href="{target["slug"]}.html"{cls}>{html.escape(lbl)}</a>')
     return "\n        ".join(items)
 
 
 PAGE = """<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -281,14 +312,14 @@ PAGE = """<!DOCTYPE html>
     <nav>
         {nav}
     </nav>
+    <div class="langswitch">{langswitch}</div>
   </div>
 </header>
 {body}
 <footer>
   <div class="shell">
-    <p>Every claim in this archive carries an evidence tier. Claims examined and rejected are
-    kept on the record rather than removed — including both hypotheses the project began with.</p>
-    <p>Source, data and full revision history:<br>
+    <p>{foot1}</p>
+    <p>{foot2}<br>
     <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a></p>
   </div>
 </footer>
@@ -296,6 +327,15 @@ PAGE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+
+def langswitch_html(lang):
+    """EN / FR toggle. Research pages link to the landing page of the other language."""
+    en_cls = ' class="on"' if lang == "en" else ""
+    fr_cls = ' class="on"' if lang == "fr" else ""
+    return (f'<a href="index.html"{en_cls} hreflang="en">EN</a>'
+            f'<span aria-hidden="true">/</span>'
+            f'<a href="index-fr.html"{fr_cls} hreflang="fr">FR</a>')
 
 
 def slugify_path(folder, path):
@@ -359,70 +399,79 @@ def build():
                        '<button aria-pressed="false" data-f="REJECTED">Rejected</button>'
                        '<button aria-pressed="false" data-f="UNTESTED">Untested</button>'
                        '<span class="count"></span></div>')
-        toc_markup = toc_html(toc)
+        toc_markup = toc_html(toc, "en")
         wrap = "with-rail" if toc_markup else "no-rail"
         body = (
             f'<main class="shell"><div class="{wrap}">{toc_markup}'
-            f'<div>{header}{summary_panel(summaries.get(p["key"]))}{filters}'
+            f'<div>{header}{summary_panel(summaries.get(p["key"]), "en")}{filters}'
             f'<article>{content}</article></div></div></main>')
         (OUT / f'{p["slug"]}.html').write_text(PAGE.format(
             title=f'{m.get("title", p["slug"])} — {SITE_NAME[0]}',
             ogtitle=html.escape(str(m.get("title", p["slug"]))),
             desc=html.escape(str(m.get("subtitle", ""))[:180]),
-            nav=nav_html(p["slug"], pages), body=body), encoding="utf-8")
+            nav=nav_html(p["slug"], pages, "en"), lang="en",
+            langswitch=langswitch_html("en"),
+            foot1=UI["en"]["foot1"], foot2=UI["en"]["foot2"],
+            body=body), encoding="utf-8")
 
-    # ---- landing page
-    imeta, ibody = split_frontmatter((SITE / "content" / "index.md").read_text(encoding="utf-8"))
-    site_title = str(imeta.get("title", ""))
-    cards = []
-    for folder, label in SECTIONS:
-        group = [p for p in pages if p["folder"] == folder]
-        if not group:
+    # ---- landing pages, one per language
+    for lang, src, outfile in (("en", "index.md", "index.html"),
+                               ("fr", "index.fr.md", "index-fr.html")):
+        srcpath = SITE / "content" / src
+        if not srcpath.exists():
             continue
-        cards.append(f'<div class="card-group"><h3>{html.escape(label)}</h3><div class="cards">')
-        for p in group:
-            t = p["tiers"]
-            chips = "".join(
-                f'<span><span class="tier tier-{k.lower()}">{k}</span><b>{t[k]}</b></span>'
-                for k in "ABC" if t[k])
-            cards.append(
-                f'<a class="card" href="{p["slug"]}.html">'
-                f'<span class="c-title">{html.escape(str(p["meta"].get("title", p["slug"])))}</span>'
-                f'<span class="c-tiers">{chips}</span>'
-                f'<span class="c-sub">{html.escape(str(p["meta"].get("subtitle","")))}</span></a>')
-        cards.append("</div></div>")
-    missing = [l for f, l in SECTIONS if not any(p["folder"] == f for p in pages)]
-    pending = (f'<div class="pending"><h3>In progress</h3><p>{", ".join(missing)}.</p></div>'
-               if missing else "")
-    content, htoc = add_anchors_and_toc(wrap_tables(render_md(ibody)))
-    hero = (
-        f'<div class="hero"><div class="shell">'
-        f'<p class="eyebrow">Research archive · {len(pages)} documents</p>'
-        f'<h1>{html.escape(str(imeta.get("title","")))}</h1>'
-        f'<p class="standfirst">{html.escape(str(imeta.get("subtitle","")))}</p>'
-        f'<div class="byline"><span>{html.escape(str(imeta.get("author","")))}</span>'
-        f'<span>{html.escape(str(imeta.get("date","")))}</span>'
-        f'<span>{sum(sum(p["tiers"].values()) for p in pages)} tier-labelled claims</span>'
-        f'</div></div></div>')
-    home_toc = "".join(
-        f'<li><a href="#{s}">{html.escape(t)}</a></li>' for lvl, s, t in htoc if lvl == 2)
-    rail_docs = "".join(
-        f'<li><a href="{p["slug"]}.html">{html.escape(str(p["meta"].get("title", p["slug"])))}</a></li>'
-        for p in pages)
-    rail = (f'<aside class="home-rail">'
-            f'<div class="rail-block"><p class="toc-head">On this page</p>'
-            f'<ol class="rail-list">{home_toc}</ol></div>'
-            f'<div class="rail-block"><p class="toc-head">Documents</p>'
-            f'<ol class="rail-list">{rail_docs}</ol></div></aside>')
-    body = (f'{hero}<main class="shell home">'
-            f'<div class="home-grid"><article>{content}</article>{rail}</div>'
-            f'<section class="doclist"><h2>The documents</h2>{"".join(cards)}{pending}</section>'
-            f'</main>')
-    (OUT / "index.html").write_text(PAGE.format(
-        title=site_title,
-        ogtitle=site_title,
-        desc=html.escape(str(imeta.get("subtitle", ""))[:180]),
-        nav=nav_html("index", pages), body=body), encoding="utf-8")
+        imeta, ibody = split_frontmatter(srcpath.read_text(encoding="utf-8"))
+        u = UI[lang]
+        cards = []
+        for folder, label in SECTIONS:
+            group = [p for p in pages if p["folder"] == folder]
+            if not group:
+                continue
+            lbl = SECTION_FR.get(folder, label) if lang == "fr" else label
+            cards.append(f'<div class="card-group"><h3>{html.escape(lbl)}</h3><div class="cards">')
+            for p in group:
+                t = p["tiers"]
+                chips = "".join(
+                    f'<span><span class="tier tier-{k.lower()}">{k}</span><b>{t[k]}</b></span>'
+                    for k in "ABC" if t[k])
+                cards.append(
+                    f'<a class="card" href="{p["slug"]}.html">'
+                    f'<span class="c-title">{html.escape(str(p["meta"].get("title", p["slug"])))}</span>'
+                    f'<span class="c-tiers">{chips}</span>'
+                    f'<span class="c-sub">{html.escape(str(p["meta"].get("subtitle",""))) }</span></a>')
+            cards.append("</div></div>")
+        content, htoc = add_anchors_and_toc(wrap_tables(render_md(ibody, lang)))
+        home_toc = "".join(
+            f'<li><a href="#{sl}">{html.escape(tt)}</a></li>' for lv, sl, tt in htoc if lv == 2)
+        rail_docs = "".join(
+            f'<li><a href="{p["slug"]}.html">{html.escape(str(p["meta"].get("title", p["slug"])))}</a></li>'
+            for p in pages)
+        rail = (f'<aside class="home-rail">'
+                f'<div class="rail-block"><p class="toc-head">{u["onpage"]}</p>'
+                f'<ol class="rail-list">{home_toc}</ol></div>'
+                f'<div class="rail-block"><p class="toc-head">{u["docs"]}</p>'
+                f'<ol class="rail-list">{rail_docs}</ol></div></aside>')
+        hero = (f'<div class="hero"><div class="shell">'
+                f'<p class="eyebrow">{u["archive"]} \u00b7 {len(pages)} documents</p>'
+                f'<h1>{html.escape(str(imeta.get("title","")))}</h1>'
+                f'<p class="standfirst">{html.escape(str(imeta.get("subtitle","")))}</p>'
+                f'<div class="byline"><span>{html.escape(str(imeta.get("author","")))}</span>'
+                f'<span>{html.escape(str(imeta.get("date","")))}</span>'
+                f'<span>{sum(sum(p["tiers"].values()) for p in pages)} {u["claims"]}</span>'
+                f'</div></div></div>')
+        body = (f'{hero}<main class="shell home">'
+                f'<div class="home-grid"><article>{content}</article>{rail}</div>'
+                f'<section class="doclist"><h2>{u["thedocs"]}</h2>{"".join(cards)}</section>'
+                f'</main>')
+        slug = "index" if lang == "en" else "index-fr"
+        (OUT / outfile).write_text(PAGE.format(
+            title=str(imeta.get("title", "")),
+            ogtitle=html.escape(str(imeta.get("title", ""))),
+            desc=html.escape(str(imeta.get("subtitle", ""))[:180]),
+            nav=nav_html(slug, pages, lang), lang=lang,
+            langswitch=langswitch_html(lang),
+            foot1=u["foot1"], foot2=u["foot2"],
+            body=body), encoding="utf-8")
 
     total = sum(sum(p["tiers"].values()) for p in pages)
     print(f"built {len(pages)+1} pages, {total} tier-labelled claims -> {OUT}")

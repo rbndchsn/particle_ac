@@ -508,3 +508,28 @@ main.home article > .intro { grid-column: 1; max-width: var(--measure); }
 
 main.home article > .stance,
 main.home article > .holes { grid-column: 1 / -1; max-width: none; width: 100%; }
+
+/* ------------------------------------------------------- language switch */
+
+.langswitch {
+  margin-left: auto; display: flex; align-items: center; gap: 0.35rem;
+  font-family: var(--sans); font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.langswitch a {
+  color: var(--ink-faint); text-decoration: none; border: 0;
+  padding: 0.2rem 0.4rem; border-radius: 3px;
+}
+.langswitch a:hover { color: var(--ink); background: var(--bg-raised); }
+.langswitch a.on { color: var(--bg); background: var(--accent); }
+.langswitch span { color: var(--rule); }
+
+/* Note that the research documents remain in English. */
+.langnote {
+  margin: -1.5rem 0 3rem; padding: 0.9rem 1.2rem;
+  border: 1px dashed var(--rule); border-radius: 5px;
+}
+.langnote p { margin: 0; font-family: var(--sans); font-size: 0.86rem; color: var(--ink-faint); }
+main.home article > .langnote { grid-column: 1; max-width: var(--measure); }
+
+@media (max-width: 40rem) { .langswitch { margin-left: 0; } }
