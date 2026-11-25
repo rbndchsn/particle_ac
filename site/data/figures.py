@@ -596,3 +596,134 @@ ART = {
 
 def render_art(name, lang="en"):
     return f'<div class="sectionart">{ART[name](lang)}</div>'
+
+
+# --------------------------------------- vignettes for the research pages
+# Deliberately plainer than the landing-page set: one idea each, small.
+
+def art_tiers(lang="en"):
+    """Four evidence tiers, sorted."""
+    o = []
+    for i, (c, lab) in enumerate(((_GRN, "A"), (_ACC, "B"), (_BLU, "C"), (_RED, "D"))):
+        x = 24 + i * 38
+        o.append(f'<rect x="{x}" y="{62 - i*8}" width="28" height="{48 + i*8}" rx="4" fill="{c}" opacity="0.85"/>')
+        o.append(f'<text x="{x+14}" y="{86 - i*8 + 6}" text-anchor="middle" '
+                 f'style="font:700 15px var(--sans,sans-serif);fill:var(--bg,#0b0b0c)">{lab}</text>')
+    o.append(_person(212, 52, 0.85, "look", "point"))
+    return _vignette("".join(o), "Four evidence tiers" if lang == "en" else "Quatre niveaux de preuve")
+
+
+def art_ring(lang="en"):
+    """The machine itself, plainly."""
+    import math
+    o = [f'<circle cx="92" cy="76" r="48" fill="none" stroke="{_DIM}" stroke-width="9"/>']
+    for i in range(8):
+        a = i * 45
+        mx = 92 + 48 * math.cos(math.radians(a))
+        my = 76 + 48 * math.sin(math.radians(a))
+        o.append(f'<rect x="{mx-6:.0f}" y="{my-4:.0f}" width="12" height="8" rx="2" fill="{_INK}" '
+                 f'transform="rotate({a+90} {mx:.0f} {my:.0f})"/>')
+    o.append(f'<circle cx="140" cy="76" r="3.5" fill="{_ACC}"/>')
+    o.append(_person(206, 52, 0.85, "look", "side"))
+    return _vignette("".join(o), "An accelerator ring" if lang == "en" else "Un anneau d accelerateur")
+
+
+def art_supply(lang="en"):
+    """Eight slots, one filled."""
+    o = []
+    for i in range(8):
+        x, y = 26 + (i % 4) * 34, 44 + (i // 4) * 40
+        fill = _RED if i == 0 else "var(--bg-inset,#1b1b1e)"
+        o.append(f'<rect x="{x}" y="{y}" width="24" height="28" rx="4" fill="{fill}" '
+                 f'stroke="{_DIM}" stroke-width="1.8"/>')
+    o.append(f'<text x="92" y="126" text-anchor="middle" '
+             f'style="font:700 13px var(--sans,sans-serif);fill:{_RED}">1 / 8</text>')
+    o.append(_person(210, 50, 0.85, "shrug", "up"))
+    return _vignette("".join(o), "One supplier of eight slots" if lang == "en"
+                     else "Un fournisseur sur huit")
+
+
+def art_software(lang="en"):
+    """One fit, two experiments."""
+    o = [f'<rect x="16" y="54" width="46" height="40" rx="5" fill="var(--bg-inset,#1b1b1e)" '
+         f'stroke="{_ACC}" stroke-width="2.2"/>',
+         f'<line x1="26" y1="68" x2="52" y2="68" stroke="{_ACC}" stroke-width="2.5"/>',
+         f'<line x1="26" y1="80" x2="46" y2="80" stroke="{_ACC}" stroke-width="2.5"/>',
+         f'<path d="M62 70 C 90 70, 90 38, 118 38" fill="none" stroke="{_DIM}" stroke-width="2.4"/>',
+         f'<path d="M62 78 C 90 78, 90 110, 118 110" fill="none" stroke="{_DIM}" stroke-width="2.4"/>']
+    for y in (24, 96):
+        o.append(f'<rect x="118" y="{y}" width="40" height="28" rx="5" fill="var(--bg-inset,#1b1b1e)" '
+                 f'stroke="{_INK}" stroke-width="2"/>')
+        o.append(f'<circle cx="138" cy="{y+14}" r="4" fill="{_BLU}"/>')
+    o.append(_person(212, 52, 0.85, "think", "chin"))
+    return _vignette("".join(o), "One fit feeding two experiments" if lang == "en"
+                     else "Un seul ajustement alimentant deux experiences")
+
+
+def art_loop(lang="en"):
+    """Theory, software, machine, closing on itself."""
+    import math
+    cx, cy, r = 92, 76, 42
+    o = [f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{_ACC}" '
+         f'stroke-width="2.6" stroke-dasharray="6 5"/>']
+    for i, lab in enumerate(("T", "S", "M")):
+        a = -90 + i * 120
+        x = cx + r * math.cos(math.radians(a))
+        y = cy + r * math.sin(math.radians(a))
+        o.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="14" fill="var(--bg-inset,#1b1b1e)" '
+                 f'stroke="{_INK}" stroke-width="2"/>')
+        o.append(f'<text x="{x:.0f}" y="{y+5:.0f}" text-anchor="middle" '
+                 f'style="font:700 13px var(--sans,sans-serif);fill:{_INK}">{lab}</text>')
+    o.append(f'<path d="M126 48 L134 42 L132 52" fill="none" stroke="{_ACC}" stroke-width="2.4"/>')
+    o.append(_person(210, 52, 0.85, "think", "chin"))
+    return _vignette("".join(o), "A closed loop of theory, software and machine" if lang == "en"
+                     else "Une boucle fermee : theorie, logiciel, machine")
+
+
+def art_chain(lang="en"):
+    """A chain with one link not closed."""
+    o = []
+    for i in range(5):
+        x = 22 + i * 34
+        col = _RED if i == 2 else _DIM
+        if i == 2:
+            o.append(f'<path d="M{x+26} 66 A 13 13 0 1 0 {x+26} 90" fill="none" '
+                     f'stroke="{col}" stroke-width="4"/>')
+        else:
+            o.append(f'<ellipse cx="{x+14}" cy="78" rx="15" ry="11" fill="none" '
+                     f'stroke="{col}" stroke-width="4"/>')
+    o.append(_person(212, 52, 0.85, "look", "point"))
+    return _vignette("".join(o), "A chain with one open link" if lang == "en"
+                     else "Une chaine dont un maillon est ouvert")
+
+
+def art_anchor(lang="en"):
+    """One anchored, one adrift."""
+    o = [f'<line x1="18" y1="104" x2="226" y2="104" stroke="{_DIM}" stroke-width="2" '
+         f'stroke-dasharray="4 4"/>',
+         f'<path d="M54 36 L54 96 M38 52 L70 52 M38 96 Q54 112 70 96" fill="none" '
+         f'stroke="{_GRN}" stroke-width="3" stroke-linecap="round"/>',
+         f'<circle cx="54" cy="30" r="6" fill="none" stroke="{_GRN}" stroke-width="3"/>',
+         f'<path d="M148 34 L148 70" stroke="{_RED}" stroke-width="3" stroke-dasharray="5 5"/>',
+         f'<circle cx="148" cy="28" r="6" fill="none" stroke="{_RED}" stroke-width="3"/>',
+         f'<text x="148" y="96" text-anchor="middle" '
+         f'style="font:700 20px var(--sans,sans-serif);fill:{_RED}">?</text>',
+         _person(212, 52, 0.85, "shrug", "up")]
+    return _vignette("".join(o), "One anchor holding, one adrift" if lang == "en"
+                     else "Une ancre qui tient, une autre a la derive")
+
+
+ART.update({"tiers": art_tiers, "ring": art_ring, "supply": art_supply,
+            "software": art_software, "loop": art_loop, "chain": art_chain,
+            "anchor": art_anchor})
+
+# Which vignette heads which research document, keyed by file stem.
+DOC_ART = {
+    "claims_register": "notclaim", "research_frame": "tiers",
+    "particle_acceleration_research": "ring", "theoretical_weaknesses": "criterion",
+    "hardware_supply_chain": "supply", "trigger_data_destruction": "instrument",
+    "software_stack_bias": "software", "publication_governance": "literature",
+    "legitimacy_confrontations": "dissent", "closed_loop": "loop",
+    "known_versus_assumed": "six-questions", "proof_failure_modes": "chain",
+    "anchoring_gradient": "anchor", "cost_and_procurement": "money",
+}

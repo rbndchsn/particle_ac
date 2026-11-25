@@ -568,3 +568,15 @@ main.home article > .langnote { grid-column: 1; max-width: var(--measure); }
   main.home article > .sectionart { grid-column: 1; }
   .sectionart .vignette { max-width: 17rem; }
 }
+
+/* Small vignette in each research document's header. Kept quiet: it sits
+   beside the title block and disappears below the two-column threshold. */
+.docmeta { display: grid; grid-template-columns: 1fr; }
+.docmeta-main { grid-column: 1; }
+.doc-art { display: none; }
+@media (min-width: 58rem) {
+  .docmeta { grid-template-columns: 1fr 11rem; column-gap: 2rem; align-items: start; }
+  .docmeta .tierbar { grid-column: 1 / -1; }
+  .doc-art { display: block; grid-column: 2; grid-row: 1; align-self: center; opacity: 0.8; }
+  .doc-art .vignette { width: 100%; height: auto; display: block; overflow: visible; }
+}

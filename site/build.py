@@ -387,12 +387,17 @@ def build():
         if nrefs:
             facts.append(f'<span><b>{nrefs}</b> references</span>')
         facts.append(f'<span>{html.escape(str(m.get("status","")))}</span>')
+        art = figures.DOC_ART.get(p["stem"])
+        artmark = (f'<div class="doc-art">{figures.ART[art]("en")}</div>'
+                   if art else "")
         header = (
             f'<div class="docmeta">'
+            f'<div class="docmeta-main">'
             f'<p class="kicker">{html.escape(p["label"])}</p>'
             f'<h1>{html.escape(str(m.get("title", p["slug"])))}</h1>'
             f'<p class="sub">{html.escape(str(m.get("subtitle","")))}</p>'
-            f'<div class="facts">{"".join(facts)}</div>'
+            f'<div class="facts">{"".join(facts)}</div></div>'
+            f'{artmark}'
             f'{tier_bar(p["tiers"])}</div>')
         filters = ""
         if is_register:
