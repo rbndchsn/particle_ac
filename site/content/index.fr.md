@@ -20,6 +20,8 @@ source_files: tous les documents de cette archive
 <p>Les quatorze documents de recherche sous-jacents demeurent en anglais. Cette page présente l'argument ; les documents en constituent les pièces justificatives, avec plus de cinq cents références.</p>
 </div>
 
+{{art:six-questions}}
+
 # Six questions auxquelles le domaine ne peut répondre
 
 Non pas contestées. **Jamais posées.** Dans chaque cas, la quantité qui trancherait n'a jamais été calculée, et l'absence est documentée.
@@ -45,6 +47,8 @@ Non pas contestées. **Jamais posées.** Dans chaque cas, la quantité qui tranc
 <p>Autour de cette absence se tient un système incapable de vérifier ce qu'il écarte, et dont la reddition de comptes est la plus faible exactement là où ses affirmations sont les plus fortes.</p>
 </div>
 
+{{art:criterion}}
+
 ## Le critère qui a échoué à sa propre épreuve
 
 En 2008, un théoricien chevronné a dérivé une borne explicite — une nouvelle physique sous environ 1 TeV — et a écrit que si le LHC n'en trouvait aucune, le critère de naturalité échouerait. Il n'en a trouvé aucune. En 2017, le même auteur le concédait : un médecin incapable de poser le bon diagnostic ne peut pas simplement déclarer le patient guéri.
@@ -55,17 +59,23 @@ Le rapport stratégique américain de 2023 ne contient **aucune** occurrence de 
 
 Pendant ce temps, le seuil quantitatif définissant le « naturel » a été relevé par stipulation à trois reprises en trois décennies, tandis que les limites d'exclusion qu'il devait prédire grimpaient de près d'un ordre de grandeur.
 
+{{art:instrument}}
+
 ## Ce que l'instrument détruit
 
 {{fig:trigger-cascade}}
 
 Le débit est réparti par comité, annuellement, en tiers approximativement égaux entre recherches, mesures et physique des saveurs. CMS déclare sans détour avoir manqué d'un déclencheur particulier, ce qui « a empêché les mesures de R_K et R_K* » — empêché, non retardé.
 
+{{art:literature}}
+
 ## Ce que la littérature ne peut vérifier
 
 L'inventaire de réinterprétation du domaine lui-même recense les fonctions de vraisemblance complètes publiées pour **deux** analyses. Des cartes d'efficacité dans « très peu de cas ». Les données nécessaires aux réajustements « souvent non fournies ». Des analyses par apprentissage automatique qui « ne peuvent absolument pas être reproduites hors de la collaboration expérimentale ». En 2025, la reproductibilité de certaines recherches antérieures avait été perdue *à l'intérieur* de ces collaborations.
 
 La qualité d'auteur s'acquiert par un seuil de service — quatre-vingts journées de huit heures et une année — après quoi un nom paraît sur chaque article. Le comité qui l'octroie décline explicitement toute responsabilité quant au contenu.
+
+{{art:money}}
 
 ## L'argent, et ce qu'on ne peut en savoir
 
@@ -85,11 +95,15 @@ Trois fournisseurs nommés du LHC portent des condamnations pénales ou en mati�
 <p class="crux-kicker">Les deux moitiés proviennent de l'institution elle-même. Ceci n'allègue pas que de l'argent a été détourné. Cela démontre que la question ne peut recevoir de réponse depuis l'extérieur — ce qui est plus difficile à écarter, et plus difficile à corriger.</p>
 </div>
 
+{{art:dissent}}
+
 # Qui a réellement contesté ce domaine
 
 {{fig:dissent-ratio}}
 
 Soixante confrontations documentées depuis 1961. Philip Anderson a déclaré au Sénat en 1989 que la physique des hautes énergies recevait environ dix fois plus par personne que les autres domaines et que des responsables « induisaient délibérément le Congrès en erreur ». Le Superconducting Super Collider est mort par 282 voix contre 181. Sept procédures judiciaires dans quatre juridictions n'ont produit **aucune décision au fond** — chaque tribunal a refusé d'aborder la physique, ce qui n'équivaut pas à l'avoir jugée sûre.
+
+{{art:notclaim}}
 
 # Ce que ce plaidoyer n'affirme pas
 

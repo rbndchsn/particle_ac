@@ -386,3 +386,213 @@ def hero_illustration(lang="en"):
             f'class="hero-art" role="img" aria-label="'
             f'{"A particle accelerator wired to a screen, and a figure wondering whether the screen is right" if lang == "en" else "Un accelerateur de particules relie a un ecran, et une silhouette se demandant si lecran dit vrai"}'
             f'">{"".join(o)}</svg>')
+
+
+# ------------------------------------------------- section vignettes
+# One recurring stick figure, reacting to each finding. Same proportions
+# throughout so it reads as a single character moving through the argument.
+
+_INK = "var(--ink, #ebe7e0)"
+_ACC = "var(--accent, #e0a33c)"
+_DIM = "var(--ink-faint, #6b6861)"
+_RED = "var(--tier-d, #c0564e)"
+_GRN = "var(--tier-a, #4e9e73)"
+_BLU = "var(--tier-c, #5b8dc9)"
+
+
+def _person(x, y, scale=1.0, mood="think", arms="side"):
+    """The recurring figure. mood: think | look | shrug | stop."""
+    a = {"side": "M0 18 L-13 30 M0 18 L13 30",
+         "point": "M0 18 L-18 24 M0 18 L11 12",
+         "up": "M0 18 L-14 4 M0 18 L14 4",
+         "chin": "M0 18 L-14 28 M0 18 L10 7"}[arms]
+    face = {"think": '<path d="M-4 5 Q0 2 4 5" fill="none" stroke="%s" stroke-width="1.6"/>' % _INK,
+            "look": '<path d="M-4 4 Q0 7 4 4" fill="none" stroke="%s" stroke-width="1.6"/>' % _INK,
+            "shrug": '<path d="M-4 5 L4 5" stroke="%s" stroke-width="1.6"/>' % _INK,
+            "stop": '<path d="M-4 6 Q0 2 4 6" fill="none" stroke="%s" stroke-width="1.6"/>' % _INK}[mood]
+    return (f'<g transform="translate({x},{y}) scale({scale})" stroke-linecap="round">'
+            f'<circle cx="0" cy="0" r="10" fill="none" stroke="{_INK}" stroke-width="2.2"/>'
+            f'<circle cx="-4" cy="-2" r="1.5" fill="{_INK}"/>'
+            f'<circle cx="4" cy="-2" r="1.5" fill="{_INK}"/>{face}'
+            f'<path d="M0 10 L0 42" stroke="{_INK}" stroke-width="2.2"/>'
+            f'<path d="{a}" stroke="{_INK}" stroke-width="2.2"/>'
+            f'<path d="M0 42 L-10 60 M0 42 L10 60" stroke="{_INK}" stroke-width="2.2"/></g>')
+
+
+def _vignette(body, label, w=260, h=150):
+    return (f'<svg viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" '
+            f'class="vignette" role="img" aria-label="{label}">{body}</svg>')
+
+
+def art_six_questions(lang="en"):
+    """A checklist where none of the boxes has been ticked."""
+    o = [f'<rect x="14" y="16" width="104" height="122" rx="6" fill="var(--bg-inset,#1b1b1e)" '
+         f'stroke="{_INK}" stroke-width="2.2"/>',
+         f'<rect x="46" y="8" width="40" height="13" rx="4" fill="{_DIM}"/>']
+    for i in range(6):
+        y = 36 + i * 17
+        o.append(f'<rect x="26" y="{y}" width="11" height="11" rx="2.5" fill="none" '
+                 f'stroke="{_RED}" stroke-width="1.8"/>')
+        o.append(f'<line x1="45" y1="{y+6}" x2="{104 - (i % 3) * 12}" y2="{y+6}" '
+                 f'stroke="{_DIM}" stroke-width="2.5" stroke-linecap="round"/>')
+    o.append(_person(186, 56, 1.0, "think", "chin"))
+    o.append(f'<text x="186" y="18" text-anchor="middle" '
+             f'style="font:700 30px var(--sans,sans-serif);fill:{_ACC}">?</text>')
+    lbl = ("Six unticked checkboxes and a puzzled figure" if lang == "en"
+           else "Six cases non cochees et une silhouette perplexe")
+    return _vignette("".join(o), lbl)
+
+
+def art_criterion(lang="en"):
+    """The prediction on the left; the word being erased on the right."""
+    o = [f'<g transform="translate(10,22)">'
+         f'<rect x="0" y="0" width="76" height="98" rx="5" fill="var(--bg-inset,#1b1b1e)" '
+         f'stroke="{_DIM}" stroke-width="2"/>'
+         f'<text x="38" y="30" text-anchor="middle" '
+         f'style="font:700 15px var(--sans,sans-serif);fill:{_ACC}">1 TeV</text>'
+         f'<line x1="12" y1="46" x2="64" y2="46" stroke="{_DIM}" stroke-width="2.5"/>'
+         f'<line x1="12" y1="58" x2="56" y2="58" stroke="{_DIM}" stroke-width="2.5"/>'
+         f'<line x1="12" y1="70" x2="64" y2="70" stroke="{_DIM}" stroke-width="2.5"/>'
+         f'<text x="38" y="90" text-anchor="middle" '
+         f'style="font:600 9px var(--sans,sans-serif);fill:{_GRN}">2008</text></g>',
+         f'<g transform="translate(104,22)">'
+         f'<rect x="0" y="0" width="76" height="98" rx="5" fill="var(--bg-inset,#1b1b1e)" '
+         f'stroke="{_DIM}" stroke-width="2"/>'
+         f'<line x1="12" y1="26" x2="64" y2="26" stroke="{_DIM}" stroke-width="2.5"/>'
+         f'<line x1="12" y1="38" x2="44" y2="38" stroke="{_DIM}" stroke-width="2.5"/>'
+         f'<line x1="12" y1="58" x2="64" y2="58" stroke="{_DIM}" stroke-width="2.5"/>'
+         f'<rect x="12" y="42" width="34" height="11" rx="2" fill="{_RED}" opacity="0.28"/>'
+         f'<text x="38" y="90" text-anchor="middle" '
+         f'style="font:600 9px var(--sans,sans-serif);fill:{_RED}">2023</text></g>',
+         # the eraser, mid-stroke
+         f'<g transform="translate(118,56) rotate(-18)">'
+         f'<rect x="0" y="0" width="26" height="13" rx="3" fill="{_RED}"/>'
+         f'<rect x="20" y="0" width="12" height="13" rx="2" fill="{_DIM}"/></g>',
+         _person(216, 46, 0.85, "look", "point")]
+    lbl = ("A prediction from 2008 beside a 2023 document with the word erased"
+           if lang == "en" else
+           "Une prediction de 2008 a cote d un document de 2023 dont le mot a ete efface")
+    return _vignette("".join(o), lbl)
+
+
+def art_instrument(lang="en"):
+    """Almost everything into the bin; one survivor out the bottom."""
+    import random
+    o = [f'<path d="M20 18 L140 18 L96 72 L96 112 L64 112 L64 72 Z" fill="var(--bg-inset,#1b1b1e)" '
+         f'stroke="{_INK}" stroke-width="2.2" stroke-linejoin="round"/>']
+    rnd = random.Random(7)
+    for i in range(16):                        # incoming flood
+        x = 26 + rnd.random() * 108
+        y = -2 + rnd.random() * 16
+        o.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="2.6" fill="{_ACC}" opacity="0.85"/>')
+    for i in range(11):                        # spilling out, discarded
+        side = -1 if i % 2 else 1
+        x = 80 + side * (26 + rnd.random() * 34)
+        y = 58 + rnd.random() * 48
+        o.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="2.4" fill="{_RED}" opacity="0.7"/>')
+    o.append(f'<circle cx="80" cy="124" r="3.4" fill="{_ACC}"/>')
+    o.append(f'<path d="M62 132 L98 132 L94 146 L66 146 Z" fill="none" stroke="{_DIM}" stroke-width="2"/>')
+    o.append(_person(212, 50, 0.9, "look", "point"))
+    lbl = ("A funnel discarding almost everything, one particle surviving"
+           if lang == "en" else
+           "Un entonnoir qui ecarte presque tout, une seule particule survit")
+    return _vignette("".join(o), lbl)
+
+
+def art_literature(lang="en"):
+    """A locked cabinet; two sheets in the out-slot."""
+    o = [f'<rect x="18" y="20" width="104" height="112" rx="6" fill="var(--bg-inset,#1b1b1e)" '
+         f'stroke="{_INK}" stroke-width="2.2"/>']
+    for i in range(3):
+        y = 32 + i * 34
+        o.append(f'<rect x="28" y="{y}" width="84" height="26" rx="3" fill="none" '
+                 f'stroke="{_DIM}" stroke-width="1.8"/>')
+        o.append(f'<line x1="60" y1="{y+13}" x2="80" y2="{y+13}" stroke="{_DIM}" stroke-width="3"/>')
+    o.append(f'<g transform="translate(70,76)">'
+             f'<rect x="-11" y="-2" width="22" height="18" rx="3" fill="{_RED}"/>'
+             f'<path d="M-6 -2 L-6 -9 A6 6 0 0 1 6 -9 L6 -2" fill="none" stroke="{_RED}" stroke-width="2.6"/></g>')
+    o.append(f'<rect x="126" y="60" width="22" height="28" rx="2" fill="var(--bg-sunk,#070708)" '
+             f'stroke="{_DIM}" stroke-width="1.6" transform="rotate(8 137 74)"/>')
+    o.append(f'<rect x="132" y="56" width="22" height="28" rx="2" fill="var(--bg-sunk,#070708)" '
+             f'stroke="{_DIM}" stroke-width="1.6" transform="rotate(-6 143 70)"/>')
+    o.append(f'<text x="140" y="104" text-anchor="middle" '
+             f'style="font:700 13px var(--sans,sans-serif);fill:{_ACC}">2</text>')
+    o.append(_person(212, 50, 0.9, "shrug", "up"))
+    lbl = ("A padlocked cabinet with two sheets released" if lang == "en"
+           else "Un classeur cadenasse dont deux feuilles seulement sortent")
+    return _vignette("".join(o), lbl)
+
+
+def art_money(lang="en"):
+    """Scales: the money on one side, 1.7% of science on the other."""
+    o = [f'<path d="M130 24 L130 112" stroke="{_INK}" stroke-width="2.4"/>',
+         f'<path d="M104 128 L156 128" stroke="{_INK}" stroke-width="2.4"/>',
+         f'<path d="M130 112 L112 128 M130 112 L148 128" stroke="{_INK}" stroke-width="2.2"/>',
+         f'<path d="M58 34 L202 50" stroke="{_INK}" stroke-width="2.4"/>',
+         f'<path d="M58 34 L58 54 M202 50 L202 70" stroke="{_DIM}" stroke-width="1.6"/>',
+         # heavy side
+         f'<path d="M36 54 L80 54 L72 90 L44 90 Z" fill="{_DIM}"/>',
+         f'<text x="58" y="78" text-anchor="middle" '
+         f'style="font:700 17px var(--sans,sans-serif);fill:{_ACC}">€</text>',
+         # light side
+         f'<path d="M194 70 L210 70 L214 86 L190 86 Z" fill="none" stroke="{_BLU}" stroke-width="2"/>',
+         f'<text x="202" y="104" text-anchor="middle" '
+         f'style="font:700 12px var(--sans,sans-serif);fill:{_BLU}">1,7 %</text>'
+         if lang == "fr" else
+         f'<text x="202" y="104" text-anchor="middle" '
+         f'style="font:700 12px var(--sans,sans-serif);fill:{_BLU}">1.7%</text>',
+         _person(30, 96, 0.72, "shrug", "up")]
+    lbl = ("Scales tipped by money against a tiny flask of science" if lang == "en"
+           else "Une balance que l argent fait pencher face a une fiole de science")
+    return _vignette("".join(o), lbl)
+
+
+def art_dissent(lang="en"):
+    """A crowd arguing about cost; three arguing about the physics."""
+    o = []
+    for i in range(9):
+        x = 22 + (i % 5) * 34
+        y = 56 + (i // 5) * 54
+        o.append(_person(x, y, 0.42, "shrug", "side"))
+        o.append(f'<rect x="{x-13}" y="{y-26}" width="26" height="12" rx="3" '
+                 f'fill="{_ACC}" opacity="0.8"/>')
+    for i in range(3):
+        x = 196 + i * 26
+        o.append(_person(x, 56, 0.42, "look", "side"))
+        o.append(f'<rect x="{x-11}" y="30" width="22" height="12" rx="3" fill="{_RED}"/>')
+    o.append(f'<line x1="180" y1="22" x2="180" y2="124" stroke="{_DIM}" '
+             f'stroke-width="1.4" stroke-dasharray="3 4"/>')
+    o.append(f'<text x="222" y="118" text-anchor="middle" '
+             f'style="font:700 15px var(--sans,sans-serif);fill:{_RED}">3</text>')
+    o.append(f'<text x="92" y="140" text-anchor="middle" '
+             f'style="font:700 15px var(--sans,sans-serif);fill:{_ACC}">57</text>')
+    lbl = ("A crowd of 57 with one kind of placard and three with another"
+           if lang == "en" else
+           "Une foule de 57 avec une pancarte et trois avec une autre")
+    return _vignette("".join(o), lbl)
+
+
+def art_notclaim(lang="en"):
+    """The figure striking out its own placard."""
+    o = [f'<rect x="56" y="30" width="116" height="60" rx="6" fill="var(--bg-inset,#1b1b1e)" '
+         f'stroke="{_INK}" stroke-width="2.2"/>',
+         f'<line x1="70" y1="48" x2="158" y2="48" stroke="{_DIM}" stroke-width="3"/>',
+         f'<line x1="70" y1="62" x2="140" y2="62" stroke="{_DIM}" stroke-width="3"/>',
+         f'<line x1="70" y1="76" x2="152" y2="76" stroke="{_DIM}" stroke-width="3"/>',
+         f'<path d="M62 86 L166 36" stroke="{_RED}" stroke-width="4" stroke-linecap="round"/>',
+         f'<path d="M114 90 L114 104" stroke="{_INK}" stroke-width="2.4"/>',
+         _person(212, 52, 0.88, "stop", "point")]
+    lbl = ("A figure striking through its own sign" if lang == "en"
+           else "Une silhouette qui raye sa propre pancarte")
+    return _vignette("".join(o), lbl)
+
+
+ART = {
+    "six-questions": art_six_questions, "criterion": art_criterion,
+    "instrument": art_instrument, "literature": art_literature,
+    "money": art_money, "dissent": art_dissent, "notclaim": art_notclaim,
+}
+
+
+def render_art(name, lang="en"):
+    return f'<div class="sectionart">{ART[name](lang)}</div>'

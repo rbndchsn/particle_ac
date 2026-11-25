@@ -142,6 +142,8 @@ def count_tiers(md_text):
 
 
 def embed_figures(md_text, lang="en"):
+    md_text = re.sub(r"\{\{art:([a-z0-9-]+)\}\}",
+                     lambda m: figures.render_art(m.group(1), lang), md_text)
     return re.sub(r"\{\{fig:([a-z0-9-]+)\}\}",
                   lambda m: figures.render(m.group(1), lang), md_text)
 

@@ -16,6 +16,8 @@ source_files: all documents in this archive
 <p>None of this requires that anyone lied. It requires only that incentives aligned and that nobody was positioned to check — a more durable problem than fraud, and a harder one to repair. This is a brief for that case, argued from one side and saying so, assembled almost entirely out of CERN technical papers, Inspector General audits, GAO reports, collaboration reinterpretation inventories and court records. Roughly eighty claims tested here <strong>failed</strong>, including both hypotheses the project began with. They are kept <a href="00-claims-register.html">on the record</a>, because an argument built only from what survived would be worth nothing.</p>
 </div>
 
+{{art:six-questions}}
+
 # Six questions the field cannot answer
 
 Not disputed. **Unasked.** In each case the quantity that would settle it has never been computed, and the absence is documented.
@@ -41,6 +43,8 @@ Not disputed. **Unasked.** In each case the quantity that would settle it has ne
 <p>Around that absence sits a system that cannot audit what it discards, and whose accountability is weakest exactly where its claims are strongest.</p>
 </div>
 
+{{art:criterion}}
+
 ## The criterion that failed its own test
 
 In 2008 a senior theorist derived an explicit bound — new physics below roughly 1 TeV — and wrote that if the LHC found none, the naturalness criterion would fail. It found none. By 2017 the same author conceded it: a doctor unable to find the right diagnosis cannot simply declare the patient healed.
@@ -51,17 +55,23 @@ The 2023 US strategy report contains **zero** instances of "naturalness," "hiera
 
 Meanwhile the quantitative threshold defining "natural" was raised by stipulation three times across three decades, while the exclusion limits it was meant to predict climbed by nearly an order of magnitude.
 
+{{art:instrument}}
+
 ## What the instrument destroys
 
 {{fig:trigger-cascade}}
 
 Rate is allocated by committee, annually, in roughly equal thirds between searches, measurements and flavour physics. CMS states plainly that it lacked a particular trigger, which "prevented the measurements of R_K and R_K*" — prevented, not delayed.
 
+{{art:literature}}
+
 ## What the literature cannot check
 
 The field's own reinterpretation inventory records full statistical likelihoods released for **two** analyses. Efficiency maps in "very few cases." Data for refits "often not provided." Machine-learning analyses that "cannot be reproduced at all outside the experimental collaboration." By 2025, the reproducibility of some earlier searches had been lost *inside* those collaborations.
 
 Authorship is earned by a service threshold — eighty eight-hour days and a year — after which a name appears on every paper. The committee that grants it explicitly disclaims responsibility for content.
+
+{{art:money}}
 
 ## The money, and what is not knowable about it
 
@@ -81,11 +91,15 @@ Three named LHC suppliers carry criminal or competition findings in other market
 <p class="crux-kicker">Both halves are sourced to the institution itself. This is not an allegation that money was taken. It is a demonstration that the question cannot be answered from outside — which is a harder thing to dismiss, and a harder thing to fix.</p>
 </div>
 
+{{art:dissent}}
+
 # Who has actually challenged this field
 
 {{fig:dissent-ratio}}
 
 Sixty documented confrontations since 1961. Philip Anderson told the Senate in 1989 that high-energy physics received roughly ten times more per capita than other fields and that officials were "deliberately misleading Congress." The Superconducting Super Collider died 282–143. Seven legal proceedings across four jurisdictions produced **zero merits rulings** — every court declined to reach the physics, which is not the same as finding it safe.
+
+{{art:notclaim}}
 
 # What this brief does not claim
 
