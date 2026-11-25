@@ -312,7 +312,7 @@ evidence here is the main reason the category (a) claims fail.
 | E5 | OPERA superluminal neutrinos | OPERA collaboration; Ereditato, Autiero | 2011-12 | 60.7 ns early arrival, announced 22-23 Sept 2011 at six sigma; refined 17-18 Nov 2011 to 57.8 ns at 6.2 sigma and submitted to JHEP | A loose GPS-to-master-clock fibre link (73 ns) and a fast electronic board clock. Internal tension: a **no-confidence vote among more than thirty group team leaders failed**. LVD photographs showed the cable loose by 13 Oct 2011; co-located ICARUS measured light speed. CERN announced 8 June 2012 that OPERA, ICARUS, LVD and BOREXINO all agreed with light speed; OPERA published 6.5 +- 15 ns on 12 July 2012. Named physicists who publicly doubted it beforehand: Weinberg, Rubbia, Kaku (45) |
 | E6 | 750 GeV diphoton excess | ATLAS and CMS | Dec 2015 - Aug 2016 | 3.9 sigma (ATLAS) and 3.4 sigma (CMS) local, announced 15 Dec 2015; **about 500 theory papers** written by Aug 2016 | Not confirmed in the 2016 data (CMS 12.9 fb-1, ATLAS 15.4 fb-1, presented Aug 2016); treated as a statistical fluctuation. It never reached 5 sigma and was never claimed as a discovery. Fowlie's Bayesian reanalysis: substantial evidence on 2015 data, evidence against once 2016 was added (44) |
 | E7 | CDF II W-boson mass | CDF vs ATLAS, CMS, LHCb | 2022-2024 | CDF reported 80,433.5 +- 9.4 MeV on ~4 million W decays, **seven standard deviations above** the SM prediction of 80,353 +- 6 MeV | ATLAS reanalysed its 7 TeV data with new PDFs and got an SM-consistent value at 16 MeV; LHCb favoured the SM; CMS (2024) got 80,360.2 +- 9.9 MeV on 16.8 fb-1 at 13 TeV. Jens Erler: "extremely difficult to explain the discrepancy with the three LHC measurements by the presence of new physics". Sven Heinemeyer would not call it "case closed". **Unresolved** (46) |
-| E8 | Tenth-order (five-loop) QED contribution to the electron magnetic moment | Sergey Volkov vs Aoyama, Hayakawa, Kinoshita, Nio | 31 March 2024 | First **complete independent verification** of a number the field had relied on since 2012 | Volkov obtained A1(10) = 5.891(61) and reported: "The discrepancy is 5 sigma." Published in *Phys. Rev. D* 110:036001 (47) |
+| E8 | Tenth-order (five-loop) QED contribution to the electron magnetic moment | Sergey Volkov vs Aoyama, Hayakawa, Kinoshita, Nio | 31 March 2024 | First **complete independent verification** of a number the field had relied on since 2012 | Volkov obtained A1(10) = 5.891(61) and reported: "The discrepancy is 5 sigma." Published in *Phys. Rev. D* 110:036001 (47). **RESOLVED since, in Volkov's favour:** AHKN audited their own calculation, traced the difference to 98 under-sampled integrals, revised Set V downward by 0.803(72), and the two are now reported as consistent at A1(10) = 5.887(55). The finding is the five-year latency, not an open dispute. See 08_evidential_audit, Proof 1. |
 | E9 | The fine-structure constant | Parker et al. (Berkeley) vs Morel et al. (Sorbonne) | ongoing | Two most accurate measurements of alpha disagree at **5.5 sigma** | Unresolved. This, not QED, is now the limiting factor on the Standard Model's most precise test (48) |
 
 **Why E8 and E9 matter more than anything else in this file.** The precision test that is
@@ -469,7 +469,9 @@ Two contested items, labelled as such:
 The prediction of a fabrication thesis is suppression of disconfirmation. The record shows
 the opposite, repeatedly and recently: Volkov's 2024 independent calculation of the
 tenth-order QED coefficient was published in *Phys. Rev. D* reporting a **5-sigma
-disagreement** with the field's only prior value (47); CDF and the three LHC experiments
+disagreement** with the field's only prior value (47) — a disagreement the originating
+group then confirmed and corrected in its own favour of Volkov, which is disconfirmation
+being published rather than suppressed; CDF and the three LHC experiments
 have published mutually contradictory W-mass measurements and said so in print (46); the
 750 GeV excess was retired by the same two collaborations that reported it, on their own
 new data, within eight months (44); OPERA published its own cabling error and its leaders
@@ -500,8 +502,11 @@ primary citations (20). Franklin's bandwagon finding in the PDG record is his ow
 (20). Consa's report that Kinoshita's team revised the fifth-order coefficient from 7,795
 to 6,675 between 2014 and 2018 is correct (49). And his structural worry - that
 multi-thousand-diagram calculations nobody has independently repeated cannot be trusted -
-was **vindicated in 2024** when Volkov repeated one and disagreed at 5 sigma (47). That
-much the archive should carry forward.
+was **vindicated in 2024** when Volkov repeated one and disagreed at 5 sigma (47) — and
+the disagreement was subsequently resolved in Volkov's favour, the original group finding
+98 under-sampled integrals in its own work. The canonical value had been wrong by about
+five times its quoted uncertainty for five years, and only an outside recalculation found
+it. That much the archive should carry forward.
 
 *What fails.* The inference from "unchecked" to "manipulated". He offers no new calculation,
 no re-analysis of raw data, and no documentary evidence of manipulation; his evidence is
@@ -611,7 +616,7 @@ as [C], and asserts neither figure.
    counted individually rather than as single acts.
 
 #
-> **Correction, 2026-11-24.** The Volkov–AHKN disagreement is recorded above as an open 5σ
+> **Correction, 2026-11-24 (applied in the body above on 2026-11-25).** The Volkov–AHKN disagreement was recorded as an open 5σ
 > discrepancy. It is not open. AHKN audited their own calculation, traced the difference to 98
 > integrals affected by insufficient Monte Carlo sampling, revised Set V downward by 0.803 (72),
 > and the two calculations are now reported as consistent at A₁⁽¹⁰⁾ = 5.887(55) [A]. The dispute
