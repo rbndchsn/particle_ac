@@ -193,6 +193,10 @@ def number_references(html_text):
     tail_new = tail_new.replace("<ul>", '<ul class="refs">', 1)
     body = html_text[:m.start()] + head + tail_new
     total = n[0]
+    # Markdown will silently turn an indented continuation line beginning
+    # "<digits>." into a new list item, which shifts every id after it and makes
+    # citations resolve to the wrong source. Count and report the mismatch.
+    REF_COUNTS.append(total)
 
     def link(mm):
         nums = [x.strip() for x in mm.group(1).split(",")]
@@ -377,6 +381,7 @@ def slugify_path(folder, path):
 
 SITE_NAME = [""]
 ASSETV = {"css": "0", "js": "0"}
+REF_COUNTS = []
 
 
 def build():
@@ -417,7 +422,12 @@ def build():
             })
 
     for p in pages:
+        src_refs = len(re.findall(r"^\d+\.\s", p["body"].split("# References")[-1], re.M)) \
+            if "# References" in p["body"] else 0
         content, nrefs = number_references(render_md(p["body"]))
+        if src_refs and nrefs != src_refs:
+            print(f'  !! {p["slug"]}: {nrefs} rendered refs vs {src_refs} in source '
+                  f'\u2014 citations will resolve to the wrong entries')
         content, toc = add_anchors_and_toc(content)
         content = wrap_tables(content)
         is_register = p["stem"] == "claims_register"

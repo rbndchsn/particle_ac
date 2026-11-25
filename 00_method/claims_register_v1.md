@@ -98,9 +98,11 @@ rejected, and the OPERA episode cuts the other way: a collaboration of that size
 its own anomaly and then its own refutation.
 
 The conclusion survives by a different route, and a better documented one [A]. The field's own
-reinterpretation inventory records full statistical likelihoods released for two analyses,
-efficiency maps in very few cases, data for refits often not provided, and machine-learning
-analyses that cannot be reproduced outside the collaboration that produced them. By 2025 the
+2020 reinterpretation inventory recorded full statistical likelihoods released for two
+analyses, efficiency maps in very few cases, data for refits often not provided, and
+machine-learning analyses that cannot be reproduced outside the collaboration that produced
+them; the 2025 follow-up records 41 statistical-model records and a CMS commitment to
+systematic release, so the artefact deficit is narrowing and the claim must be dated. By 2025 the
 reproducibility of some earlier searches had been lost *inside* those collaborations. An
 outsider cannot audit because the artefacts are not there, not because three thousand people
 signed the paper.

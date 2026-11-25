@@ -9,9 +9,9 @@ source_files: all documents in this archive
 ---
 
 <div class="intro">
-<p class="lede-para">Modern particle physics presents itself as the most rigorously verified body of knowledge humans have produced, and at its core it is. That is not the finding. The finding is what sits <em>around</em> that core — a structure in which the field's most expensive and least constrained claims are protected not by evidence but by the fact that nobody has looked. In six separate places, the quantity that would settle a load-bearing question has never been computed, and in every case the absence is documented in the field's own literature.</p>
+<p class="lede-para">Modern particle physics presents itself as the most rigorously verified body of knowledge humans have produced, and at its core it is. That is not the finding. The finding is what sits <em>around</em> that core — a structure in which the field's most expensive and least constrained claims are protected not by evidence but by the fact that nobody has looked. In six separate places the quantity that would settle a load-bearing question has not been published — in three the field names the gap itself, and in three it is an absence this brief established by searching and finding nothing.</p>
 
-<p>What that structure permits becomes visible once it is assembled in one place. A criterion carrying a published failure condition, which was met, conceded in the journals, and then stripped of its vocabulary in the documents requesting the next machine. An instrument that destroys thirteen thousand times more data than it keeps, in hardware, irreversibly, under a menu built from the theories it exists to test. Two experiments presented as independent confirmation of each other, whose simulated physics descends from a single manual fit. A literature that has released full statistical likelihoods for <em>two</em> analyses, and that contains machine-learning results its own authors state cannot be reproduced outside the collaboration that made them. An institution that names, in its own technical papers, the precise conditions under which a sole supplier could overcharge it — while publishing no audit output, no senior remuneration, no register of interests, and standing immune from the jurisdiction in which a challenge could be heard.</p>
+<p>What that structure permits becomes visible once it is assembled in one place. A criterion carrying a published failure condition, which was met, conceded in the journals, and then stripped of its vocabulary in the documents requesting the next machine. An instrument that destroys thousands of times more data than it keeps, the first cut made in hardware within microseconds and never revisited, under a menu built from the theories it exists to test. Two experiments whose simulated physics descends from a single manual fit, whose combinations do model the resulting correlation and publish the sensitivity — except for the one quantity, the 2012 discovery significance, where their independence was the whole argument. A literature whose own inventory of reusable material counted full statistical likelihoods for two analyses in 2020 and forty-one by 2025, and which still contains machine-learning results its own authors state cannot be reproduced outside the collaboration that made them. An institution that names, in its own technical papers, the precise conditions under which a sole supplier could overcharge it — while publishing no audit output, no senior remuneration, no register of interests, and standing immune from the jurisdiction in which a challenge could be heard.</p>
 
 <p>None of this requires that anyone lied. It requires only that incentives aligned and that nobody was positioned to check — a more durable problem than fraud, and a harder one to repair. This is a brief for that case, argued from one side and saying so, assembled almost entirely out of CERN technical papers, Inspector General audits, GAO reports, collaboration reinterpretation inventories and court records. Roughly eighty claims tested here <strong>failed</strong>, including both hypotheses the project began with. They are kept <a href="00-claims-register.html">on the record</a>, because an argument built only from what survived would be worth nothing.</p>
 </div>
@@ -23,11 +23,11 @@ source_files: all documents in this archive
 Not disputed. **Unasked.** In each case the quantity that would settle it has never been computed, and the absence is documented.
 
 <div class="holes">
-<div class="hole"><span class="hn">01</span><h3>How much physics does the trigger throw away?</h3><p>The LHC discards <b>13,000×</b> of its collisions in hardware, in microseconds, unrecoverably — under a menu built, in the field's own words, from "theoretical models and detailed Monte Carlo simulations." Trigger error is counted in one direction: keeping too much costs budgeted bandwidth everyone can see; discarding the wrong thing costs events that no longer exist.</p><p class="gap">No coverage integral over signature space has ever been published.</p></div>
+<div class="hole"><span class="hn">01</span><h3>How much physics does the trigger throw away?</h3><p>The LHC keeps roughly one collision in <b>13,000</b> — about 400:1 of that discarded by fixed-latency hardware in microseconds, the rest by software on a farm, both unrecoverably — under a menu built, in the field's own words, from "theoretical models and detailed Monte Carlo simulations." Trigger error is counted in one direction: keeping too much costs budgeted bandwidth everyone can see; discarding the wrong thing costs events that no longer exist.</p><p class="gap">No coverage integral over signature space has ever been published.</p></div>
 
 <div class="hole"><span class="hn">02</span><h3>Why doesn't the lineshape match?</h3><p>The electron magnetic moment is the showpiece — 0.13 parts per trillion. Its <b>largest systematic</b> is a cyclotron lineshape that does not match prediction, in the measuring group's own words. The same group advises against averaging its own 2008 and 2023 results.</p><p class="gap">Nobody outside that group has investigated it.</p></div>
 
-<div class="hole"><span class="hn">03</span><h3>What is the stopping power pinned to?</h3><p>Electronic stopping power is the dominant uncertainty in ion-beam analysis — <b>0.8% inside a 1% budget</b> — and it is calibrated against the very standard it is then used to measure.</p><p class="gap">No published multi-energy consistency check exists.</p></div>
+<div class="hole"><span class="hn">03</span><h3>What is the stopping power pinned to?</h3><p>Electronic stopping power is the dominant uncertainty in ion-beam analysis — <b>0.8% inside a 1% budget</b> — and it is calibrated against the very standard it is then used to measure.</p><p>A blind test on a certified implant passed, at −0.18 ± 0.11% against a 0.6%-certified value — so the loop is broken here.</p><p class="gap">What is missing is the one check that would separate a stopping-power bias from a true areal density: no published multi-energy consistency study was located.</p></div>
 
 <div class="hole"><span class="hn">04</span><h3>How independent were the two experiments in 2012?</h3><p>Both LHC experiments' hadronisation descends from <b>one manual fit</b> whose authors describe making "(subjective) decisions" and set a parameter to "effectively mimic" a missing calculation. Correlation scans exist for the top mass and the tt̄ cross section.</p><p class="gap">No scan has ever been published for the discovery significance itself — the one quantity where independence was load-bearing.</p></div>
 
@@ -39,7 +39,7 @@ Not disputed. **Unasked.** In each case the quantity that would settle it has ne
 # The argument
 
 <div class="thesis">
-<p>Particle physics published, in advance and in print, the condition under which its central organising argument would fail. The condition was met. The argument was then removed from the documents that ask for the next machine — without being retracted in them.</p>
+<p>Particle physics published, in advance and in print, the condition under which its central organising argument would fail. The condition was met. The vocabulary was then dropped from the documents that ask for the next machine while the argument itself was kept in paraphrase — and in the newest of them the vocabulary is back.</p>
 <p>Around that absence sits a system that cannot audit what it discards, and whose accountability is weakest exactly where its claims are strongest.</p>
 </div>
 
@@ -47,7 +47,7 @@ Not disputed. **Unasked.** In each case the quantity that would settle it has ne
 
 ## The criterion that failed its own test
 
-In 2008 a senior theorist derived an explicit bound — new physics below roughly 1 TeV — and wrote that if the LHC found none, the naturalness criterion would fail. It found none. By 2017 the same author conceded it: a doctor unable to find the right diagnosis cannot simply declare the patient healed.
+In 2008 a senior theorist derived an explicit bound — new physics below roughly 1 TeV — and wrote that if the LHC found none, the naturalness criterion would fail. It found none. By 2017 the same author had named "the post-naturalness era" and written that the absence of new physics "is putting into question the logic of naturalness when applied to the Higgs" — while refusing to drop the problem itself: a doctor unable to find the right diagnosis cannot simply declare the patient healed.
 
 The 2023 US strategy report contains **zero** instances of "naturalness," "hierarchy problem," "fine-tuning" or "unnatural" across all 379,741 characters — while still paraphrasing the argument those words name. The 2025 European briefing book restores the term.
 
@@ -67,7 +67,7 @@ Rate is allocated by committee, annually, in roughly equal thirds between search
 
 ## What the literature cannot check
 
-The field's own reinterpretation inventory records full statistical likelihoods released for **two** analyses. Efficiency maps in "very few cases." Data for refits "often not provided." Machine-learning analyses that "cannot be reproduced at all outside the experimental collaboration." By 2025, the reproducibility of some earlier searches had been lost *inside* those collaborations.
+The field's own 2020 reinterpretation inventory recorded full statistical likelihoods released for **two** analyses; by 2025 the count had reached **41** statistical-model records, with CMS releasing its Combine software and planning systematic release. The direction is right, and the base was two. Efficiency maps in "very few cases." Data for refits "often not provided." Machine-learning analyses that "cannot be reproduced at all outside the experimental collaboration." By 2025, the reproducibility of some earlier searches had been lost *inside* those collaborations.
 
 Authorship is earned by a service threshold — eighty eight-hour days and a year — after which a name appears on every paper. The committee that grants it explicitly disclaims responsibility for content.
 
@@ -79,7 +79,7 @@ Authorship is earned by a service threshold — eighty eight-hour days and a yea
 
 The official cost-benefit analysis assigns **1.7%** of the LHC's €16.4bn benefit to scientific knowledge, and 66% to spillover and human capital. Both it and the UK national evaluation monetise the physics by counting papers.
 
-An Inspector General report questioned **$162,018,139.47** of $413.9m claimed by Fermilab's operator for a single fiscal year, $159.47m of it unsupported indirect costs — and found that DOE "did not review or approve" the contractor's indirect cost rates. On the SSC, on the same date in 1993, DOE's own estimate showed a $124m overrun against an independent Departmental assessment of ~$1.6bn. A factor of thirteen.
+An Inspector General report questioned **$162,018,139.47** of $413.9m claimed by Fermilab's operator for a single fiscal year, $159.47m of it unsupported indirect costs — and found that DOE "did not review or approve" the contractor's indirect cost rates. On the SSC, on the same date in 1993, the project's own cost-control system showed a $124m overrun while an independent Departmental assessment showed about $1.6bn. A factor of thirteen.
 
 {{fig:supply-concentration}}
 
@@ -103,6 +103,6 @@ Sixty documented confrontations since 1961. Philip Anderson told the Senate in 1
 
 # What this brief does not claim
 
-The machines work. The Standard Model is the most precisely confirmed theory in the history of physics, and nothing here disputes a physical result. Fabrication was examined and rejected. Particle physics is not a cost-overrun outlier — JWST and ITER are far worse. No prosecution, debarment or bid protest arising from a CERN contract exists anywhere in the record.
+The machines work. The Standard Model is the most precisely confirmed theory in the history of physics, and nothing here disputes a physical result. Fabrication was examined and rejected. Particle physics is not a cost-overrun outlier — JWST and ITER are far worse. No prosecution, debarment or bid protest arising from a CERN contract was found anywhere this search could reach.
 
 Those findings are on the record with the rest, at full length, because the case above is only worth something if they are.

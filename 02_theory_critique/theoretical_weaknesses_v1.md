@@ -760,8 +760,8 @@ C-T2 is labelled the weakest of the three.
 8. J. L. Feng, "Naturalness and the Status of Supersymmetry," arXiv:1302.6587 (2013); Annu.
    Rev. Nucl. Part. Sci. https://arxiv.org/abs/1302.6587
 9. N. Arkani-Hamed and S. Dimopoulos, "Supersymmetric Unification Without Low Energy
-   Supersymmetry And Signatures for Fine-Tuning at the LHC," arXiv:hep-th/0405159, 18 May
-   2004. https://arxiv.org/abs/hep-th/0405159
+   Supersymmetry And Signatures for Fine-Tuning at the LHC," arXiv:hep-th/0405159,
+   18 May 2004. https://arxiv.org/abs/hep-th/0405159
 10. A. Duperrin, "Review of Searches for Higgs Bosons and Beyond the Standard Model Physics
     at the Tevatron," arXiv:0805.3624, 22 May 2008. https://arxiv.org/abs/0805.3624
 11. Particle Data Group, "Supersymmetry, Part II (Experiment)," Review of Particle Physics
@@ -805,8 +805,8 @@ C-T2 is labelled the weakest of the three.
     dark matter searches," arXiv:2109.03116 (2021). https://arxiv.org/abs/2109.03116
 28. Snowmass 2021 Cosmic Frontier, "Dark Matter Direct Detection to the Neutrino Fog,"
     arXiv:2203.08084. https://arxiv.org/abs/2203.08084
-29. M. Salamon, "DOE Second-Generation Dark Matter Program Status," HEPAP meeting, 12 March
-    2013. https://science.osti.gov/-/media/hep/hepap/pdf/march-2013/HEPAP_MHS_Talk_Salamon_FINAL.pdf
+29. M. Salamon, "DOE Second-Generation Dark Matter Program Status," HEPAP meeting,
+    12 March 2013. https://science.osti.gov/-/media/hep/hepap/pdf/march-2013/HEPAP_MHS_Talk_Salamon_FINAL.pdf
 30. Particle Physics Project Prioritization Panel, "Exploring the Quantum Universe:
     Pathways to Innovation and Discovery in Particle Physics," 2023; arXiv:2407.19176.
     https://arxiv.org/abs/2407.19176

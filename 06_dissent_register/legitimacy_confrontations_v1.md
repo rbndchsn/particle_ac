@@ -61,9 +61,11 @@ on this archive must take that constraint as binding.
 The corollary cuts the other way, and is equally Tier A: because almost nobody has
 attacked validity, the field's internal error-detection record is the only evidence about
 validity there is - and that record is both better and worse than its public presentation.
-Better, because the field publishes its own disconfirmations, including a 5-sigma
+Better, because the field publishes its own disconfirmations, including the 5-sigma
 disagreement found in 2024 when someone finally recalculated the tenth-order QED
-contribution independently (47). Worse, because that recalculation took until 2024 for a
+contribution independently (47) — a disagreement AHKN then traced to its own under-sampled
+integrals and resolved in Volkov's favour, so what stands is not an open crack but a
+five-year latency. Worse, because that recalculation took until 2024 for a
 number published in 2012 and corrected by 15% in 2018 (49), and the comparison it feeds is
 now limited by a 5.5-sigma disagreement between two measurements of the fine-structure
 constant (48).
@@ -320,8 +322,10 @@ the field's flagship claim - the electron magnetic moment, measured by Fan et al
 **0.13 parts per trillion**, 2.2x better than the 2008 Harvard measurement at 0.28 ppt (48)
 - currently cannot be fully exploited, because the theory input depends on alpha and the two
 best alpha measurements disagree at 5.5 sigma, and because the tenth-order QED coefficient
-was found in 2024 to disagree at 5 sigma with its only previous calculation. **Both facts
-were established and published by the field itself.** That is simultaneously the strongest
+was found in 2024 to disagree at 5 sigma with its only previous calculation — a disagreement
+since resolved in Volkov's favour, the originating group having found 98 under-sampled
+integrals in its own work. **Both facts were established and published by the field
+itself, and so was the correction.** That is simultaneously the strongest
 available rebuttal to the fabrication thesis and the strongest available support for the
 structural worry that drives it.
 
