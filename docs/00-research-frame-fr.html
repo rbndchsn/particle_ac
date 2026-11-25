@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadre de recherche et normes de preuve — Particle Acceleration: The Instrument And Its Blind Spot</title>
+<meta name="description" content="Comment cette enquête est structurée, ce qui compte comme preuve, et le piège méthodologique inscrit dans sa propre prémisse">
+<meta property="og:title" content="Cadre de recherche et normes de preuve">
+<meta property="og:description" content="Comment cette enquête est structurée, ce qui compte comme preuve, et le piège méthodologique inscrit dans sa propre prémisse">
+<link rel="stylesheet" href="assets/style.css?v=34b58dc7f4">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="index.html">Particle Acceleration</a>
+    <nav>
+        <a href="index-fr.html">Vue d’ensemble</a>
+        <a href="00-research-frame.html" class="active">Méthode</a>
+        <a href="01-particle-acceleration-research.html">Fondements</a>
+        <a href="02-theoretical-weaknesses.html">Théorie</a>
+        <a href="03-trigger-data-destruction.html">Matériel</a>
+        <a href="04-software-stack-bias.html">Logiciel</a>
+        <a href="05-publication-governance.html">Publication</a>
+        <a href="06-legitimacy-confrontations.html">Dissidence</a>
+        <a href="07-closed-loop.html">Connu vs supposé</a>
+        <a href="08-proof-failure-modes.html">Où les preuves cèdent</a>
+        <a href="09-anchoring-gradient.html">Ancrage</a>
+        <a href="10-cost-and-procurement.html">Argent</a>
+    </nav>
+    <div class="langswitch"><a href="index.html" hreflang="en">EN</a><span aria-hidden="true">/</span><a href="index-fr.html" class="on" hreflang="fr">FR</a></div>
+  </div>
+</header>
+<main class="shell"><div class="with-rail"><nav class="toc" aria-label="Sommaire"><p class="toc-head">Sommaire</p><ol><li class="lvl-2"><a href="#la-question-de-recherche">La question de recherche</a></li><li class="lvl-2"><a href="#le-piège-inscrit-dans-la-prémisse-de-ce-projet">Le piège inscrit dans la prémisse de ce projet</a></li><li class="lvl-2"><a href="#une-correction-terminologique">Une correction terminologique</a></li><li class="lvl-2"><a href="#niveaux-de-preuve">Niveaux de preuve</a></li><li class="lvl-2"><a href="#exigence-de-falsifiabilité">Exigence de falsifiabilité</a></li><li class="lvl-2"><a href="#limites-du-périmètre">Limites du périmètre</a></li><li class="lvl-3"><a href="#une-exception-permanente-à-la-règle-du-niveau-d">Une exception permanente à la règle du niveau D</a></li></ol></nav><div><div class="docmeta"><div class="docmeta-main"><p class="kicker">Méthode</p><h1>Cadre de recherche et normes de preuve</h1><p class="sub">Comment cette enquête est structurée, ce qui compte comme preuve, et le piège méthodologique inscrit dans sa propre prémisse</p><div class="facts"><span><b>v1</b></span><span>2026-11-25</span><span>actif — régit tous les autres documents de cette archive</span></div></div><div class="doc-art"><svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" class="vignette" role="img" aria-label="Quatre niveaux de preuve"><rect x="24" y="62" width="28" height="48" rx="4" fill="var(--tier-a, #4e9e73)" opacity="0.85"/><text x="38" y="92" text-anchor="middle" style="font:700 15px var(--sans,sans-serif);fill:var(--bg,#0b0b0c)">A</text><rect x="62" y="54" width="28" height="56" rx="4" fill="var(--accent, #e0a33c)" opacity="0.85"/><text x="76" y="84" text-anchor="middle" style="font:700 15px var(--sans,sans-serif);fill:var(--bg,#0b0b0c)">B</text><rect x="100" y="46" width="28" height="64" rx="4" fill="var(--tier-c, #5b8dc9)" opacity="0.85"/><text x="114" y="76" text-anchor="middle" style="font:700 15px var(--sans,sans-serif);fill:var(--bg,#0b0b0c)">C</text><rect x="138" y="38" width="28" height="72" rx="4" fill="var(--tier-d, #c0564e)" opacity="0.85"/><text x="152" y="68" text-anchor="middle" style="font:700 15px var(--sans,sans-serif);fill:var(--bg,#0b0b0c)">D</text><g transform="translate(212,52) scale(0.85)" stroke-linecap="round"><circle cx="0" cy="0" r="10" fill="none" stroke="var(--ink, #ebe7e0)" stroke-width="2.2"/><circle cx="-4" cy="-2" r="1.5" fill="var(--ink, #ebe7e0)"/><circle cx="4" cy="-2" r="1.5" fill="var(--ink, #ebe7e0)"/><path d="M-4 4 Q0 7 4 4" fill="none" stroke="var(--ink, #ebe7e0)" stroke-width="1.6"/><path d="M0 10 L0 42" stroke="var(--ink, #ebe7e0)" stroke-width="2.2"/><path d="M0 18 L-18 24 M0 18 L11 12" stroke="var(--ink, #ebe7e0)" stroke-width="2.2"/><path d="M0 42 L-10 60 M0 42 L10 60" stroke="var(--ink, #ebe7e0)" stroke-width="2.2"/></g></svg></div></div><article><h2 id="la-question-de-recherche">La question de recherche<a class="anchor" href="#la-question-de-recherche" aria-label="Link to section">#</a></h2>
+<p>Sur toute la pile de la physique des particules à haute énergie — motivation théorique,
+matériel des machines, instrumentation des détecteurs, logiciels de simulation et
+d'analyse, publication, gouvernance du financement — où sont les faiblesses, et sont-elles
+reconnues ?</p>
+<p>L'enquête opère à cinq niveaux, chacun doté de son propre dossier :</p>
+<ol>
+<li><strong>Théorie</strong> — les notions qui motivent les machines sont-elles falsifiables, et
+   qu'advient-il d'un argument motivant lorsque sa prédiction échoue ?</li>
+<li><strong>Matériel</strong> — ce que les instruments ne peuvent physiquement pas voir, et qui les
+   construit.</li>
+<li><strong>Logiciel</strong> — quelles hypothèses théoriques sont encodées dans le code qui convertit
+   les signaux du détecteur en affirmations physiques.</li>
+<li><strong>Publication</strong> — la littérature est-elle structurellement capable de se vérifier
+   elle-même.</li>
+<li><strong>Gouvernance</strong> — qui décide de ce qui se construit, et quel est son intérêt.</li>
+</ol>
+<h2 id="le-piège-inscrit-dans-la-prémisse-de-ce-projet">Le piège inscrit dans la prémisse de ce projet<a class="anchor" href="#le-piège-inscrit-dans-la-prémisse-de-ce-projet" aria-label="Link to section">#</a></h2>
+<p>Le mandat est « d'exposer les faiblesses ». Cette formulation préengage la conclusion, ce
+qui est précisément la défaillance méthodologique que l'enquête entend documenter chez les
+autres. Une critique bâtie sur un raisonnement motivé peut être écartée exactement sur le
+terrain qu'elle avance.</p>
+<p>Deux conséquences en découlent, et elles lient chaque document de cette archive :</p>
+<p><strong>Le niveau D est obligatoire.</strong> Chaque document de recherche doit se clore sur les
+affirmations qui ont été examinées et qui n'ont <em>pas</em> pu être étayées. Un document sans
+section de niveau D est incomplet, non pas plus fort. La présence d'affirmations rejetées
+est ce qui distingue le travail d'enquête du plaidoyer militant, et c'est la seule chose
+qui rende coûteux le rejet des affirmations survivantes.</p>
+<p><strong>Les explications ordinaires priment sur les explications motivées.</strong> La contrainte
+budgétaire, l'inertie institutionnelle, la dépendance au sentier et le conservatisme
+technique expliquent la plus grande part de ce qui ressemble à de la suppression. Une
+explication faisant intervenir l'intérêt ou la captation doit l'emporter sur l'explication
+ordinaire par la preuve, non par l'attrait du récit.</p>
+<h2 id="une-correction-terminologique">Une correction terminologique<a class="anchor" href="#une-correction-terminologique" aria-label="Link to section">#</a></h2>
+<p>« Biais dans les algorithmes » importe un sens issu de l'éthique de l'apprentissage
+automatique — le biais social dans les données d'entraînement — qui ne décrit pas ce qui se
+produit ici et induirait en erreur un lecteur technique.</p>
+<p>Le phénomène réel est le <strong>présupposé théorique encodé dans l'instrumentation et dans le
+code</strong> : les hypothèses d'un modèle sont intégrées à l'appareil et au logiciel qui servent
+ensuite à éprouver ce modèle. C'est une affirmation plus nette, plus défendable et plus
+grave que « biais ». L'archive emploie partout la formulation précise. Là où un véritable
+biais de sélection ou de représentation existe, il est nommé comme tel et distingué.</p>
+<h2 id="niveaux-de-preuve">Niveaux de preuve<a class="anchor" href="#niveaux-de-preuve" aria-label="Link to section">#</a></h2>
+<p>Chaque affirmation substantielle, dans chaque document, porte une étiquette de niveau.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Signification</th>
+<th>Norme de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>Documenté et reconnu à l'intérieur du domaine</td>
+<td>Littérature primaire, rapports techniques de collaboration, documents officiels de laboratoire ou d'agence, dossiers de marchés publics ou de justice</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>Contesté à l'intérieur du domaine, avec des tenants nommés de part et d'autre</td>
+<td>Les deux positions citées d'après leurs propres auteurs, non d'après des caractérisations</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Inférence structurelle — découle de faits de niveau A mais n'a pas été assemblée ni éprouvée par le domaine</td>
+<td>Doit énoncer les faits de niveau A sur lesquels elle repose et ce qui la falsifierait. Jamais présentée comme un constat.</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Examiné et rejeté</td>
+<td>Consigné avec la raison de son échec, pour qu'il ne soit pas réexaminé</td>
+</tr>
+</tbody>
+</table></div>
+<p>Le niveau C est là où réside la contribution originale de ce projet, et c'est aussi le
+niveau le plus dangereux. Une affirmation de niveau C présentée comme établie transforme
+l'archive entière en polémique. Les affirmations de niveau C doivent être rédigées de telle
+sorte qu'un spécialiste hostile dise « cette inférence est disponible à partir de ces
+faits », et non « cela n'est pas étayé ».</p>
+<h2 id="exigence-de-falsifiabilité">Exigence de falsifiabilité<a class="anchor" href="#exigence-de-falsifiabilité" aria-label="Link to section">#</a></h2>
+<p>Chaque niveau d'analyse doit énoncer ce qui montrerait que sa critique est fausse :</p>
+<ul>
+<li><strong>La critique théorique</strong> échoue si les arguments motivants ont effectivement été
+  abandonnés ouvertement et au grand jour lorsque leurs prédictions ont échoué, et si cet
+  abandon se reflète dans les demandes de financement ultérieures.</li>
+<li><strong>La critique du matériel</strong> échoue si les angles morts instrumentaux sont publiés,
+  quantifiés et intégrés aux affirmations de découverte.</li>
+<li><strong>La critique du logiciel</strong> échoue si les incertitudes liées au choix de générateur et à
+  la dépendance à la simulation sont propagées avec un traitement correct des corrélations
+  entre expériences.</li>
+<li><strong>La critique de la publication</strong> échoue s'il existe un mécanisme opérant par lequel un
+  spécialiste extérieur peut vérifier un résultat signé par plusieurs milliers d'auteurs et
+  imposer une correction.</li>
+<li><strong>La critique de la gouvernance</strong> échoue si les instances stratégiques comportent des
+  membres sans intérêt prospectif, et si leurs recommandations sont historiquement allées à
+  l'encontre de l'intérêt de leur propre composition.</li>
+</ul>
+<p>Ce sont de véritables épreuves. Certaines peuvent être réussies. Le consigner est le
+travail.</p>
+<h2 id="limites-du-périmètre">Limites du périmètre<a class="anchor" href="#limites-du-périmètre" aria-label="Link to section">#</a></h2>
+<p>Dans le périmètre : les accélérateurs terrestres et leurs détecteurs ; la pile logicielle
+qui convertit les signaux en affirmations ; les systèmes de publication et de financement
+qui les entourent ; les instruments d'accélération astrophysique là où les mêmes questions
+reparaissent.</p>
+<p>Hors périmètre, et explicitement : toute affirmation selon laquelle les résultats
+expérimentaux seraient fabriqués, selon laquelle les prédictions confirmées du Modèle
+standard seraient invalides, ou selon laquelle la physique des détecteurs serait truquée.
+Ce ne sont pas des versions faibles de l'argument ; c'est un argument différent et
+indéfendable, et l'inclure discréditerait par association le matériel défendable. Le Modèle
+standard est la théorie la plus précisément éprouvée de l'histoire de la physique. La
+critique menée ici porte sur ce qui <em>entoure</em> ce noyau : motivation, limites
+instrumentales, hypothèses encodées, reddition de comptes et intérêt.</p>
+<h3 id="une-exception-permanente-à-la-règle-du-niveau-d">Une exception permanente à la règle du niveau D<a class="anchor" href="#une-exception-permanente-à-la-règle-du-niveau-d" aria-label="Link to section">#</a></h3>
+<p><code>10_financial_investigation/</code> est un <strong>document de phase de collecte</strong> et ne comporte
+délibérément aucune section « Affirmations examinées et non étayées ». Il a été commandé
+sur la consigne explicite que la collecte et l'évaluation soient séparées, et que rien de
+ce qui est rencontré ne soit écarté — y compris les affirmations issues de sources faibles
+ou anonymes, qui sont consignées avec leur provenance plutôt que filtrées.</p>
+<p>À la place du niveau D, il se clôt sur une liste énumérée de ce qui n'a pu être établi,
+chaque élément nommant le document qui y répondrait. Chaque entrée porte une classe de
+source (audit, justice, officiel, presse, plaidoyer, anonyme) et un statut (vérifié,
+rapporté, allégué, invérifiable), de sorte que la phase d'évaluation dispose de ce qu'il
+lui faut.</p>
+<p>C'est une exception au cadre, non un manquement. Une révision ultérieure ne doit pas la
+« corriger » en ajoutant une section de rejet : l'évaluation appartient à un document
+distinct, établi face au matériel collecté.</p></article></div></div></main>
+<footer>
+  <div class="shell">
+    <p>Chaque affirmation de cette archive porte un niveau de preuve. Celles qui ont été examinées puis rejetées sont conservées au dossier plutôt qu’effacées — y compris les deux hypothèses de départ du projet.</p>
+    <p>Sources, données et historique complet des révisions :<br>
+    <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a><br>
+    <span class="buildmark">build 34b58dc7f4</span></p>
+  </div>
+</footer>
+<script src="assets/site.js?v=18db04c890" defer></script>
+</body>
+</html>

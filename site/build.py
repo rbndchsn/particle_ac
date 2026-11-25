@@ -45,6 +45,7 @@ UI = {
     "en": dict(overview="Overview", toc="Contents", onpage="On this page",
                docs="Documents", thedocs="The documents", inprog="In progress",
                refs="references", claims="tier-labelled claims", archive="Research archive",
+               tierhead="Evidence tiers used in this document", tiercount="labelled claims",
                clickdocs="Please click on the boxes to access the content.",
                found="What this stream found", struck="Examined and struck out",
                foot1="Every claim in this archive carries an evidence tier. Claims examined and "
@@ -55,6 +56,7 @@ UI = {
                docs="Documents", thedocs="Les documents", inprog="En cours",
                refs="r\u00e9f\u00e9rences", claims="affirmations cot\u00e9es par niveau de preuve",
                archive="Archive de recherche",
+               tierhead="Niveaux de preuve employ\u00e9s dans ce document", tiercount="affirmations cot\u00e9es",
                clickdocs="Veuillez cliquer sur les encadr\u00e9s pour acc\u00e9der au contenu.",
                found="Ce que ce volet a trouv\u00e9", struck="Examin\u00e9 et \u00e9cart\u00e9",
                foot1="Chaque affirmation de cette archive porte un niveau de preuve. Celles qui ont "
@@ -73,10 +75,24 @@ SECTION_FR = {
 
 NAV_PRIMARY = {"00_method": "research_frame", "03_hardware_systems": "trigger_data_destruction"}
 TIER_NAMES = {"A": "Documented", "B": "Contested", "C": "Inference", "D": "Rejected"}
+TIER_FR = {"A": "Document\u00e9", "B": "Contest\u00e9", "C": "Inf\u00e9rence", "D": "Rejet\u00e9"}
+# Longest token first, so "SUPPORTED-AS-INFERENCE" is not eaten by "SUPPORTED".
 STATUS_CLASS = [
     ("SUPPORTED-AS-INFERENCE", "st-inference"), ("REJECTED", "st-rejected"),
     ("SUPPORTED", "st-supported"), ("UNTESTED", "st-untested"), ("WEAKENED", "st-weakened"),
+    ("\u00c9TAY\u00c9E COMME INF\u00c9RENCE", "st-inference"), ("REJET\u00c9E", "st-rejected"),
+    ("\u00c9TAY\u00c9E", "st-supported"), ("NON \u00c9PROUV\u00c9E", "st-untested"),
+    ("AFFAIBLIE", "st-weakened"),
 ]
+
+FILTERS = {
+    "en": [("all", "All claims"), ("SUPPORTED", "Supported"),
+           ("SUPPORTED-AS-INFERENCE", "Inference"), ("REJECTED", "Rejected"),
+           ("UNTESTED", "Untested")],
+    "fr": [("all", "Toutes"), ("\u00c9TAY\u00c9E", "\u00c9tay\u00e9es"),
+           ("\u00c9TAY\u00c9E COMME INF\u00c9RENCE", "Inf\u00e9rences"),
+           ("REJET\u00c9E", "Rejet\u00e9es"), ("NON \u00c9PROUV\u00c9E", "Non \u00e9prouv\u00e9es")],
+}
 
 
 # ----------------------------------------------------------------- utilities
@@ -238,7 +254,7 @@ def mark_claim_rows(html_text):
 
 # ------------------------------------------------------------------ chrome
 
-def tier_bar(counts):
+def tier_bar(counts, lang="en"):
     total = sum(counts.values())
     if total < 5:
         return ""
@@ -247,11 +263,12 @@ def tier_bar(counts):
         c = counts[t]
         if c:
             segs.append(f'<span class="tier-{t.lower()}" style="width:{c/total*100:.2f}%"></span>')
+        nm = TIER_FR[t] if lang == "fr" else TIER_NAMES[t]
         keys.append(f'<span><span class="tier tier-{t.lower()}">{t}</span> '
-                    f'{TIER_NAMES[t]} <b>{c}</b></span>')
+                    f'{nm} <b>{c}</b></span>')
     return (f'<div class="tierbar">'
-            f'<p class="tierbar-head">Evidence tiers used in this document '
-            f'<span>({total} labelled claims)</span></p>'
+            f'<p class="tierbar-head">{UI[lang]["tierhead"]} '
+            f'<span>({total} {UI[lang]["tiercount"]})</span></p>'
             f'<div class="track">{"".join(segs)}</div>'
             f'<div class="keys">{"".join(keys)}</div></div>')
 
@@ -334,6 +351,16 @@ PAGE = """<!DOCTYPE html>
 """
 
 
+def filters_html(lang):
+    btns = "".join(
+        f'<button aria-pressed="{str(i == 0).lower()}" data-f="{html.escape(k)}">'
+        f'{html.escape(lab)}</button>'
+        for i, (k, lab) in enumerate(FILTERS[lang]))
+    word = "claims" if lang == "en" else "affirmations"
+    return (f'<div class="filters" data-filter-table data-word="{word}">'
+            f'{btns}<span class="count"></span></div>')
+
+
 def langswitch_html(lang):
     """EN / FR toggle. Research pages link to the landing page of the other language."""
     en_cls = ' class="on"' if lang == "en" else ""
@@ -365,6 +392,10 @@ def build():
     (OUT / ".nojekyll").write_text("")
 
     summaries = yaml.safe_load((SITE / "summaries.yaml").read_text()) or {}
+    fr_titles = {}
+    ft = SITE / "doc_titles.fr.yaml"
+    if ft.exists():
+        fr_titles = yaml.safe_load(ft.read_text(encoding="utf-8")) or {}
 
     pages = []
     for folder, label in SECTIONS:
@@ -372,8 +403,14 @@ def build():
         if not d.exists():
             continue
         for f in sorted(d.glob("*.md")):
+            if f.name.endswith(".fr.md"):
+                continue
             meta, body = split_frontmatter(f.read_text(encoding="utf-8"))
+            frf = f.with_suffix("").with_suffix(".fr.md")
+            if not frf.exists():
+                frf = d / (f.stem + ".fr.md")
             pages.append({
+                "fr": frf if frf.exists() else None,
                 "slug": slugify_path(folder, f), "folder": folder, "label": label,
                 "stem": re.sub(r"_v\d+$", "", f.stem), "meta": meta, "body": body,
                 "key": f"{folder}/{f.name}", "tiers": count_tiers(body),
@@ -406,19 +443,49 @@ def build():
             f'{tier_bar(p["tiers"])}</div>')
         filters = ""
         if is_register:
-            filters = ('<div class="filters" data-filter-table>'
-                       '<button aria-pressed="true" data-f="all">All claims</button>'
-                       '<button aria-pressed="false" data-f="SUPPORTED">Supported</button>'
-                       '<button aria-pressed="false" data-f="SUPPORTED-AS-INFERENCE">Inference</button>'
-                       '<button aria-pressed="false" data-f="REJECTED">Rejected</button>'
-                       '<button aria-pressed="false" data-f="UNTESTED">Untested</button>'
-                       '<span class="count"></span></div>')
+            filters = filters_html("en")
         toc_markup = toc_html(toc, "en")
         wrap = "with-rail" if toc_markup else "no-rail"
         body = (
             f'<main class="shell"><div class="{wrap}">{toc_markup}'
             f'<div>{header}{summary_panel(summaries.get(p["key"]), "en")}{filters}'
             f'<article>{content}</article></div></div></main>')
+        if p.get("fr"):
+            fmeta, fbody = split_frontmatter(p["fr"].read_text(encoding="utf-8"))
+            fcontent, fnrefs = number_references(render_md(fbody, "fr"))
+            fcontent, ftoc = add_anchors_and_toc(fcontent)
+            fcontent = wrap_tables(fcontent)
+            if is_register:
+                fcontent = mark_claim_rows(fcontent)
+            ffacts = [f'<span><b>{html.escape(str(fmeta.get("version","v1")))}</b></span>',
+                      f'<span>{html.escape(str(fmeta.get("date","")))}</span>']
+            if fnrefs:
+                ffacts.append(f'<span><b>{fnrefs}</b> {UI["fr"]["refs"]}</span>')
+            ffacts.append(f'<span>{html.escape(str(fmeta.get("status","")))}</span>')
+            fart = (f'<div class="doc-art">{figures.ART[art]("fr")}</div>' if art else "")
+            fheader = (
+                f'<div class="docmeta"><div class="docmeta-main">'
+                f'<p class="kicker">{html.escape(SECTION_FR.get(p["folder"], p["label"]))}</p>'
+                f'<h1>{html.escape(str(fmeta.get("title", p["slug"])))}</h1>'
+                f'<p class="sub">{html.escape(str(fmeta.get("subtitle","")))}</p>'
+                f'<div class="facts">{"".join(ffacts)}</div></div>'
+                f'{fart}{tier_bar(p["tiers"], "fr")}</div>')
+            fbodyhtml = (
+                f'<main class="shell">'
+                f'<div class="{"with-rail" if toc_html(ftoc, "fr") else "no-rail"}">'
+                f'{toc_html(ftoc, "fr")}<div>{fheader}'
+                f'{filters_html("fr") if is_register else ""}'
+                f'<article>{fcontent}</article></div></div></main>')
+            (OUT / f'{p["slug"]}-fr.html').write_text(PAGE.format(
+                title=f'{fmeta.get("title", p["slug"])} \u2014 {SITE_NAME[0]}',
+                ogtitle=html.escape(str(fmeta.get("title", p["slug"]))),
+                desc=html.escape(str(fmeta.get("subtitle", ""))[:180]),
+                nav=nav_html(p["slug"], pages, "fr"), lang="fr",
+                langswitch=langswitch_html("fr"),
+                foot1=UI["fr"]["foot1"], foot2=UI["fr"]["foot2"],
+                cssv=ASSETV["css"], jsv=ASSETV["js"],
+                body=fbodyhtml), encoding="utf-8")
+
         (OUT / f'{p["slug"]}.html').write_text(PAGE.format(
             title=f'{m.get("title", p["slug"])} — {SITE_NAME[0]}',
             ogtitle=html.escape(str(m.get("title", p["slug"]))),
@@ -449,17 +516,24 @@ def build():
                 chips = "".join(
                     f'<span><span class="tier tier-{k.lower()}">{k}</span><b>{t[k]}</b></span>'
                     for k in "ABC" if t[k])
+                tr = fr_titles.get(p["stem"], {}) if lang == "fr" else {}
+                suffix = "-fr" if (lang == "fr" and p.get("fr")) else ""
+                ct = tr.get("title", p["meta"].get("title", p["slug"]))
+                cs = tr.get("subtitle", p["meta"].get("subtitle", ""))
                 cards.append(
-                    f'<a class="card" href="{p["slug"]}.html">'
-                    f'<span class="c-title">{html.escape(str(p["meta"].get("title", p["slug"])))}</span>'
+                    f'<a class="card" href="{p["slug"]}{suffix}.html">'
+                    f'<span class="c-title">{html.escape(str(ct))}</span>'
                     f'<span class="c-tiers">{chips}</span>'
-                    f'<span class="c-sub">{html.escape(str(p["meta"].get("subtitle",""))) }</span></a>')
+                    f'<span class="c-sub">{html.escape(str(cs))}</span></a>')
             cards.append("</div></div>")
         content, htoc = add_anchors_and_toc(wrap_tables(render_md(ibody, lang)))
         home_toc = "".join(
             f'<li><a href="#{sl}">{html.escape(tt)}</a></li>' for lv, sl, tt in htoc if lv == 2)
         rail_docs = "".join(
-            f'<li><a href="{p["slug"]}.html">{html.escape(str(p["meta"].get("title", p["slug"])))}</a></li>'
+            '<li><a href="{s}{x}.html">{t}</a></li>'.format(
+                s=p["slug"], x=("-fr" if (lang == "fr" and p.get("fr")) else ""),
+                t=html.escape(str((fr_titles.get(p["stem"], {}) if lang == "fr" else {})
+                                  .get("title", p["meta"].get("title", p["slug"])))))
             for p in pages)
         rail = (f'<aside class="home-rail">'
                 f'<div class="rail-block"><p class="toc-head">{u["onpage"]}</p>'

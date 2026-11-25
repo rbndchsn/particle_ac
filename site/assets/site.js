@@ -44,8 +44,10 @@
     });
     if (countEl) {
       var total = rows.filter(function (r) { return r.getAttribute("data-status"); }).length;
+      var word = bar.getAttribute("data-word") || "claims";
+      var of = word === "claims" ? " of " : " sur ";
       countEl.textContent = filter === "all"
-        ? total + " claims" : shown + " of " + total + " claims";
+        ? total + " " + word : shown + of + total + " " + word;
     }
   }
 

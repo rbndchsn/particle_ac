@@ -1,0 +1,44 @@
+# French titles and subtitles for the research documents, used by the French
+# landing page. A document that gains its own <name>.fr.md overrides this.
+claims_register:
+  title: Registre des affirmations
+  subtitle: Chaque affirmation substantielle de l'archive, avec son niveau de preuve, son document source et son statut
+research_frame:
+  title: Cadre de recherche et normes de preuve
+  subtitle: Comment cette enquête est structurée, ce qui compte comme preuve, et le piège méthodologique inscrit dans sa propre prémisse
+particle_acceleration_research:
+  title: Accélération de particules — archive de recherche
+  subtitle: Mécanismes, limites d'ingénierie et problèmes ouverts, des accélérateurs de laboratoire aux accélérateurs astrophysiques
+theoretical_weaknesses:
+  title: Faiblesses des notions théoriques qui motivent les accélérateurs
+  subtitle: Naturalité, supersymétrie, WIMP et le paysage — ce qui fut prédit, ce qui fut exclu, et si les arguments motivants ont été retirés au grand jour
+hardware_supply_chain:
+  title: Qui construit réellement le matériel
+  subtitle: La chaîne d'approvisionnement industrielle de la physique des hautes énergies — entreprises, pays, propriété, concentration et exposition géopolitique
+trigger_data_destruction:
+  title: Le déclenchement comme destruction irréversible et orientée des données
+  subtitle: Ce que le LHC écarte à 40 MHz, qui en décide, et ce qui survit de l'argument au contact des documents des collaborations elles-mêmes
+software_stack_bias:
+  title: Les présupposés théoriques encodés dans la pile logicielle
+  subtitle: Générateurs, ajustements, simulation du détecteur, déconvolution et classificateurs appris, porteurs des hypothèses qu'ils servent à éprouver — et le problème des erreurs corrélées entre ATLAS et CMS
+publication_governance:
+  title: Publication et gouvernance
+  subtitle: La littérature de la physique des hautes énergies peut-elle se vérifier elle-même, et quel intérêt décide de ce qui se construit
+legitimacy_confrontations:
+  title: Qui a contesté la légitimité des accélérateurs de particules
+  subtitle: Un registre trié et chiffré de chaque contestation documentée, 1961-2026, séparant la validité des priorités, de la sûreté, de l'épistémologie et des résultats précis
+closed_loop:
+  title: La boucle fermée
+  subtitle: Une machine, son logiciel et sa théorie peuvent-ils se confirmer mutuellement sans jamais toucher le réel ? Une hypothèse, sa forme la plus forte, et ce qui la briserait
+known_versus_assumed:
+  title: Connu, inféré, supposé
+  subtitle: Quelle est réellement la précision, où la chaîne inférentielle devient dépendante du modèle, et une évaluation honnête de chaque cadre concurrent et de chaque anomalie vivante
+proof_failure_modes:
+  title: Où les preuves pourraient céder
+  subtitle: Un audit des modes de défaillance de huit preuves porteuses — ce sur quoi chacune repose, comment elle pourrait donner la réponse attendue tout en étant fausse, ce qui le détecterait, et si quelqu'un a vérifié
+anchoring_gradient:
+  title: Le gradient d'ancrage
+  subtitle: La contrainte externe sur la physique faiblit-elle à mesure que les enjeux montent, l'argent et le plaidoyer vont-ils en sens inverse, et toute l'observation n'est-elle qu'une tautologie
+cost_and_procurement:
+  title: Coûts, marchés publics et la piste de l'argent
+  subtitle: Un relevé financier en phase de collecte — audits, dépassements, fournisseur unique, rémunération, poursuites, affirmations de critiques et allégations non vérifiées, chacune avec sa provenance
