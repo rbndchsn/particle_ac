@@ -302,3 +302,87 @@ FIGURES = {
 def render(name, lang="en"):
     return (f'<figure class="fig" id="fig-{name}">{FIGURES[name](lang)}'
             f'<figcaption>{CAPTIONS[name][lang]}</figcaption></figure>')
+
+
+# ------------------------------------------------- hero illustration
+
+def hero_illustration(lang="en"):
+    """Cartoon: a working accelerator wired to a screen, and someone who
+    cannot tell whether the screen is telling the truth. The question mark
+    is the argument."""
+    ink = "var(--ink, #ebe7e0)"
+    acc = "var(--accent, #e0a33c)"
+    dim = "var(--ink-faint, #6b6861)"
+    scr = "var(--tier-c, #5b8dc9)"
+    red = "var(--tier-d, #c0564e)"
+    o = []
+
+    # --- accelerator ring: beam pipe, bending magnets, circulating bunches
+    cx, cy, r = 112, 132, 66
+    o.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{dim}" stroke-width="11"/>')
+    o.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="var(--bg-raised,#141416)" stroke-width="6"/>')
+    import math
+    for i in range(12):                       # bending magnets around the ring
+        a = i * 30 - 90
+        mx = cx + r * math.cos(math.radians(a))
+        my = cy + r * math.sin(math.radians(a))
+        o.append(f'<rect x="{mx-7:.1f}" y="{my-5:.1f}" width="14" height="10" rx="2" '
+                 f'fill="{dim}" transform="rotate({a+90} {mx:.1f} {my:.1f})"/>')
+    for i, a in enumerate((-60, -20, 25)):    # circulating bunches
+        bx = cx + r * math.cos(math.radians(a))
+        by = cy + r * math.sin(math.radians(a))
+        o.append(f'<circle cx="{bx:.1f}" cy="{by:.1f}" r="3.5" fill="{acc}"/>')
+    o.append(f'<circle cx="{cx}" cy="{cy}" r="{r-26}" fill="none" stroke="{acc}" '
+             f'stroke-width="1.5" stroke-dasharray="3 7" opacity="0.5"/>')
+    # injector line feeding the ring
+    o.append(f'<path d="M30 {cy+52} L{cx-r+6} {cy+26}" stroke="{dim}" stroke-width="6" stroke-linecap="round"/>')
+    o.append(f'<circle cx="34" cy="{cy+50}" r="5" fill="{acc}"/>')
+    # detector: barrel straddling the ring at the right
+    dxc, dyc = cx + r, cy
+    o.append(f'<g transform="translate({dxc},{dyc})">'
+             f'<rect x="-17" y="-26" width="34" height="52" rx="7" fill="var(--bg-inset,#1b1b1e)" '
+             f'stroke="{ink}" stroke-width="2.5"/>'
+             f'<line x1="-17" y1="-10" x2="17" y2="-10" stroke="{ink}" stroke-width="1.5"/>'
+             f'<line x1="-17" y1="4" x2="17" y2="4" stroke="{ink}" stroke-width="1.5"/>'
+             f'<line x1="-17" y1="17" x2="17" y2="17" stroke="{ink}" stroke-width="1.5"/>'
+             f'<circle cx="0" cy="-19" r="3" fill="{acc}"/></g>')
+
+    # --- cable from detector to the computer
+    o.append(f'<path d="M{dxc+18} {dyc} C 215 132, 215 86, 252 86" fill="none" '
+             f'stroke="{dim}" stroke-width="3.5" stroke-linecap="round"/>')
+
+    # --- monitor showing "the result"
+    o.append('<g transform="translate(252,42)">')
+    o.append(f'<rect x="0" y="0" width="128" height="92" rx="7" fill="var(--bg-inset,#1b1b1e)" '
+             f'stroke="{ink}" stroke-width="2.5"/>')
+    o.append(f'<rect x="9" y="9" width="110" height="74" rx="3" fill="var(--bg-sunk,#070708)"/>')
+    o.append(f'<path d="M18 74 L18 18" stroke="{dim}" stroke-width="1.5"/>')
+    o.append(f'<path d="M18 74 L110 74" stroke="{dim}" stroke-width="1.5"/>')
+    # a spectrum with a bump in it
+    o.append(f'<path d="M20 70 L34 67 L46 64 L56 60 L62 40 L68 22 L74 40 L80 60 L92 56 L104 53" '
+             f'fill="none" stroke="{scr}" stroke-width="2.5" stroke-linejoin="round"/>')
+    o.append(f'<circle cx="68" cy="22" r="3.5" fill="{acc}"/>')
+    o.append(f'<path d="M50 90 L78 90 L82 104 L46 104 Z" fill="{dim}"/>')
+    o.append(f'<rect x="38" y="104" width="52" height="5" rx="2.5" fill="{ink}"/>')
+    o.append('</g>')
+
+    # --- stick figure, and the question
+    o.append('<g transform="translate(416,96)" stroke-linecap="round">')
+    o.append(f'<circle cx="0" cy="0" r="11" fill="none" stroke="{ink}" stroke-width="2.5"/>')
+    o.append(f'<circle cx="-4" cy="-2" r="1.6" fill="{ink}"/><circle cx="4" cy="-2" r="1.6" fill="{ink}"/>')
+    o.append(f'<path d="M-4 5 Q0 2 4 5" fill="none" stroke="{ink}" stroke-width="1.8"/>')
+    o.append(f'<path d="M0 11 L0 46" stroke="{ink}" stroke-width="2.5"/>')
+    o.append(f'<path d="M0 20 L-16 32" stroke="{ink}" stroke-width="2.5"/>')   # arm toward screen
+    o.append(f'<path d="M0 20 L14 14" stroke="{ink}" stroke-width="2.5"/>')    # hand on chin
+    o.append(f'<path d="M0 46 L-11 66 M0 46 L11 66" stroke="{ink}" stroke-width="2.5"/>')
+    o.append('</g>')
+    o.append(f'<text x="416" y="-16" text-anchor="middle" '
+             f'style="font:700 46px var(--sans,sans-serif);fill:{red}" '
+             f'transform="translate(0,56)">?</text>')
+    o.append(f'<circle cx="398" cy="60" r="2.5" fill="{red}" opacity="0.75"/>')
+    o.append(f'<circle cx="392" cy="70" r="1.8" fill="{red}" opacity="0.5"/>')
+
+    return (f'<svg viewBox="0 0 470 240" xmlns="http://www.w3.org/2000/svg" '
+            f'class="hero-art" role="img" aria-label="'
+            f'{"A particle accelerator wired to a screen, and a figure wondering whether the screen is right" if lang == "en" else "Un accelerateur de particules relie a un ecran, et une silhouette se demandant si lecran dit vrai"}'
+            f'">{"".join(o)}</svg>')

@@ -533,3 +533,19 @@ main.home article > .holes { grid-column: 1 / -1; max-width: none; width: 100%; 
 main.home article > .langnote { grid-column: 1; max-width: var(--measure); }
 
 @media (max-width: 40rem) { .langswitch { margin-left: 0; } }
+
+/* ------------------------------------------- hero illustration + prompts */
+
+.hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 62rem) { .hero-grid { grid-template-columns: 1fr 30rem; } }
+.hero-fig { min-width: 0; }
+.hero-art { width: 100%; height: auto; display: block; overflow: visible; }
+@media (max-width: 62rem) {
+  .hero-fig { max-width: 26rem; }
+  .hero-art { opacity: 0.9; }
+}
+
+.clickprompt {
+  font-family: var(--sans); font-size: var(--fs-sm); font-weight: 600;
+  color: var(--accent); margin: -0.6rem 0 1.6rem;
+}

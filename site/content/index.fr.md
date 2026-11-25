@@ -1,5 +1,5 @@
 ---
-title: "Accélération de particules : l'instrument et son angle mort"
+title: "Accélération De Particules : L'Instrument Et Son Angle Mort"
 subtitle: Six endroits où la science la plus précisément confirmée sur Terre repose sur quelque chose que personne n'a jamais vérifié. Assemblé à partir des propres articles, audits et dossiers judiciaires du domaine.
 author: Robin
 date: 2026-11-25

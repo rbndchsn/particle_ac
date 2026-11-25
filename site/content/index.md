@@ -1,5 +1,5 @@
 ---
-title: "Particle Acceleration: The Instrument and Its Blind Spot"
+title: "Particle Acceleration: The Instrument And Its Blind Spot"
 subtitle: Six places where the most precisely confirmed science on Earth rests on something nobody has ever checked. Assembled from the field's own papers, audits and court records.
 author: Robin
 date: 2026-11-25

@@ -45,6 +45,7 @@ UI = {
     "en": dict(overview="Overview", toc="Contents", onpage="On this page",
                docs="Documents", thedocs="The documents", inprog="In progress",
                refs="references", claims="tier-labelled claims", archive="Research archive",
+               clickdocs="Please click on the boxes to access the content.",
                found="What this stream found", struck="Examined and struck out",
                foot1="Every claim in this archive carries an evidence tier. Claims examined and "
                      "rejected are kept on the record rather than removed \u2014 including both "
@@ -54,6 +55,7 @@ UI = {
                docs="Documents", thedocs="Les documents", inprog="En cours",
                refs="r\u00e9f\u00e9rences", claims="affirmations cot\u00e9es par niveau de preuve",
                archive="Archive de recherche",
+               clickdocs="Veuillez cliquer sur les encadr\u00e9s pour acc\u00e9der au contenu.",
                found="Ce que ce volet a trouv\u00e9", struck="Examin\u00e9 et \u00e9cart\u00e9",
                foot1="Chaque affirmation de cette archive porte un niveau de preuve. Celles qui ont "
                      "\u00e9t\u00e9 examin\u00e9es puis rejet\u00e9es sont conserv\u00e9es au dossier plut\u00f4t "
@@ -451,17 +453,20 @@ def build():
                 f'<ol class="rail-list">{home_toc}</ol></div>'
                 f'<div class="rail-block"><p class="toc-head">{u["docs"]}</p>'
                 f'<ol class="rail-list">{rail_docs}</ol></div></aside>')
-        hero = (f'<div class="hero"><div class="shell">'
+        hero = (f'<div class="hero"><div class="shell hero-grid"><div class="hero-text">'
                 f'<p class="eyebrow">{u["archive"]} \u00b7 {len(pages)} documents</p>'
                 f'<h1>{html.escape(str(imeta.get("title","")))}</h1>'
                 f'<p class="standfirst">{html.escape(str(imeta.get("subtitle","")))}</p>'
                 f'<div class="byline"><span>{html.escape(str(imeta.get("author","")))}</span>'
                 f'<span>{html.escape(str(imeta.get("date","")))}</span>'
                 f'<span>{sum(sum(p["tiers"].values()) for p in pages)} {u["claims"]}</span>'
-                f'</div></div></div>')
+                f'</div></div>'
+                f'<div class="hero-fig">{figures.hero_illustration(lang)}</div>'
+                f'</div></div>')
         body = (f'{hero}<main class="shell home">'
                 f'<div class="home-grid"><article>{content}</article>{rail}</div>'
-                f'<section class="doclist"><h2>{u["thedocs"]}</h2>{"".join(cards)}</section>'
+                f'<section class="doclist"><h2>{u["thedocs"]}</h2>'
+                f'<p class="clickprompt">{u["clickdocs"]}</p>{"".join(cards)}</section>'
                 f'</main>')
         slug = "index" if lang == "en" else "index-fr"
         (OUT / outfile).write_text(PAGE.format(
