@@ -8,9 +8,12 @@ status: active
 source_files: all documents in this archive
 ---
 
-<div class="stance">
-<p><b>What this is.</b> An adversarial brief. It argues one side — the case against — and it says so rather than posing as a neutral survey. Every claim is sourced, overwhelmingly to the field's own documents: CERN technical papers, DOE Inspector General reports, GAO audits, collaboration reinterpretation inventories, court records.</p>
-<p>Roughly eighty claims were tested here and <strong>failed</strong>, including both hypotheses this project began with. They are not hidden. They are on <a href="00-claims-register.html">one page of their own</a>, because a brief that buried its counterevidence would be worth nothing the moment a specialist found it.</p>
+<div class="intro">
+<p class="lede-para">Modern particle physics presents itself as the most rigorously verified body of knowledge humans have produced, and at its core it is. That is not the finding. The finding is what sits <em>around</em> that core — a structure in which the field's most expensive and least constrained claims are protected not by evidence but by the fact that nobody has looked. In six separate places, the quantity that would settle a load-bearing question has never been computed, and in every case the absence is documented in the field's own literature.</p>
+
+<p>What that structure permits becomes visible once it is assembled in one place. A criterion carrying a published failure condition, which was met, conceded in the journals, and then stripped of its vocabulary in the documents requesting the next machine. An instrument that destroys thirteen thousand times more data than it keeps, in hardware, irreversibly, under a menu built from the theories it exists to test. Two experiments presented as independent confirmation of each other, whose simulated physics descends from a single manual fit. A literature that has released full statistical likelihoods for <em>two</em> analyses, and that contains machine-learning results its own authors state cannot be reproduced outside the collaboration that made them. An institution that names, in its own technical papers, the precise conditions under which a sole supplier could overcharge it — while publishing no audit output, no senior remuneration, no register of interests, and standing immune from the jurisdiction in which a challenge could be heard.</p>
+
+<p>None of this requires that anyone lied. It requires only that incentives aligned and that nobody was positioned to check — a more durable problem than fraud, and a harder one to repair. This is a brief for that case, argued from one side and saying so, assembled almost entirely out of CERN technical papers, Inspector General audits, GAO reports, collaboration reinterpretation inventories and court records. Roughly eighty claims tested here <strong>failed</strong>, including both hypotheses the project began with. They are kept <a href="00-claims-register.html">on the record</a>, because an argument built only from what survived would be worth nothing.</p>
 </div>
 
 # Six questions the field cannot answer

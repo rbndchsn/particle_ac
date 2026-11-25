@@ -469,6 +469,16 @@ main.home article > .crux { grid-column: 1 / -1; max-width: none; width: 100%; }
 
 /* ------------------------------------------------ adversarial brief layer */
 
+/* Introduction: the stance, stated substantively. */
+.intro { margin: 0 0 3.5rem; }
+.intro p { color: var(--ink-dim); margin-bottom: 1.2rem; }
+.intro .lede-para {
+  font-size: var(--fs-lg); line-height: 1.52; color: var(--ink);
+  border-left: 3px solid var(--accent); padding-left: 1.4rem; margin-bottom: 1.6rem;
+}
+.intro em { color: var(--ink); font-style: italic; }
+main.home article > .intro { grid-column: 1; max-width: var(--measure); }
+
 /* Declared stance. Not an apology — a statement of form. */
 .stance {
   margin: 0 0 3.5rem; padding: 1.5rem 1.8rem 1.1rem;
