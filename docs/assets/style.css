@@ -466,3 +466,35 @@ main.home article > .crux { grid-column: 1 / -1; max-width: none; width: 100%; }
   margin: 0 0 0.55rem;
 }
 .tierbar-head span { text-transform: none; letter-spacing: 0; font-weight: 400; }
+
+/* ------------------------------------------------ adversarial brief layer */
+
+/* Declared stance. Not an apology — a statement of form. */
+.stance {
+  margin: 0 0 3.5rem; padding: 1.5rem 1.8rem 1.1rem;
+  border: 1px solid var(--rule); border-left: 3px solid var(--ink-faint);
+  border-radius: 0 6px 6px 0; background: var(--bg-sunk);
+}
+.stance p { font-size: 0.95rem; color: var(--ink-dim); margin-bottom: 0.9rem; }
+.stance b { color: var(--ink); font-family: var(--sans); font-size: var(--fs-xs);
+  text-transform: uppercase; letter-spacing: 0.09em; margin-right: 0.3rem; }
+
+/* The six holes — the spine of the brief. */
+.holes { display: grid; gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; margin: 2.5rem 0 3.5rem; }
+@media (min-width: 52rem) { .holes { grid-template-columns: 1fr 1fr; } }
+.hole { background: var(--bg-raised); padding: 1.7rem 1.8rem 1.3rem; position: relative; }
+.hole .hn {
+  display: block; font-family: var(--sans); font-size: var(--fs-xs); font-weight: 700;
+  letter-spacing: 0.14em; color: var(--accent); margin-bottom: 0.7rem;
+}
+.hole h3 { margin: 0 0 0.8rem; font-size: 1.08rem; color: var(--ink-bright); max-width: 26ch; }
+.hole p { font-size: 0.93rem; color: var(--ink-dim); margin-bottom: 0.8rem; }
+.hole b { color: var(--ink-bright); }
+.hole .gap {
+  margin: 0; padding-top: 0.85rem; border-top: 1px solid var(--rule);
+  font-family: var(--sans); font-size: 0.86rem; font-weight: 600; color: var(--tier-d);
+}
+
+main.home article > .stance,
+main.home article > .holes { grid-column: 1 / -1; max-width: none; width: 100%; }

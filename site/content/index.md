@@ -1,107 +1,91 @@
 ---
 title: "Particle Acceleration: The Instrument and Its Blind Spot"
-subtitle: Particle physics counts what it keeps and not what it discards. In four separate domains, the quantity that would measure the difference has never been computed.
+subtitle: Six places where the most precisely confirmed science on Earth rests on something nobody has ever checked. Assembled from the field's own papers, audits and court records.
 author: Robin
-date: 2026-11-24
-version: v2
+date: 2026-11-25
+version: v3
 status: active
 source_files: all documents in this archive
 ---
 
-<div class="concede">
-<h3>Conceded, before anything else</h3>
-<p>The machines work. The Standard Model is the most precisely confirmed theory in the history of physics. The detectors measure what they claim to measure. No part of this archive argues otherwise, and any version of this critique that did would be wrong.</p>
-<ul>
-<li>Experimental results are <strong>not</strong> fabricated. Every claim to the contrary was examined here and rejected.</li>
-<li>The electron magnetic moment is confirmed to <strong>0.13 parts per trillion</strong> — fifteen significant figures, matched by a 12,672-diagram calculation.</li>
-<li>Of sixty documented challenges to this field, <strong>three</strong> dispute the validity of the physics. None of the three is a practising particle physicist.</li>
-<li>Particle physics publishes negative results <strong>better than most of science</strong>, not worse.</li>
-<li>The funding panels <strong>do</strong> operate a conflict-of-interest regime, and <strong>do</strong> include members without a stake.</li>
-<li>Critics are <strong>not</strong> professionally punished. The case usually cited as proof was a disciplinary matter about something else.</li>
-<li>Combinations between experiments <strong>do</strong> model their shared systematic error. They do not ignore it.</li>
-</ul>
-<p class="closing">More than forty claims of this kind were tested here and struck out, including both hypotheses this project began with. They are kept on the record with their reasons rather than quietly dropped.</p>
+<div class="stance">
+<p><b>What this is.</b> An adversarial brief. It argues one side — the case against — and it says so rather than posing as a neutral survey. Every claim is sourced, overwhelmingly to the field's own documents: CERN technical papers, DOE Inspector General reports, GAO audits, collaboration reinterpretation inventories, court records.</p>
+<p>Roughly eighty claims were tested here and <strong>failed</strong>, including both hypotheses this project began with. They are not hidden. They are on <a href="00-claims-register.html">one page of their own</a>, because a brief that buried its counterevidence would be worth nothing the moment a specialist found it.</p>
 </div>
 
-This page leads with the concessions because the argument that follows only has force once the easy version of it is off the table.
+# Six questions the field cannot answer
+
+Not disputed. **Unasked.** In each case the quantity that would settle it has never been computed, and the absence is documented.
+
+<div class="holes">
+<div class="hole"><span class="hn">01</span><h3>How much physics does the trigger throw away?</h3><p>The LHC discards <b>13,000×</b> of its collisions in hardware, in microseconds, unrecoverably — under a menu built, in the field's own words, from "theoretical models and detailed Monte Carlo simulations." Trigger error is counted in one direction: keeping too much costs budgeted bandwidth everyone can see; discarding the wrong thing costs events that no longer exist.</p><p class="gap">No coverage integral over signature space has ever been published.</p></div>
+
+<div class="hole"><span class="hn">02</span><h3>Why doesn't the lineshape match?</h3><p>The electron magnetic moment is the showpiece — 0.13 parts per trillion. Its <b>largest systematic</b> is a cyclotron lineshape that does not match prediction, in the measuring group's own words. The same group advises against averaging its own 2008 and 2023 results.</p><p class="gap">Nobody outside that group has investigated it.</p></div>
+
+<div class="hole"><span class="hn">03</span><h3>What is the stopping power pinned to?</h3><p>Electronic stopping power is the dominant uncertainty in ion-beam analysis — <b>0.8% inside a 1% budget</b> — and it is calibrated against the very standard it is then used to measure.</p><p class="gap">No published multi-energy consistency check exists.</p></div>
+
+<div class="hole"><span class="hn">04</span><h3>How independent were the two experiments in 2012?</h3><p>Both LHC experiments' hadronisation descends from <b>one manual fit</b> whose authors describe making "(subjective) decisions" and set a parameter to "effectively mimic" a missing calculation. Correlation scans exist for the top mass and the tt̄ cross section.</p><p class="gap">No scan has ever been published for the discovery significance itself — the one quantity where independence was load-bearing.</p></div>
+
+<div class="hole"><span class="hn">05</span><h3>What does the superconductor actually cost?</h3><p>CERN's own papers name the "risk and high cost of sole supplier" for Nb₃Sn, a <b>40% weight-price premium</b>, degrading yield at the single qualified vendor, and $13/kA·m against $7.50 in 2005. One supplier met the HL-LHC specification. Eight met ITER's.</p><p class="gap">That pricing has never been benchmarked or audited.</p></div>
+
+<div class="hole"><span class="hn">06</span><h3>Who checked the showpiece calculation?</h3><p>The five-loop QED coefficient was wrong from 2019 to 2024 — by about <b>five times its own quoted uncertainty</b> — because 98 of 6,354 diagrams were under-sampled. It was caught only because one person outside the originating group redid it.</p><p class="gap">There are still only two independent computations. Agreement between two catches an error in one, not an error common to both.</p></div>
+</div>
+
+# The argument
 
 <div class="thesis">
 <p>Particle physics published, in advance and in print, the condition under which its central organising argument would fail. The condition was met. The argument was then removed from the documents that ask for the next machine — without being retracted in them.</p>
-<p>Around that absence sits a system that cannot audit what it discards: an instrument whose selection errors are measured in one direction only, a simulation stack whose shared ancestry is not reflected in how its uncertainties are combined, and a literature in which the body that publishes a result is the only one able to check it.</p>
+<p>Around that absence sits a system that cannot audit what it discards, and whose accountability is weakest exactly where its claims are strongest.</p>
 </div>
 
-<div class="crux">
-<p class="crux-lede">The field measures its errors in one direction.</p>
-<p>Everything it keeps is counted, budgeted and published with uncertainties. Everything it discards is acknowledged one paper at a time and integrated nowhere. A criterion fails its own published test and the failure never reaches the funding case. A trigger keeping too much costs measured bandwidth; discarding the wrong thing costs events that no longer exist. Model uncertainty is estimated from a two-point spread a published study says does not bound a third. Results that survive internal review are published thoroughly, and what nobody outside can reproduce is not represented anywhere at all.</p>
-<p>Four domains, one shape — and none of it concealed. The field writes every instance down in its own technical literature. What is missing is any mechanism carrying the local acknowledgement up into the confidence expressed at the top.</p>
-<p class="crux-kicker">In all four cases, the quantity that would measure the discarded part has never been computed. There is no coverage integral over signature space. No study scans correlation and model variance jointly. No accounting of what the abandoned criterion cost the programme it justified. The number is not disputed. It is absent.</p>
-</div>
+## The criterion that failed its own test
 
-That is a narrower claim than "particle accelerators are not doing what they say." It is also harder to dismiss, because nearly every fact supporting it comes from the field's own technical documents, strategy reports and court records. This is not an argument from outside physics. It is an argument assembled out of physics' own paperwork.
+In 2008 a senior theorist derived an explicit bound — new physics below roughly 1 TeV — and wrote that if the LHC found none, the naturalness criterion would fail. It found none. By 2017 the same author conceded it: a doctor unable to find the right diagnosis cannot simply declare the patient healed.
 
-<div class="stats">
-<div class="stat"><span class="n">0</span><span class="l">occurrences of "naturalness", "hierarchy problem" or "fine-tuning" in the 2023 US strategy report, across 379,741 characters</span></div>
-<div class="stat"><span class="n hl">13,000×</span><span class="l">of collisions discarded in hardware, unrecoverably, under a menu built from theoretical expectation</span></div>
-<div class="stat"><span class="n">2</span><span class="l">analyses for which full statistical likelihoods have been released, by the field's own inventory</span></div>
-<div class="stat"><span class="n">3 / 60</span><span class="l">documented challenges that dispute the physics rather than the priorities</span></div>
-</div>
-
-## Who has actually challenged this field
-
-The register runs to sixty documented confrontations between 1961 and 2026, sorted by what they actually contest. The distribution is the finding.
-
-{{fig:dissent-ratio}}
-
-Philip Anderson told the Senate in February 1989 that high-energy physics received roughly ten times more per capita than other fields and that officials were "deliberately misleading Congress." He was a Nobel laureate in condensed matter, and he was arguing about allocation, not about whether colliders work. The Superconducting Super Collider died 282–143 in October 1993 with about $2 billion spent.
-
-Seven legal proceedings across four jurisdictions produced **zero merits rulings**. Every court declined to reach the physics. "The courts found the LHC safe" is false — they found they had no standing to decide.
-
-The one genuinely open technical challenge found anywhere in the register is Volkov's 2024 independent recalculation of tenth-order QED, which disagrees with the standard result at 5σ and is published in Physical Review D.
-
-## 1. A falsification condition was set, met, and unreported
-
-In 2008 a senior theorist derived an explicit bound — new physics below roughly 1 TeV — and wrote that if the LHC found no such phenomena, the naturalness criterion would fail. The LHC found none. By 2017 the same author conceded it: a doctor unable to find the right diagnosis cannot simply declare the patient healed.
+The 2023 US strategy report contains **zero** instances of "naturalness," "hierarchy problem," "fine-tuning" or "unnatural" across all 379,741 characters — while still paraphrasing the argument those words name. The 2025 European briefing book restores the term.
 
 {{fig:naturalness-goalposts}}
 
-The retirement happened. It happened on the record, in the journals. It did not happen in the documents that request funding, where the argument survives as paraphrase with the vocabulary removed.
+Meanwhile the quantitative threshold defining "natural" was raised by stipulation three times across three decades, while the exclusion limits it was meant to predict climbed by nearly an order of magnitude.
 
-## 2. The instrument's errors are counted in one direction
+## What the instrument destroys
 
 {{fig:trigger-cascade}}
 
-What decides is the trigger menu, and the field says plainly what builds it: menus select events believed in advance to be interesting, guided by theoretical models and simulation. Rate is allocated by committee, annually, in roughly equal thirds between searches, measurements and flavour physics. CMS states it lacked a particular trigger, which "prevented the measurements of R_K and R_K*" — prevented, not delayed.
+Rate is allocated by committee, annually, in roughly equal thirds between searches, measurements and flavour physics. CMS states plainly that it lacked a particular trigger, which "prevented the measurements of R_K and R_K*" — prevented, not delayed.
 
-The error is structurally asymmetric. A trigger that keeps too much costs measured, budgeted bandwidth that everyone can see. A trigger that discards the wrong thing costs events that no longer exist, and that cost is never integrated over the space of signatures it might have contained.
+## What the literature cannot check
 
-**The strong version of this claim is false and was dropped.** Unbiased streams exist at an effective prescale near forty thousand. Physics outside the menu is badly sampled, not unobservable. What survives is the asymmetry, falsifiable by one coverage calculation that nobody appears to have published.
+The field's own reinterpretation inventory records full statistical likelihoods released for **two** analyses. Efficiency maps in "very few cases." Data for refits "often not provided." Machine-learning analyses that "cannot be reproduced at all outside the experimental collaboration." By 2025, the reproducibility of some earlier searches had been lost *inside* those collaborations.
 
-## 3. The simulation stack has one ancestor
+Authorship is earned by a service threshold — eighty eight-hour days and a year — after which a name appears on every paper. The committee that grants it explicitly disclaims responsibility for content.
 
-Both general-purpose experiments' nominal hadronisation descends from a single manual fit whose authors describe making subjective choices and who set a shower parameter to mimic a calculation that was missing. One experiment holds those parameters fixed; the other tunes ten on top of them. Model uncertainty is then estimated by comparing two generators — and a published study finds that spread does not bound the spread to a third.
-
-In unfolding, the field states openly that the simulation's own prediction serves as the regularising prior.
-
-Combinations do assign a correlation coefficient to these shared terms, around one half. The open question is what that number is calibrated on: procedural difference between two collaborations, rather than shared model ancestry, where the true figure for hadronisation is plausibly near one. For the top mass this is numerically immaterial. Whether it is immaterial in general has not been tested.
-
-## 4. The publishing unit is the only body that can audit the result
-
-The field's own reinterpretation inventory records full likelihoods released for two analyses, efficiency maps in very few cases, and machine-learning analyses that cannot be reproduced at all outside the collaboration that produced them. By 2025, reproducibility of some earlier searches had been lost *inside* those collaborations.
-
-Authorship is earned by a service threshold, after which a name appears on every paper, and the granting committee explicitly disclaims responsibility for content.
-
-The inference is not suppression. It is one cause with two opposite effects: because the collaboration is the publishing unit, there is no file drawer — which is why this field's null-result record is genuinely good — and there is no external check, because nobody outside holds what an audit would require.
-
-## What it rests on, and what it costs
-
-{{fig:supply-concentration}}
+## The money, and what is not knowable about it
 
 {{fig:fcc-drift}}
 
-Strategy panels take their cost figures from the proponents, and one subcommittee was barred from producing estimates of its own.
+The official cost-benefit analysis assigns **1.7%** of the LHC's €16.4bn benefit to scientific knowledge, and 66% to spillover and human capital. Both it and the UK national evaluation monetise the physics by counting papers.
 
-## How to read this archive
+An Inspector General report questioned **$162,018,139.47** of $413.9m claimed by Fermilab's operator for a single fiscal year, $159.47m of it unsupported indirect costs — and found that DOE "did not review or approve" the contractor's indirect cost rates. On the SSC, on the same date in 1993, DOE's own estimate showed a $124m overrun against an independent Departmental assessment of ~$1.6bn. A factor of thirteen.
 
-Five levels, each a folder: the motivating theory, the hardware, the software, the publication system, the governance. Every substantive claim carries an evidence tier. Rejected claims stay on the page.
+{{fig:supply-concentration}}
 
-The method file states the trap in this project's own premise — that a brief to "expose weaknesses" pre-commits to its conclusion and is the first thing a specialist would attack. The defence is not rhetoric. It is the rejected-claims sections, and the fact that both of the strongest hypotheses this project started with were killed by its own research.
+Three named LHC suppliers carry criminal or competition findings in other markets: Alstom pleaded guilty to FCPA books-and-records falsification at $772.29m; Furukawa Electric to Sherman Act bid rigging and price fixing at $200m, with three executives jailed; Air Liquide and Linde, the world's only two qualified helium turbo-expander makers, were both named in a Brazilian market-allocation case.
+
+<div class="crux">
+<p class="crux-lede">And the finding that outlasts all of them.</p>
+<p>CERN's own technical papers document the conditions under which overcharging would be possible and hard to detect — sole supplier, degrading yield, a 40% premium, a price that has nearly doubled since 2005. CERN publishes its non-competitive-award threshold but not the count or value. It publishes no internal audit output, no senior remuneration, no register of personnel interests, no post-employment restriction. It is immune from national jurisdiction, so a bid protest <em>cannot exist</em>.</p>
+<p class="crux-kicker">Both halves are sourced to the institution itself. This is not an allegation that money was taken. It is a demonstration that the question cannot be answered from outside — which is a harder thing to dismiss, and a harder thing to fix.</p>
+</div>
+
+# Who has actually challenged this field
+
+{{fig:dissent-ratio}}
+
+Sixty documented confrontations since 1961. Philip Anderson told the Senate in 1989 that high-energy physics received roughly ten times more per capita than other fields and that officials were "deliberately misleading Congress." The Superconducting Super Collider died 282–143. Seven legal proceedings across four jurisdictions produced **zero merits rulings** — every court declined to reach the physics, which is not the same as finding it safe.
+
+# What this brief does not claim
+
+The machines work. The Standard Model is the most precisely confirmed theory in the history of physics, and nothing here disputes a physical result. Fabrication was examined and rejected. Particle physics is not a cost-overrun outlier — JWST and ITER are far worse. No prosecution, debarment or bid protest arising from a CERN contract exists anywhere in the record.
+
+Those findings are on the record with the rest, at full length, because the case above is only worth something if they are.
