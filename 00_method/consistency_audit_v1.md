@@ -1,0 +1,863 @@
+---
+title: Internal Consistency Audit
+subtitle: Where the archive contradicts itself, where its corrections sit behind the errors they correct, and where the public page claims more than the documents support
+author: Robin
+date: 2026-11-25
+version: v1
+status: active - first full internal audit; 28 findings, 6 of them capable of discrediting the archive in front of a specialist
+source_files: 00_method/research_frame_v1.md; 00_method/claims_register_v1.md; 01_foundations/particle_acceleration_research_v1.md; 02_theory_critique/theoretical_weaknesses_v1.md; 03_hardware_systems/hardware_supply_chain_v1.md; 03_hardware_systems/trigger_data_destruction_v1.md; 04_software_algorithmic/software_stack_bias_v1.md; 05_publication_governance/publication_governance_v1.md; 06_dissent_register/legitimacy_confrontations_v1.md; 07_epistemic_audit/closed_loop_v1.md; 07_epistemic_audit/known_versus_assumed_v1.md; 08_evidential_audit/proof_failure_modes_v1.md; 09_anchoring_gradient/anchoring_gradient_v1.md; 10_financial_investigation/cost_and_procurement_v1.md; site/content/index.md
+---
+
+# What this audit did, and what it is for
+
+This is not new research. No external source was consulted. The archive was read against itself:
+every load-bearing number was traced to every place it appears, every correction was located and
+its line number compared with the line numbers of the passages it corrects, and every factual
+assertion on the public landing page was traced back to the document that is supposed to carry it.
+
+Line numbers are as of 2026-11-25 and will move as soon as any fix is applied. Apply fixes from the
+bottom of each file upward, or re-grep the quoted string.
+
+**Severity bands used below.**
+
+- **S1 - discrediting.** A specialist reading the public page and then the document would find the
+  page asserting something the document rejects, or asserting as current a figure the archive itself
+  records as superseded. Six findings.
+- **S2 - cross-document contradiction.** Two documents in the archive say incompatible things, or
+  assign incompatible evidence tiers to the same fact. Nine findings.
+- **S3 - drift.** Variant numbers, stale status lines, orphan references, overstated adjectives.
+  Thirteen findings.
+
+**One structural note before the findings.** The archive has issued exactly two corrections in
+prose: `06_dissent_register/legitimacy_confrontations_v1.md:614` and
+`03_hardware_systems/trigger_data_destruction_v1.md:54`. One of the two is placed after everything
+it corrects. The other is placed well, and the public page then uses the uncorrected figure anyway.
+That pattern - correction written, correction not propagated - is the single most common defect
+found, and it accounts for five of the six S1 findings.
+
+# S1 findings - the ones that would be caught by a specialist
+
+## S1-1. The landing page states a 2020 snapshot as the current state of likelihood publication, and the archive's own 2025 source contradicts it
+
+**File / line:** `site/content/index.md:70` and, in the same words, `site/content/index.md:14`.
+
+**Current text (line 70):**
+
+> The field's own reinterpretation inventory records full statistical likelihoods released for **two** analyses. Efficiency maps in "very few cases." Data for refits "often not provided." Machine-learning analyses that "cannot be reproduced at all outside the experimental collaboration." By 2025, the reproducibility of some earlier searches had been lost *inside* those collaborations.
+
+**Current text (line 14, same claim, different wording):**
+
+> A literature that has released full statistical likelihoods for <em>two</em> analyses, and that contains machine-learning results its own authors state cannot be reproduced outside the collaboration that made them.
+
+**What is wrong.** The figure "two" comes from the 2020 LHC Reinterpretation Forum report, and
+`05_publication_governance/publication_governance_v1.md:162` carries the time qualifier that makes
+it true: "**At the time of writing**, ATLAS had published full likelihoods in JSON format for two
+analyses." The landing page drops the qualifier and sets the figure next to a 2025 statement, so it
+reads as current. It is not current, and the archive knows it is not current.
+`04_software_algorithmic/software_stack_bias_v1.md:607-611` says, under the heading "What has
+improved":
+
+> ATLAS released "the first full HistFactory models" in 2019, "met with enthusiasm" by the phenomenology community; a HEPData search found 41 statistical-model records (16 SUSY, 21 top), and "14 of the 16" SUSY searches with HistFactory models are reused by reinterpretation tools. CMS "has recently followed suit by publishing their Combine software" with the 2012 Higgs statistical model and "plans to systematically release full statistical models."
+
+Forty-one against two. The page is off by a factor of twenty on the number that carries its
+"literature cannot check" section, and the correcting passage sits in a different file, 537 lines
+into it. `05_publication_governance/publication_governance_v1.md:807-808` even lists the question as
+an open gap - "Whether the Reinterpretation Forum's 2020 recommendations have since been adopted -
+in particular how many ATLAS and CMS analyses now publish full likelihoods, against the two" -
+which means the archive flagged the staleness and then published the stale number anyway.
+
+**Recommended replacement, `site/content/index.md:70`** (replace the first two sentences, keep the
+rest of the paragraph):
+
+> The field's own 2020 reinterpretation inventory recorded full statistical likelihoods released for **two** analyses; by the 2025 follow-up the count had reached **41** statistical-model records, with CMS releasing its Combine software and planning systematic release. The direction is right and the base was two. Efficiency maps in "very few cases." Data for refits "often not provided." Machine-learning analyses that "cannot be reproduced at all outside the experimental collaboration." By 2025, the reproducibility of some earlier searches had been lost *inside* those collaborations.
+
+**Recommended replacement, `site/content/index.md:14`:**
+
+> A literature whose own inventory of reusable material counted full statistical likelihoods for two analyses in 2020 and forty-one in 2025 - and which still contains machine-learning results its own authors state cannot be reproduced outside the collaboration that made them.
+
+**Also fix, `00_method/claims_register_v1.md:100-103`,** which repeats the stale figure with no date.
+Current text:
+
+> The conclusion survives by a different route, and a better documented one [A]. The field's own
+> reinterpretation inventory records full statistical likelihoods released for two analyses,
+> efficiency maps in very few cases, data for refits often not provided, and machine-learning
+> analyses that cannot be reproduced outside the collaboration that produced them.
+
+Replacement:
+
+> The conclusion survives by a different route, and a better documented one [A]. The field's 2020
+> reinterpretation inventory recorded full statistical likelihoods released for two analyses,
+> efficiency maps in very few cases, data for refits often not provided, and machine-learning
+> analyses that cannot be reproduced outside the collaboration that produced them; the 2025
+> follow-up records 41 statistical-model records and a CMS commitment to systematic release, so the
+> artefact deficit is narrowing and the claim must be dated.
+
+## S1-2. The landing page says the naturalness argument was removed from the funding documents; the archive says the word was removed and the argument was kept
+
+**File / line:** `site/content/index.md:42`.
+
+**Current text:**
+
+> Particle physics published, in advance and in print, the condition under which its central organising argument would fail. The condition was met. The argument was then removed from the documents that ask for the next machine - without being retracted in them.
+
+**What is wrong.** This is the reverse of the archive's finding. `02_theory_critique/theoretical_weaknesses_v1.md:164-166`:
+
+> The argument is nonetheless present in paraphrase: "We do not know why the Higgs boson mass should be as low as it is," and a "fantastical accident is required to accommodate the observed mass of the Higgs boson" (30) [A].
+
+And `02_theory_critique/theoretical_weaknesses_v1.md:190-193`:
+
+> So the claim "retired without the retirement being reflected" is too strong: the reflection happened, unevenly, in some documents and not others, and it took the form of dropping a word rather than withdrawing an argument.
+
+The register agrees. `00_method/claims_register_v1.md:47` records C7 as "SUPPORTED-AS-INFERENCE
+(reworded)" and words it: "paraphrased with the vocabulary removed in one, restored in another."
+The page's thesis box asserts the version the register struck out. It is also self-contradicting
+within the page: line 52 reports the 2025 restoration of the term eight lines later.
+
+**Recommended replacement, `site/content/index.md:42`:**
+
+> Particle physics published, in advance and in print, the condition under which its central organising argument would fail. The condition was met. The vocabulary was then dropped from the documents that ask for the next machine while the argument itself was kept in paraphrase - and in the newest of them the vocabulary is back.
+
+## S1-3. The landing page restates rejected claim C1 in its opening paragraph
+
+**File / line:** `site/content/index.md:14`.
+
+**Current text:**
+
+> Two experiments presented as independent confirmation of each other, whose simulated physics descends from a single manual fit.
+
+**What is wrong.** "Presented as independent confirmation of each other" is the premise of claim C1,
+which the archive rejected as factually false. `00_method/claims_register_v1.md:34` struck it
+through and marked it **REJECTED**, and `00_method/claims_register_v1.md:53-57` says why:
+
+> The original claim said combinations present ATLAS and CMS as independent while ignoring systematic error correlated through shared software. That is false, and documented to the contrary [A].
+
+`04_software_algorithmic/software_stack_bias_v1.md:522-524` is blunter:
+
+> Inter-experiment correlation of theory and modelling systematics is **modelled, not ignored, and the sensitivity to the modelling is published** [A]. The investigation's stated falsifiability test for the software critique is therefore substantially met for the two combinations examined. This should be recorded as a pass, not minimised.
+
+The page's own hole-04 box at line 32 states the surviving narrow claim correctly. The intro
+paragraph states the rejected one. A reader who checks the archive finds the archive refuting its
+own front page.
+
+**Recommended replacement, `site/content/index.md:14`:**
+
+> Two experiments whose simulated physics descends from a single manual fit, whose combinations do model the resulting correlation and publish the sensitivity - except for the one quantity, the 2012 discovery significance, where their independence was the whole argument.
+
+## S1-4. The landing page attributes the full 13,000x rejection to hardware acting in microseconds; the document says hardware does 400x and names the rest as software
+
+**File / lines:** `site/content/index.md:26` and `site/content/index.md:14`.
+
+**Current text (line 26):**
+
+> The LHC discards <b>13,000x</b> of its collisions in hardware, in microseconds, unrecoverably - under a menu built, in the field's own words, from "theoretical models and detailed Monte Carlo simulations."
+
+**Current text (line 14):**
+
+> An instrument that destroys thirteen thousand times more data than it keeps, in hardware, irreversibly, under a menu built from the theories it exists to test.
+
+**What is wrong.** Three things, and the first is fatal.
+
+1. The 13,000x figure is the product of Level-1 and the High-Level Trigger, not the hardware stage.
+   `03_hardware_systems/trigger_data_destruction_v1.md:48`: "The resulting rejection factors for
+   ATLAS Run 3, from the figures above: **L1 about 400:1**, HLT about 33:1, overall about
+   1.3 x 10^4:1." The hardware stage discards 400x, not 13,000x.
+2. The document explicitly forbids the conflation the page performs.
+   `03_hardware_systems/trigger_data_destruction_v1.md:64-65` lists "Three distinct
+   irreversibilities, which the argument should not conflate": "*L1 rejection* is hardware,
+   fixed-latency, and final. **This is the only stage that is literally destruction by hardware
+   within microseconds.** ... *HLT rejection* is software and equally permanent as to the record,
+   but it is not hardware destruction. It occurs at second-to-minute timescales on a CPU farm."
+3. The figure is also not the archive's best current number for total loss.
+   `03_hardware_systems/trigger_data_destruction_v1.md:54`: "Counting all recorded streams, the Run
+   3 kept fraction is nearer 10^-3 than the 2.5 x 10^-5 implied by 1 kHz." That is nearer 1,000x.
+   The page picks the largest available ratio and attaches it to the strongest available mechanism.
+
+Separately, the 13,000x figure carries tier **[C]** in the source - "arithmetic on (3) and (4); the
+collaborations do not publish the product as a single figure" - and the page prints it in bold as a
+fact. That is also recorded below as S3-11.
+
+**Recommended replacement, `site/content/index.md:26`:**
+
+> The LHC keeps roughly one collision in <b>13,000</b> - about 400:1 of that thrown away by fixed-latency hardware in microseconds, the rest by software on a farm, both unrecoverably - under a menu built, in the field's own words, from "theoretical models and detailed Monte Carlo simulations."
+
+**Recommended replacement, `site/content/index.md:14`:**
+
+> An instrument that destroys thousands of times more data than it keeps, the first cut made in hardware within microseconds and never revisited, under a menu built from the theories it exists to test.
+
+## S1-5. The Volkov-AHKN 5-sigma disagreement stands as live in five places in the dissent register before the correction that retracts it
+
+**File:** `06_dissent_register/legitimacy_confrontations_v1.md`. The correction is at **line 614**, in
+a 682-line file. The claims it corrects are at lines **64**, **315**, **322-323**, **470-472** and
+**503**. A reader meets the false live claim five times before reaching the retraction. The brief
+for this audit treated this as already fixed; it is not. A correction note was appended and no
+in-text passage was amended.
+
+**Line 64 (current):**
+
+> Better, because the field publishes its own disconfirmations, including a 5-sigma
+> disagreement found in 2024 when someone finally recalculated the tenth-order QED
+> contribution independently (47).
+
+Replacement:
+
+> Better, because the field publishes its own disconfirmations, including the 5-sigma disagreement
+> found in 2024 when someone finally recalculated the tenth-order QED contribution independently
+> (47) - a disagreement AHKN then traced to its own under-sampled integrals and resolved in
+> Volkov's favour, so what stands is not an open crack but a five-year latency. See the Correction
+> below.
+
+**Line 315 (current, table cell E8, Outcome column):**
+
+> Volkov obtained A1(10) = 5.891(61) and reported: "The discrepancy is 5 sigma." Published in *Phys. Rev. D* 110:036001 (47)
+
+Replacement:
+
+> Volkov obtained A1(10) = 5.891(61) and reported: "The discrepancy is 5 sigma." Published in *Phys. Rev. D* 110:036001 (47). **Resolved since:** AHKN audited their own calculation, traced the difference to 98 under-sampled integrals, revised Set V down by 0.803, and the two now agree at A1(10) = 5.887(55). The dispute closed in Volkov's favour; the finding is the five-year latency, not an open discrepancy.
+
+**Lines 322-323 (current):**
+
+> best alpha measurements disagree at 5.5 sigma, and because the tenth-order QED coefficient
+> was found in 2024 to disagree at 5 sigma with its only previous calculation. **Both facts
+> were established and published by the field itself.**
+
+Replacement:
+
+> best alpha measurements disagree at 5.5 sigma, and because the tenth-order QED coefficient was
+> found in 2024 to disagree at 5 sigma with its only previous calculation - a disagreement since
+> resolved in Volkov's favour, after five years in which the canonical value was wrong by about
+> five times its own quoted uncertainty. **Both facts were established and published by the field
+> itself**, and so was the resolution.
+
+**Lines 470-472 (current):**
+
+> the opposite, repeatedly and recently: Volkov's 2024 independent calculation of the
+> tenth-order QED coefficient was published in *Phys. Rev. D* reporting a **5-sigma
+> disagreement** with the field's only prior value (47);
+
+Replacement:
+
+> the opposite, repeatedly and recently: Volkov's 2024 independent calculation of the tenth-order
+> QED coefficient was published in *Phys. Rev. D* reporting a **5-sigma disagreement** with the
+> field's only prior value, after which the originating group audited itself, found 98 under-sampled
+> integrals and revised its number to agree (47);
+
+**Line 503 (current):**
+
+> was **vindicated in 2024** when Volkov repeated one and disagreed at 5 sigma (47). That
+
+Replacement:
+
+> was **vindicated in 2024** when Volkov repeated one, disagreed at 5 sigma, and was proved right -
+> the originating group traced the error to its own sampling and revised (47). That
+
+**Finally, move the correction.** `06_dissent_register/legitimacy_confrontations_v1.md:613` is a
+bare `#` line, and the correction blockquote at 614-621 follows it. Delete the bare `#` (see S2-9 -
+it breaks the published build) and relocate the whole corrected block to immediately after line 25,
+before "## The answer, stated before the evidence", so no reader can reach the stale text first.
+
+## S1-6. The landing page quotes Giudice's refusal to concede as his concession
+
+**File / line:** `site/content/index.md:50`.
+
+**Current text:**
+
+> In 2008 a senior theorist derived an explicit bound - new physics below roughly 1 TeV - and wrote that if the LHC found none, the naturalness criterion would fail. It found none. By 2017 the same author conceded it: a doctor unable to find the right diagnosis cannot simply declare the patient healed.
+
+**What is wrong.** The doctor sentence is not the concession. It is the counterargument.
+`02_theory_critique/theoretical_weaknesses_v1.md:110-114`:
+
+> But both documents retain the problem while conceding the prediction. **This is the field's strongest counterargument and it must be stated at full strength.** Giudice: "If the LHC rules out dynamical solutions to Higgs naturalness at the weak scale, it does not eradicate the problem," and "a doctor who is unable to find the right diagnosis cannot simply declare the patient healed" (2).
+
+Giudice's actual concession is at `02_theory_critique/theoretical_weaknesses_v1.md:101-104`: he names
+"the post-naturalness era" and says "the lack of new physics in the initial stages of the LHC project
+is putting into question the logic of naturalness when applied to the Higgs." A physicist who knows
+the 2017 paper will read the page's sentence as a quote deployed against its author's meaning, which
+is the single easiest way to lose a technical reader.
+
+**Recommended replacement, `site/content/index.md:50`:**
+
+> In 2008 a senior theorist derived an explicit bound - new physics below roughly 1 TeV - and wrote that if the LHC found none, the naturalness criterion would fail. It found none. By 2017 the same author had named "the post-naturalness era" and written that the absence of new physics "is putting into question the logic of naturalness when applied to the Higgs" - while refusing to drop the problem itself: a doctor unable to find the right diagnosis cannot simply declare the patient healed.
+
+# S2 findings - cross-document contradictions and tier conflicts
+
+## S2-1. The dissent register tiers the SSC $203m figure as [A]; the financial file records it as unverified press and flags its arithmetic as inconsistent
+
+**Files / lines:** `06_dissent_register/legitimacy_confrontations_v1.md:138-140` against
+`10_financial_investigation/cost_and_procurement_v1.md:93`, `:97`, `:99` and `:1095`.
+
+**Current text, 06:131 and 138-140.** The passage opens "**The SSC endgame, with numbers** [A]" and
+inside that [A] scope states:
+
+> A June 1993 draft Inspector General report found inadequate documentation for **$203 million**, about 40% of money spent to that point, alongside $12,000 for Christmas parties and over $20,000 a year for office plants (1, 2).
+
+**What the financial file says.** `10:93` labels the same figure `[SRC: press]` `REPORTED` and notes
+"Neither was retrievable in this pass." `10:97` says the separate verified figure is $207m for a
+different audit category and that identity of the two is `UNVERIFIABLE`. `10:99` says the 40%
+denominator "implies ~$508m of spend, inconsistent with ~$1.57-2bn total." `10:1095` lists the
+question as an open verification gap.
+
+So one document in the archive carries as documented-and-acknowledged-inside-the-field a figure
+another document in the same archive records as an unretrieved press report with internally
+inconsistent arithmetic. Under `00_method/research_frame_v1.md:63`, tier A requires primary
+literature or official documents; a 1993 newspaper paraphrase of a draft audit is not that.
+
+**Recommended replacement, `06_dissent_register/legitimacy_confrontations_v1.md:138-140`:**
+
+> A June 1993 draft Inspector General report was reported in the press as finding inadequate documentation for **$203 million**, about 40% of money spent to that point, alongside $12,000 for Christmas parties and over $20,000 a year for office plants (1, 2) [B - press report of a draft audit; neither the draft nor its scope statement has been retrieved, and the 40% denominator does not reconcile with total project spend. The separately verified OIG figure is $207m of *questioned contractor costs*, a different audit category. See `10_financial_investigation/cost_and_procurement_v1.md` sections 1.3 and 12.]
+
+## S2-2. The two files date and tier the GAO SSC overrun differently
+
+**Files / lines:** `06_dissent_register/legitimacy_confrontations_v1.md:133-134` against
+`10_financial_investigation/cost_and_procurement_v1.md:87`.
+
+**Current text, 06:133-134** (inside the same [A] block):
+
+> In February 1993 GAO reported a $630 million overrun on a $1.25 billion construction budget;
+
+**Current text, 10:87:**
+
+> **Overrun as reported in press.** The General Accounting Office "reported a **$630 million overrun** in the **$1.25 billion** construction budget" (5, citing Krauss, *New York Times*, 31 March 1993). `[SRC: press]` `REPORTED`. *Verification note: GAO/RCED-93-158 (14 May 1993) is the likely primary document; it could not be retrieved in this pass.*
+
+Two defects: the date (February 1993 against a 31 March 1993 press report of a document probably
+dated 14 May 1993), and the tier ([A] against `[SRC: press]` `REPORTED`).
+
+**Recommended replacement, `06_dissent_register/legitimacy_confrontations_v1.md:133-134`:**
+
+> In press reporting of 31 March 1993, GAO was said to have found a $630 million overrun on a $1.25 billion construction budget [B - press, primary GAO report GAO/RCED-93-158 not retrieved];
+
+## S2-3. The landing page swaps the two SSC estimates
+
+**File / line:** `site/content/index.md:82`.
+
+**Current text:**
+
+> On the SSC, on the same date in 1993, DOE's own estimate showed a $124m overrun against an independent Departmental assessment of ~$1.6bn. A factor of thirteen.
+
+**What is wrong.** `10_financial_investigation/cost_and_procurement_v1.md:113` assigns the two
+numbers to two different parties, and that contrast is the whole point:
+
+> **The internal estimate disagreed with the Department's own by an order of magnitude.** The May 1993 computer-calculated estimate-at-completion showed a **$124 million overrun**, while an independent Departmental assessment reported an overrun of **about $1.6 billion** (4). ... *the project's own control system and the Department's own reviewers differed by a factor of about 13 on the same project at the same date.*
+
+The $124m is the project's own cost-control output. The $1.6bn is the Department's. The page labels
+the $124m "DOE's own estimate" and the $1.6bn "independent Departmental", which puts both on the
+same side and dissolves the finding.
+
+**Recommended replacement, `site/content/index.md:82`** (replace the second sentence only):
+
+> On the SSC, on the same date in 1993, the project's own cost-control system showed a $124m overrun while an independent Departmental assessment showed about $1.6bn. A factor of thirteen.
+
+## S2-4. The landing page converts a search-limited absence into an absolute one
+
+**File / line:** `site/content/index.md:106`.
+
+**Current text:**
+
+> No prosecution, debarment or bid protest arising from a CERN contract exists anywhere in the record.
+
+**What the source says.** `10_financial_investigation/cost_and_procurement_v1.md:793`:
+
+> No court record, debarment entry, prosecution or competition finding **involving a CERN procurement** was located. No supplier protest, bid challenge or award dispute against CERN was located. ... `VERIFIED` as an absence.
+
+"Was located" and "exists anywhere in the record" are different claims, and the stronger one is
+falsified by a single counterexample. The page also makes the same move in the opposite direction at
+line 90, where it says CERN "is immune from national jurisdiction, so a bid protest *cannot exist*"
+- which, if true, makes the absence uninformative rather than a finding. Both sentences should be
+brought into line with the source.
+
+**Recommended replacement, `site/content/index.md:106`:**
+
+> No prosecution, debarment or bid protest arising from a CERN contract was found anywhere this search could reach.
+
+## S2-5. The page's governing frame says the absence is documented by the field; for three of the six holes it is documented by this archive's own failed literature search
+
+**File / line:** `site/content/index.md:12`, and the subtitle at `site/content/index.md:3`.
+
+**Current text (line 12):**
+
+> In six separate places, the quantity that would settle a load-bearing question has never been computed, and in every case the absence is documented in the field's own literature.
+
+**What is wrong.** For holes 02, 03 and 06 the absence rests on the archive's own search, explicitly
+so. `08_evidential_audit/proof_failure_modes_v1.md:165`: "**No published independent investigation of
+this mismatch exists** ... [A on the absence, **from a literature search returning nothing**]."
+`08:561`: "**Multi-energy consistency: no published systematic study was located.**" Neither is the
+field documenting its own gap; both are this archive finding nothing. Hole 06's gap is not an
+uncomputed quantity at all - it is "there are still only two independent computations."
+
+**Recommended replacement, `site/content/index.md:12`** (replace the final clause):
+
+> In six separate places the quantity that would settle a load-bearing question has not been published - in three cases the field names the gap itself, and in three it is an absence this brief established by searching and finding nothing.
+
+## S2-6. Hole 03 is framed as unchecked; the archive's verdict on that same proof is that the check exists and it passed
+
+**File / lines:** `site/content/index.md:30` against
+`08_evidential_audit/proof_failure_modes_v1.md:553-555` and `:567`.
+
+**Current text (line 30):**
+
+> Electronic stopping power is the dominant uncertainty in ion-beam analysis - <b>0.8% inside a 1% budget</b> - and it is calibrated against the very standard it is then used to measure. ... No published multi-energy consistency check exists.
+
+Both halves trace cleanly (`08:483`, `08:505`, `08:533`, `08:561`). The problem is the frame. The
+page's subtitle promises "something nobody has ever checked," and for this proof somebody has.
+`08:553-555`:
+
+> **The blind test exists, and it passed.** ... the codes' fluence values had a standard deviation of 0.11% and the average sat at **-0.18 +/- 0.11% from the certified value** (46) [A]. ... **The closed-loop hypothesis fails for low-energy RBS areal-density measurement on implanted standards.** [A]
+
+`08:567`: "That is the clearest answer this audit produced to the archive's founding question, and
+it is favourable to the field." `07_epistemic_audit/closed_loop_v1.md:59` agrees: the loop at a
+low-energy ion facility is "broken in all four ways."
+
+**Recommended addition, `site/content/index.md:30`** (insert before the `<p class="gap">`):
+
+> A blind test on a certified implant passed, at -0.18 +/- 0.11% against a 0.6% certified value - so the loop is broken here. What is missing is the one check that would separate a stopping-power bias from a true areal density.
+
+## S2-7. A citation in the dissent register points at the wrong reference
+
+**File / line:** `06_dissent_register/legitimacy_confrontations_v1.md:486-487`.
+
+**Current text:**
+
+> the Vietnamese 2015 review - written precisely to ask "Was the Higgs boson discovered?" - concluded the couplings "are compatible with the standard model Higgs boson" (58).
+
+**What is wrong.** Reference (58) in that file is "ATLAS Collaboration, *Study of the spin and parity
+of the Higgs boson in diboson decays with the ATLAS detector*, arXiv:1506.05669"
+(`06:...` reference list, entry 58). The Vietnamese review is entry **57**: "Nguyen Anh Ky and
+Nguyen Thi Hong Van, 'Was the Higgs boson discovered?', arXiv:1503.08630."
+
+**Recommended replacement:** change `(58)` to `(57)` at line 487. Entry 58 is then cited nowhere and
+should be attached to the spin-parity sentence at line 483, which currently cites only (51), a
+briefing page rather than the paper.
+
+## S2-8. The published site misnumbers every reference from 10 upward in the theory-critique page, because two reference continuation lines begin with a year
+
+**Files / lines:** `02_theory_critique/theoretical_weaknesses_v1.md:764` and `:809`.
+
+**Current text, line 764** (third line of reference 9):
+
+>     2004. https://arxiv.org/abs/hep-th/0405159
+
+**Current text, line 809** (second line of reference 29):
+
+>      2013. https://science.osti.gov/-/media/hep/hepap/pdf/march-2013/HEPAP_MHS_Talk_Salamon_FINAL.pdf
+
+**What is wrong.** Each of those lines begins with a number followed by a period, so the Markdown
+builder reads it as a new ordered-list item. The published page therefore carries two spurious
+reference entries whose whole content is a bare URL, at positions 10 and 31, and every subsequent
+reference is pushed down. The in-text links are unaffected, so they now land on the wrong entry:
+`02_theory_critique/theoretical_weaknesses_v1.md` cites Lyons as `(18)` four times, and on the
+published page `href="#ref-18"` resolves to the Wikipedia 750 GeV entry while Lyons sits at
+`ref-19`. Forty-plus citation links on a public page point one or two entries off. This is the kind
+of defect a specialist checks first.
+
+**Recommended replacement, line 764:**
+
+>     18 May 2004. https://arxiv.org/abs/hep-th/0405159
+
+(and delete "18 May" from the end of line 763, so the date is not duplicated)
+
+**Recommended replacement, line 809:**
+
+>     meeting of 12 March 2013. https://science.osti.gov/-/media/hep/hepap/pdf/march-2013/HEPAP_MHS_Talk_Salamon_FINAL.pdf
+
+(and delete ", 12 March" from the end of line 808)
+
+No other file in the archive has a reference continuation line beginning with a numbered-list
+marker; this check was run across all fourteen files.
+
+## S2-9. The correction in the dissent register renders as a broken heading on the published site
+
+**File / line:** `06_dissent_register/legitimacy_confrontations_v1.md:613`.
+
+**Current text:** a line containing only `#`.
+
+**What is wrong.** An empty level-1 heading immediately followed by a blockquote. The builder folds
+the blockquote into the heading: `docs/06-legitimacy-confrontations.html:1168` renders as
+`<h2 id="correction-2026-11-24-the-volkovahkn-disagreement-is-recorde">&gt; <strong>Correction, 2026-11-24.</strong> ...`.
+The one correction the archive has issued is published as a malformed heading with a literal `&gt;`
+in it. A reader who scrolls the table of contents sees a mangled entry; a reader who reads the page
+sees the correction as a title rather than as a note.
+
+**Recommended replacement:** delete line 613 entirely, and give the block a real heading. Replace
+lines 613-614 with:
+
+> `# Correction`
+>
+> **Correction, 2026-11-24.** The Volkov-AHKN disagreement is recorded above as an open 5-sigma
+
+(keeping lines 615-621 unchanged), and then relocate the whole section per S1-5.
+
+# S3 findings - number variants, status drift, orphans
+
+## S3-1. "98 integrals" and "98 diagrams" are used interchangeably, including inside one document
+
+**Current text.** `08_evidential_audit/proof_failure_modes_v1.md:149`: "traced the discrepancy to
+**98 integrals, each containing a single second-order self-energy subdiagram**, affected by
+insufficient Monte Carlo statistics." `08:155`, six lines later: "It was wrong because of
+under-sampled Monte Carlo integration in **98 of 6,354 diagrams**."
+`07_epistemic_audit/known_versus_assumed_v1.md:81`: "**98 diagrams sharing a common structure**."
+`06_dissent_register/legitimacy_confrontations_v1.md:615-616`: "**98 integrals** affected by
+insufficient Monte Carlo sampling." `site/content/index.md:36`: "because **98 of 6,354 diagrams**
+were under-sampled."
+
+Integrals and diagrams are not the same object, and 6,354 is the Set V diagram count
+(`08:105`). The authoritative statement is `08:149`.
+
+**Recommended replacement, `08_evidential_audit/proof_failure_modes_v1.md:155`:** change
+"under-sampled Monte Carlo integration in 98 of 6,354 diagrams" to "under-sampled Monte Carlo
+integration in 98 integrals within the 6,354-diagram Set V".
+
+**Recommended replacement, `07_epistemic_audit/known_versus_assumed_v1.md:81`:** change "98 diagrams
+sharing a common structure" to "98 integrals sharing a common structure".
+
+**Recommended replacement, `site/content/index.md:36`:** change "because 98 of 6,354 diagrams were
+under-sampled" to "because 98 integrals inside its 6,354-diagram no-loop set were under-sampled".
+
+## S3-2. The caesium-alpha tension is 3.8 sigma in one document and 3.9 sigma in another
+
+`08_evidential_audit/proof_failure_modes_v1.md:85`: "giving experiment - theory = -1.00(26), a
+**-3.8-sigma** disagreement (15) [A]", repeated at `08:88` and `08:759`.
+`07_epistemic_audit/known_versus_assumed_v1.md:75`: "differs by 2.1 sigma from the Paris rubidium
+determination and **3.9 sigma** from the Berkeley caesium determination (1)", repeated at `07:968`.
+
+These are the same quantity cited to two different reviews, and neither document notes the other.
+`08` is the fuller treatment and shows the arithmetic.
+
+**Recommended replacement, `07_epistemic_audit/known_versus_assumed_v1.md:74-75`:**
+
+> alpha inferred from g/2 plus the SM differs by 2.1 sigma from the Paris rubidium determination and 3.9 sigma from the Berkeley caesium determination (1). **[A]** (The g-2 review quoted in `08_evidential_audit/proof_failure_modes_v1.md` gives -3.8 sigma for the caesium comparison; the two sources differ in the last digit and nothing in either argument turns on it.)
+
+## S3-3. "Nearly an order of magnitude" overstates a factor of six to seven
+
+**File / line:** `site/content/index.md:56`.
+
+**Current text:**
+
+> Meanwhile the quantitative threshold defining "natural" was raised by stipulation three times across three decades, while the exclusion limits it was meant to predict climbed by nearly an order of magnitude.
+
+`02_theory_critique/theoretical_weaknesses_v1.md:211-212`: "the exclusions are real and large [A].
+The gluino limit moved from roughly 310-390 GeV in 2008 (10) to about 2.3 TeV by 2019 (11) - **a
+factor of six to seven**." Six to seven is not nearly ten, and the document's own number is more
+impressive when it is exact.
+
+**Recommended replacement, `site/content/index.md:56`:**
+
+> Meanwhile the quantitative threshold defining "natural" was raised by stipulation - 10, then 20, then 100 with 1000 reported as acceptable - while the gluino exclusion it was meant to predict climbed by a factor of six to seven.
+
+## S3-4. The publication-governance status line describes outcomes the register overruled
+
+**File / line:** `05_publication_governance/publication_governance_v1.md:7`.
+
+**Current text:**
+
+> status: research complete - two candidate claims tested, one supported as inference, one substantially narrowed
+
+Per `00_method/claims_register_v1.md:42-44`, C4 is **REJECTED** on mechanism and replaced by C4a,
+which is **SUPPORTED** at tier **A**; C5 is **SUPPORTED (narrowed)** at tier A. Neither is "supported
+as inference." The front matter tells a reader the opposite of the register.
+
+**Recommended replacement:**
+
+> status: research complete - two candidate claims tested; C4 rejected on mechanism and rebuilt as C4a (supported, Tier A), C5 supported in narrowed form
+
+## S3-5. The software file states the struck-out half of C1a without noting that the register weakened it
+
+**File / line:** `04_software_algorithmic/software_stack_bias_v1.md:537`.
+
+**Current text:**
+
+> On the facts, the physical correlation of the hadronisation category is plausibly closer to 1 than to 0.5.
+
+`00_method/claims_register_v1.md:35` carries that exact proposition struck through and marked
+**WEAKENED**, and `00_method/claims_register_v1.md:150` says "The second half does not survive."
+`04:539-542` does immediately explain why it does not matter numerically, so the document is not
+wrong - but the sentence as written is the register's retired text with no pointer to that fact.
+
+**Recommended replacement:**
+
+> On the facts, the physical correlation of the hadronisation category is plausibly closer to 1 than to 0.5 - a claim the register carries as C1a, **weakened**: it survives as a criticism of the *grounds* for the coefficient and fails as a numerical claim, because the published scans show the response is linear and small (see `00_method/claims_register_v1.md`, C1a and C1a-prime).
+
+## S3-6. One sentence in the software file gives two different totals for the same uncertainty
+
+**File / line:** `04_software_algorithmic/software_stack_bias_v1.md:505-506`.
+
+**Current text:**
+
+> with modelling categories shifting the result by a few MeV each (QCD radiation 7 MeV, ME generator under 1 MeV), all small against a total uncertainty of 0.30 GeV on $m_t = 172.51 \pm 0.33$ GeV;
+
+0.30 GeV and +/- 0.33 GeV in the same clause. `00_method/claims_register_v1.md:57` and `:152` both
+use 0.33 GeV as the total.
+
+**Recommended replacement:**
+
+> with modelling categories shifting the result by a few MeV each (QCD radiation 7 MeV, ME generator under 1 MeV), all small against the 0.33 GeV total uncertainty on $m_t = 172.51 \pm 0.33$ GeV;
+
+## S3-7. Three different civil-engineering figures for FCC-ee
+
+`06_dissent_register/legitimacy_confrontations_v1.md:180`: "CHF 15 billion for FCC-ee including
+**CHF 6 billion** of civil engineering". `10_financial_investigation/cost_and_procurement_v1.md:470`:
+2018 CDR basis "civil engineering **5.4**". `05_publication_governance/publication_governance_v1.md:503`:
+"CHF 15.3bn (CHF 15.32bn; ~US$17.4bn), **~1/3 tunnel**" - about 5.1 on the 15.32 total. Three
+numbers, three sources, no cross-reference. The headline total (15.32 BCHF) is consistent
+everywhere, so only the CE split drifts.
+
+**Recommended replacement, `06_dissent_register/legitimacy_confrontations_v1.md:180`:**
+
+> CHF 15.32 billion for FCC-ee, of which roughly a third is civil engineering (the 2018 CDR basis put CE at 5.4 BCHF; press accounts of the 2025 study say about 6), against a CERN
+
+## S3-8. Two totals for FCC stage 1 plus stage 2
+
+`10_financial_investigation/cost_and_procurement_v1.md:484` (computed): "Combined stage 1 + stage 2:
+27.5 -> **~34.1 BCHF**, +24%". `10:521`, from the Blondel et al. descoping paper: FCC-ee "CAPEX incl.
+next stage" **34.7**. Both are labelled with their provenance, so this is not an error - but the two
+sit 37 lines apart and a reader will read them as a discrepancy.
+
+**Recommended addition at `10_financial_investigation/cost_and_procurement_v1.md:484`,** appended to
+the bullet:
+
+> (The descoping paper's own "CAPEX incl. next stage" figure for FCC-ee is 34.7 BCHF, differing from this arithmetic because it uses a higher FCC-hh figure; both are reported as given.)
+
+## S3-9. "Roughly eighty claims tested here failed" is not a number the archive states, and it understates
+
+**File / line:** `site/content/index.md:16`.
+
+A direct count of enumerated Tier D rejection items across the ten documents that carry a "Claims
+Examined and Not Supported" section gives about 102: 18 in `02`, 10 in `03_hardware_systems/trigger_data_destruction_v1.md`,
+11 in `04`, 12 in `05`, 12 in `06`, 18 in `07_epistemic_audit/known_versus_assumed_v1.md`, 10 in `08`,
+11 in `09`, plus the unnumbered rejections in `03_hardware_systems/hardware_supply_chain_v1.md` and
+`07_epistemic_audit/closed_loop_v1.md`. No document in the archive states a total, so the page's
+figure is unverifiable from the archive and understates it by about a quarter.
+
+**Recommended replacement:**
+
+> More than a hundred claims tested here <strong>failed</strong>, including both hypotheses the project began with.
+
+and add a count line to `00_method/claims_register_v1.md` under "# Outcome" so the figure traces:
+
+> Across the ten research files, the Tier D sections record 102 enumerated claims examined and not supported.
+
+## S3-10. The trigger-allocation sentence on the landing page merges two collaborations' practices
+
+**File / line:** `site/content/index.md:64`.
+
+**Current text:**
+
+> Rate is allocated by committee, annually, in roughly equal thirds between searches, measurements and flavour physics.
+
+`03_hardware_systems/trigger_data_destruction_v1.md:84` attributes the thirds to CMS - "roughly one
+third of the rate to beyond-Standard-Model searches, one third to measurements including the Higgs,
+and one third to B physics **and object groups**" - and says CMS "deploys roughly a dozen menus per
+year." The annual revision belongs to ATLAS in the same passage. So "annually" is ATLAS's cadence
+attached to CMS's split, and the third bucket is not purely flavour physics.
+
+**Recommended replacement:**
+
+> CMS attributes high-level-trigger rate to its physics groups in roughly equal thirds - beyond-Standard-Model searches, measurements including the Higgs, and B physics plus object groups - across roughly a dozen menus a year; ATLAS revises its menu annually against the expected luminosity.
+
+## S3-11. The landing page prints a Tier C arithmetic figure in bold as established
+
+`site/content/index.md:26` bolds **13,000x**. `03_hardware_systems/trigger_data_destruction_v1.md:48`
+labels it "[C - arithmetic on (3) and (4); **the collaborations do not publish the product as a
+single figure**]". The archive's own frame is explicit about this:
+`00_method/research_frame_v1.md:65` says a Tier C claim is "Never presented as a finding," and
+`research_frame_v1.md:68-69` says "A Tier C claim that is presented as established converts the whole
+archive into polemic."
+
+The replacement text given under S1-4 already adds the attribution. Additionally, the gap line in
+that box should name the arithmetic as the archive's own:
+
+**Recommended addition, `site/content/index.md:26`,** inside the `<p class="gap">`:
+
+> No coverage integral over signature space has ever been published - and the overall rejection factor is this brief's arithmetic on the collaborations' published rates, not a figure they publish themselves.
+
+## S3-12. Orphan references
+
+Entries present in a reference list and cited nowhere in the body of their own file:
+
+- `06_dissent_register/legitimacy_confrontations_v1.md`: entries **52** (Mattig and Stoltzner),
+  **53** (P5 2023 section 2), **55** (Ereditato at Yale) and **56** (Unzicker). Entry **57** becomes
+  cited once S2-7 is applied.
+- `04_software_algorithmic/software_stack_bias_v1.md`: entry **9** (Buckley et al., Professor).
+- `10_financial_investigation/cost_and_procurement_v1.md`: entry **72** (CERN Procurement, Dispute
+  Settlement RACI category) - which is odd, because `10:793` makes exactly the claim that entry
+  supports.
+
+**Recommended fix for the clearest one:** at `10_financial_investigation/cost_and_procurement_v1.md:793`,
+change "**CERN's procurement site carries a "Dispute Settlement" RACI category**" to
+"**CERN's procurement site carries a "Dispute Settlement" RACI category** (72)". For the rest,
+either cite them where they belong or delete them; an uncited entry in a forensic reference list
+invites the reader to ask what else is decorative.
+
+## S3-13. The dissent register's front matter does not record that the file has been corrected
+
+`06_dissent_register/legitimacy_confrontations_v1.md:7` reads "status: draft - stream 06 (dissent
+register), first full pass; Tier D section closed", with `date: 2026-11-24`. The file carries a
+substantive correction dated 2026-11-24 that reverses one of its headline findings, and the front
+matter gives no signal. Every other file that was revised says so in its status line (compare
+`07_epistemic_audit/closed_loop_v1.md:7`).
+
+**Recommended replacement:**
+
+> status: draft - stream 06 (dissent register), first full pass; Tier D section closed; **corrected 2026-11-24 - the Volkov-AHKN five-loop disagreement is resolved, not open; see the Correction section and `08_evidential_audit/proof_failure_modes_v1.md`, Proof 1**
+
+# Checked and consistent
+
+This bounds the audit. Each item below was traced to every place it appears and found to agree.
+
+**Superseded claims that are correctly retired everywhere they appear.**
+
+- **Electron g-2 versus the caesium alpha value is not new physics.** Stated correctly and in place
+  at `08_evidential_audit/proof_failure_modes_v1.md:88`, `:92` and `:759`, and at
+  `07_epistemic_audit/known_versus_assumed_v1.md:72-77` and `:964-970`. No document anywhere in the
+  archive presents the -3.8-sigma figure as evidence of new physics. The landing page does not
+  mention it. Clean.
+- **Claim C2, "unobservable in principle."** Retired at `00_method/claims_register_v1.md:38` and
+  `:69-72`; retired in its own source file at
+  `03_hardware_systems/trigger_data_destruction_v1.md:40` - that is, in the document's own opening
+  statement of what it claims, before any supporting material - and again at `:180`; and recorded as
+  D8 at `08_evidential_audit/proof_failure_modes_v1.md:769`. The replacement quantitative claim
+  (effective prescale of order 40,000) is used consistently. This is the model for how the Volkov
+  correction should have been handled.
+- **Claim C4 on mechanism.** Rejected at `00_method/claims_register_v1.md:42` and `:94-98`; the
+  source file `05_publication_governance/publication_governance_v1.md` nowhere asserts that author
+  counts prevent audit, states the internal process "is elaborate, documented, and in the specific
+  cases on record it works" at `:111`, and records D7 at `:874`. Only the front-matter status line
+  drifts (S3-4).
+- **Claim C6b.** Rejected at `00_method/claims_register_v1.md:46` and `:126-128`, and the underlying
+  data at `03_hardware_systems/hardware_supply_chain_v1.md:425-426` and `:594` run the other way, as
+  the register says. No document asserts the rejected form.
+- **"Spending runs inversely to external anchoring."** Rejected cleanly and prominently:
+  `09_anchoring_gradient/anchoring_gradient_v1.md:38-40` announces the failure in the opening
+  section, `:481-503` shows the appropriation table, `:894` strikes the claim through as A5
+  REJECTED, and `:960` records it as D4. The NNSA 19,293,000 against HEP 1,224,570 figures
+  (thousands, FY2025 enacted) appear once, at `:487` and `:490`, and are not restated anywhere else
+  in variant form. This is the best-handled rejection in the archive.
+- **The gradient's near-tautology.** Conceded at `09_anchoring_gradient/anchoring_gradient_v1.md:37`,
+  `:840` ("near-tautological and is not presented here as a finding") and `:1001` (D10), with the
+  three reasons it is not wholly a tautology set out at `:846-879`. No document presents claim A as
+  a finding.
+
+**Load-bearing numbers verified identical across every occurrence.**
+
+- **40 MHz** bunch-crossing rate: `03_hardware_systems/trigger_data_destruction_v1.md:3`, `:33`,
+  `:44`, `:46`, `:60`. Consistent.
+- **100 kHz** L1 output for both ATLAS and CMS: `03tr:46`, `:50`, `:126`. Consistent.
+- **379,741 characters** of the 2023 P5 report, with zero instances of the naturalness vocabulary:
+  `02_theory_critique/theoretical_weaknesses_v1.md:162` and `:591`,
+  `00_method/claims_register_v1.md:138`, `site/content/index.md:52`. Identical in all four, and the
+  landing page's list of search strings is a correct subset of the document's.
+- **1.7% of EUR 16.4bn**, with 66% to spillover and human capital:
+  `09_anchoring_gradient/anchoring_gradient_v1.md:556`, `:562`, `:568`, `:863`, `:892`,
+  `site/content/index.md:80`. Consistent, including the "monetise the physics by counting papers"
+  characterisation.
+- **$162,018,139.47** questioned, against **$413,925,741.89** claimed, of which
+  **$159,472,886.00** unsupported indirect costs: `10_financial_investigation/cost_and_procurement_v1.md:154`,
+  `:156`, `:162`, `site/content/index.md:82`. The page's "$413.9m" and "$159.47m" round correctly,
+  and the DOE "did not review or approve" quote at `10:173` supports the page verbatim.
+- **93% of niobium mine production from Brazil**, with CBMM at 77-90%:
+  `03_hardware_systems/hardware_supply_chain_v1.md:156`, `:530`, `:556`,
+  `00_method/claims_register_v1.md:122`, `10:628`. Consistent, with the 77/85/90 spread correctly
+  presented as a source spread rather than resolved.
+- **3 of 60** confrontations challenging validity:
+  `06_dissent_register/legitimacy_confrontations_v1.md:38-44` and `:97-99`. The category table sums
+  to exactly 60 (3 + 21 + 12 + 15 + 9), and `:71` correctly calls 60 "a **floor, not a census**."
+  `site/content/index.md:100` is consistent with it.
+- **Seven legal proceedings, four jurisdictions, zero merits rulings:** `06:31`, `:206`,
+  `site/content/index.md:100`. Consistent.
+- **SSC terminated 282-143 on 19 October 1993:** `06:145`, `site/content/index.md:100`. Consistent.
+  The archive also handles its one known vote discrepancy properly: `06:142-143` flags 231-181
+  against 232-181 for the 1992 vote as an "**unreconciled discrepancy**" in the text and lists it
+  again at `:599`. That is how a disagreement should be carried.
+- **0.13 parts per trillion** on the electron magnetic moment:
+  `07_epistemic_audit/known_versus_assumed_v1.md:61` and `:965`,
+  `08_evidential_audit/proof_failure_modes_v1.md:79`, `06:320`, `:510`, `site/content/index.md:28`.
+  Consistent, and `08:79` gives the equivalent fractional form without conflict.
+- **15.32 BCHF for FCC-ee:** `10_financial_investigation/cost_and_procurement_v1.md:470`, `:482`,
+  `:486`, `:521` (as 15.3), `:909`, `:1126`, `:1127`,
+  `05_publication_governance/publication_governance_v1.md:503`, `:632`, `:782`, `:926`,
+  `09_anchoring_gradient/anchoring_gradient_v1.md:535` (as "15 billion"). The headline total is
+  consistent; only the civil-engineering split drifts (S3-7). The +45.9% delta from 10.5 BCHF
+  recomputes correctly, and `10:490` properly discloses that part of the rise is the move from two
+  CERN-share detectors to four.
+- **One Nb3Sn supplier at HL-LHC specification against eight for ITER:**
+  `03_hardware_systems/hardware_supply_chain_v1.md:113`, `:122`,
+  `10_financial_investigation/cost_and_procurement_v1.md:599-600`, `:628`,
+  `00_method/claims_register_v1.md:121`, `site/content/index.md:34`. Consistent, and both files
+  attribute it to the same DOE assessment.
+- **40% weight-price premium** and **$13/kA.m against $7.50 in 2005:** `10:610`, `:619`, `:626`,
+  `site/content/index.md:34` and `:90`. Consistent, and the page's "nearly doubled since 2005" is a
+  fair reading of 7.50 to above 13. The "risk and high cost of sole supplier" and "degraded yield"
+  quotes at `10:617` and `:622` support the page verbatim.
+- **Two companies worldwide making helium turbo-expanders of the required size:**
+  `03_hardware_systems/hardware_supply_chain_v1.md:249`, `10:775`, `:628`,
+  `00_method/claims_register_v1.md:123`. Consistent.
+- **Alstom $772,290,000; Furukawa $200m with three executives jailed; CADE naming Air Liquide and
+  Linde:** `10:750`, `:763`, `:767`, `:773`, against `site/content/index.md:86`. The page's
+  "$772.29m", "FCPA books-and-records falsification", "Sherman Act bid rigging and price fixing" and
+  "Brazilian market-allocation case" all trace exactly. The page also correctly omits the
+  no-misconduct-on-the-CERN-contract caveats from the hole box while keeping the overall claim about
+  other markets, which is defensible.
+- **JWST and ITER as the two largest overruns:** `10:905-906`, `:920`, against
+  `site/content/index.md:106`. Supported, including "particle physics is not a cost-overrun outlier."
+- **Authorship threshold of 80 eight-hour days and one year, with the Authorship Committee
+  disclaiming content responsibility:** `05_publication_governance/publication_governance_v1.md:70-78`
+  and `:90-92`, against `site/content/index.md:72`. Supported verbatim.
+- **The R_K / R_K-star trigger case:** `03_hardware_systems/trigger_data_destruction_v1.md:100`
+  against `site/content/index.md:64`. The quote "has thus far prevented the measurements of R_K and
+  R_K* by the CMS Collaboration" is exact, and the page's "prevented, not delayed" is the document's
+  own reading.
+- **No published correlation scan for the 2012 discovery significance, with scans existing for the
+  top mass and the tt-bar cross section:** `08_evidential_audit/proof_failure_modes_v1.md:237`,
+  `00_method/claims_register_v1.md:36` and `:155-159`, against `site/content/index.md:32`. Supported,
+  and the "(subjective) decisions" and "effectively mimic" quotes trace to
+  `04_software_algorithmic/software_stack_bias_v1.md:124` and `:127`.
+- **Cyclotron lineshape as the largest systematic, no independent investigation, and the authors'
+  advice against averaging 2008 with 2023:** `08:116`, `:118`, `:165`, against
+  `site/content/index.md:28`. Supported, including the 0.94 x 10^-13 against 1.3 x 10^-13 figures
+  that stand behind "largest systematic."
+
+**Citation integrity, checked mechanically across all fourteen files.** In every file, the highest
+genuine in-text citation number is less than or equal to the number of reference entries. The
+apparent overflows in `06`, `07_epistemic_audit/known_versus_assumed_v1.md` and `08` are all
+parenthesised uncertainties being read as citations - `5.891(61)`, `0.803(72)`,
+`137.035 999 2052(97)`, `0.22431(85)`, `38(63)`, `f+(0)` - not citation errors. Reference lists in
+`01`, `03_hardware_systems/hardware_supply_chain_v1.md`,
+`03_hardware_systems/trigger_data_destruction_v1.md`, `05`, `07_epistemic_audit/closed_loop_v1.md`,
+`09` and `10` have no gaps in numbering and no unresolved citations. One genuine mis-pointed
+citation was found (S2-7) and three sets of orphan entries (S3-12).
+
+**Tier discipline, spot-checked against the frame.** The archive is generally careful. Tier C claims
+carry explicit falsification conditions at
+`03_hardware_systems/hardware_supply_chain_v1.md:115`, `03_hardware_systems/trigger_data_destruction_v1.md:62-66`,
+`04_software_algorithmic/software_stack_bias_v1.md:544-547` and `:557-558`,
+`07_epistemic_audit/closed_loop_v1.md:59`, `08_evidential_audit/proof_failure_modes_v1.md:114`, and
+`09_anchoring_gradient/anchoring_gradient_v1.md:529`. Tier B claims cite both sides from their own
+authors, as at `02_theory_critique/theoretical_weaknesses_v1.md:67-90` (Williams against
+Hossenfelder) and `06_dissent_register/legitimacy_confrontations_v1.md:188-202` (the carbon dispute,
+with the 45x gap left explicitly unreconciled). The arithmetic the author performed is labelled as
+such, at `02:221` ("this is arithmetic I performed, not a published figure") and throughout `10`
+with `*(computed)*`. Four tier problems were found and are listed above: S2-1, S2-2, S3-5 and S3-11.
+
+**The method documents.** `00_method/research_frame_v1.md` was read in full and is internally
+consistent; its standing exception for `10_financial_investigation/` at `:107-121` is honoured by
+that file, which carries source classes and status tags throughout and closes with an enumerated
+"What Could Not Be Established" at `:1089-1168` rather than a Tier D section, exactly as the
+exception requires. `00_method/claims_register_v1.md` arithmetic checks out: seven candidates, three
+rejected as stated (C1, C2, C4), one split with half rejected (C6), three surviving narrowed (C3,
+C5, C7), six narrower replacements written (C1a-prime, C1b, C2a, C2b, C4a, C6a). The register's
+claim at `:28` that the two strongest going in are both among the rejected is correct.
+
+# What this audit did not cover
+
+- `site/content/index.fr.md` was not audited. It carries the same claims in French - the 13,000x
+  hardware attribution at line 30, the five-loop box at line 40, the 2008 bound at line 54 - and
+  every S1 and S2 fix above has a French counterpart that must be applied in the same pass.
+- The built HTML under `docs/` was not audited as a separate artefact, but two defects in it are
+  recorded above because they are caused by the Markdown source (S2-8, S2-9) and are visible to the
+  public. The built pages are in any case out of step with the research files and must be rebuilt
+  after these fixes.
+- `research/99_working/stray_tmp/` holds five temporary files, including
+  `closed_loop_v1.md.refsfix.tmp.2026-11-25`. They were excluded from every grep in this audit and
+  were not compared against the live files. If any of them is a newer draft, the comparison is worth
+  one pass before the fixes above are applied.
+- Nothing here checks the archive against the world. Every finding is a disagreement internal to the
+  archive or between the archive and its own public page. A claim can be internally consistent
+  throughout and still be wrong about physics; this audit says nothing about that.

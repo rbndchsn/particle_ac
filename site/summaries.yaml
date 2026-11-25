@@ -146,3 +146,17 @@
     - "<strong>No prosecution, debarment, bid protest or contract dispute arising from a CERN contract exists anywhere in the record.</strong> The supplier misconduct above is all in other markets."
     - "The fringe allegations (CERN “collected trillions”, undisclosed Rothschild and Rockefeller donations, audit impossible under Swiss banking law) are recorded in full with the contradicting documents named inline — the United States is not a CERN member state, and audits by Poland's NIK and the Portuguese Court of Auditors are published."
   note: "This is a <strong>collection-phase document and carries no assessment section by design</strong>. Every item is tagged by source class (audit, court, official, press, advocacy, anonymous) and status (verified, reported, alleged, unverifiable), and nothing encountered was dropped — 166 tagged items, 102 verified, 54 alleged. It closes instead with 51 enumerated gaps, each naming the document that would answer it."
+
+00_method/consistency_audit_v1.md:
+  found_label: What the audit found
+  struck_label: Checked and sound
+  key_findings:
+    - "<strong>28 inconsistencies across fourteen documents and the landing page</strong>, six of them the kind a specialist catches on first reading. All six were on the most-read page."
+    - "“Full statistical likelihoods for two analyses” was a 2020 snapshot printed as current; the archive's own 2025 source records <strong>41</strong>. Off by a factor of twenty on the figure carrying the literature section."
+    - "The thesis asserted the naturalness argument “was removed” from funding documents. The archive says the <em>vocabulary</em> was dropped and the argument kept in paraphrase — and the page contradicted itself eight lines later."
+    - "Giudice's “a doctor unable to find the right diagnosis cannot simply declare the patient healed” was quoted as his concession. It is his <em>counterargument</em> — his refusal to drop the problem."
+    - "A citation bug corrupting published output: two reference continuation lines beginning “2004.” and “2013.” were parsed as list items, so the page rendered 46 entries against 44 and <strong>every in-text citation from 10 upward resolved to the wrong source</strong>."
+  rejected:
+    - "The load-bearing numbers check out across documents: 379,741 characters; 1.7% of €16.4bn; $162,018,139.47; 93% niobium; 1-vs-8 Nb₃Sn suppliers; the 40% premium; $13 against $7.50; 3 of 60; 282–143; 0.13 parts per trillion."
+    - "The cost-overrun baseline and the “not an outlier” conclusion are fully supported."
+  note: "This audit is the archive auditing itself, and it found the same failure mode the archive documents in others: a correction filed at line 614 of a 682-line file, behind five live statements of the claim it retracts. Every finding here has been applied."

@@ -719,7 +719,7 @@ ART.update({"tiers": art_tiers, "ring": art_ring, "supply": art_supply,
 
 # Which vignette heads which research document, keyed by file stem.
 DOC_ART = {
-    "claims_register": "notclaim", "research_frame": "tiers",
+    "claims_register": "notclaim", "research_frame": "tiers", "consistency_audit": "notclaim",
     "particle_acceleration_research": "ring", "theoretical_weaknesses": "criterion",
     "hardware_supply_chain": "supply", "trigger_data_destruction": "instrument",
     "software_stack_bias": "software", "publication_governance": "literature",
