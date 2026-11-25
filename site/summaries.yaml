@@ -97,3 +97,19 @@
     - "Unzicker’s falsity claims — his auditability point survives; nothing else does."
     - "That the muon g-2 anomaly is resolved — it is <em>displaced</em>, not resolved; the two determinations remain incompatible at ~3σ."
     - "That R(K) is a live anomaly — it dissolved, with a published cause."
+
+08_evidential_audit/proof_failure_modes_v1.md:
+  key_findings:
+    - "The regress bottoms out, and the chain is traceable: ion-beam analysis → a certified antimony implant → ICP-MS → a gravimetric calibration solution → weighed high-purity metal → the SI definitions. A blind test reproduced a certified fluence to <strong>−0.18 ± 0.11%</strong> against a value fixed beforehand."
+    - "The cheapest high-payoff gap found anywhere: electronic stopping power is the dominant uncertainty in ion-beam analysis at 0.8% inside a 1% budget, is <em>pinned to the certified standard</em>, and <strong>no published multi-energy consistency check exists</strong>."
+    - "The electron g−2's largest systematic is a cyclotron lineshape that does not match prediction — the measuring group's own words — and nobody outside that group has investigated it. The group advises against averaging its own 2008 and 2023 results."
+    - "For five years the canonical five-loop QED coefficient was wrong by roughly five times its own quoted uncertainty, because 98 of 6,354 diagrams were under-sampled. It was caught only because one person outside the originating group redid the calculation. <strong>No mechanism in the field would otherwise have found it.</strong>"
+    - "No data-only characterisation exists of the fake missing-energy tail in the high-multiplicity regime where searches actually have sensitivity."
+    - "No published scan of correlation assumptions exists for the 2012 discovery significance itself — the quantity for which the two experiments' independence was rhetorically load-bearing."
+  rejected:
+    - "That these failure modes evidence fabrication. Mapping a failure mode is not evidence that it occurred, and conflating the two would void the document."
+    - "That Volkov's 5σ is a live crack in QED. It was live from 2019 to 2024 and is <strong>resolved, in Volkov's favour</strong> — reporting it as open would be a factual error."
+    - "That the g−2 discrepancy with the caesium α value is evidence of new physics. The two α determinations disagree with <em>each other</em> at 5.5σ; it is evidence about α."
+    - "That ATLAS and CMS agreement is worthless. The combinations publish their correlation assignments, state that no category was identified at ρ=1, and scan them."
+    - "That the experimenter's regress makes instrumental knowledge impossible. It is a question to ask of each case, not a general impossibility result."
+  note: "Strongest anchoring was found at the Higgs — spurious-signal criterion, blinding, independent teams — and at jets, where the parton inference rests on inclusive deep-inelastic and neutrino data that excluded three named alternatives, not on jets at all."

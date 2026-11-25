@@ -4,8 +4,8 @@ subtitle: Every substantive claim in the archive, with tier, supporting file, an
 author: Robin
 date: 2026-11-24
 version: v1
-status: complete — all seven candidate claims resolved against the research
-source_files: 00_method/research_frame_v1.md
+status: active — seven candidates resolved; C1a weakened by the evidential audit
+source_files: 00_method/research_frame_v1.md; 08_evidential_audit/proof_failure_modes_v1.md
 ---
 
 # Purpose
@@ -32,7 +32,8 @@ strongest going in — C1 and C2 — are both among the rejected.
 | ID | Claim | Tier | File | Status |
 |---|---|---|---|---|
 | C1 | ~~ATLAS and CMS are presented as mutually independent confirmation while sharing simulation toolkits, event generators and methodology, so their systematic errors are correlated and agreement between them is weaker evidence than presented~~ | C | 04_software_algorithmic | **REJECTED** — see C1a, C1b |
-| C1a | The inter-experiment correlation coefficient applied to shared modelling terms appears calibrated on procedural difference between collaborations rather than on shared model lineage, where the true value for hadronisation is plausibly nearer 1 than 0.5 | C | 04_software_algorithmic | SUPPORTED-AS-INFERENCE |
+| C1a | ~~…the true value for hadronisation is plausibly nearer 1 than 0.5~~ | C | 04_software_algorithmic | **WEAKENED** — see C1a′ |
+| C1a′ | The correlation value is a documented choice resting on procedural rather than genealogical grounds — confirmed verbatim in the papers — but where it has been scanned the numerical consequence is small; no scan has been published for the 2012 discovery significance | A | 08_evidential_audit | SUPPORTED |
 | C1b | Both general-purpose experiments' nominal hadronisation descends from one manual fit; CMS holds its parameters fixed and ATLAS tunes ten shower and multi-parton parameters on top of it | A | 04_software_algorithmic | SUPPORTED |
 | C2 | ~~The Level-1 trigger encodes a theoretical prior at the point of irreversible data destruction, making some physics unobservable in principle rather than merely unmeasured~~ | C | 03_hardware_systems | **REJECTED** — see C2a, C2b |
 | C2a | Trigger menus are built from theoretical expectation and discarded events are unrecoverable, so trigger error is structurally asymmetric: false positives cost measured, budgeted bandwidth while false negatives cost unrecoverable events and are never integrated over signature space | C | 03_hardware_systems | SUPPORTED-AS-INFERENCE |
@@ -139,3 +140,20 @@ while paraphrasing the argument those words name; the 2025 European briefing boo
 the term. Also rejected: that naturalness was merely aesthetic (its effective-field-theory
 grounding is a real argument), and that the goalposts moved only after exclusions (split
 supersymmetry abandoned naturalness in 2004, before the LHC ran).
+
+## C1a — weakened by the evidential audit, and restated
+
+The first half of C1a is confirmed in the papers' own words: shared-modelling categories are
+assigned ρ = 0.5 and the justification given is that the experiments use different generators
+and different variation schemes — procedural difference, not shared lineage [A].
+
+The second half does not survive. The published sensitivity scans show the top-mass central
+value moving by at most 41 MeV under adverse correlation assumptions, against a 0.33 GeV total
+uncertainty, and the combination states explicitly that "No category was identified to have
+ρ=1" [A]. Whatever the grounds, the numerical consequence where it has been tested is small.
+
+What remains is narrower and is now C1a′: **no published scan of correlation assumptions exists
+for the 2012 discovery significance** — the one quantity for which the independence of the two
+experiments was rhetorically load-bearing. Robustness demonstrated for a 2024 precision
+combination is being borrowed, implicitly, by a 2012 discovery claim. Falsified by production
+of such a study.

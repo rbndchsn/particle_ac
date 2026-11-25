@@ -610,7 +610,17 @@ as [C], and asserts neither figure.
    order of magnitude if individual signatories, submissions and Congressional votes are
    counted individually rather than as single acts.
 
-## References
+#
+> **Correction, 2026-11-24.** The Volkov–AHKN disagreement is recorded above as an open 5σ
+> discrepancy. It is not open. AHKN audited their own calculation, traced the difference to 98
+> integrals affected by insufficient Monte Carlo sampling, revised Set V downward by 0.803 (72),
+> and the two calculations are now reported as consistent at A₁⁽¹⁰⁾ = 5.887(55) [A]. The dispute
+> resolved **in Volkov's favour**. What stands as a finding is not an ongoing crack but the
+> five-year latency: the canonical value was wrong by about five times its own quoted uncertainty
+> from 2019 to 2024, and was caught only because one person outside the originating group redid
+> the calculation. See 08_evidential_audit/proof_failure_modes_v1.md, Proof 1.
+
+# References
 
 1. Daniel J. Kevles, "Big Science and Big Politics in the United States: Reflections on the Death of the SSC and the Life of the Human Genome Project," *Historical Studies in the Physical and Biological Sciences* 27(2), 1997, 269-297. https://econ.williams.edu/files/www.jstor_.org_stable_pdfplus_27757780.pdf
 2. "Superconducting Super Collider," Wikipedia. https://en.wikipedia.org/wiki/Superconducting_Super_Collider
