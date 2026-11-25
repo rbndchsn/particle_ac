@@ -307,7 +307,7 @@ PAGE = """<!DOCTYPE html>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{ogtitle}">
 <meta property="og:description" content="{desc}">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={cssv}">
 </head>
 <body>
 <header class="masthead">
@@ -327,7 +327,7 @@ PAGE = """<!DOCTYPE html>
     <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a></p>
   </div>
 </footer>
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v={jsv}" defer></script>
 </body>
 </html>
 """
@@ -348,6 +348,7 @@ def slugify_path(folder, path):
 
 
 SITE_NAME = [""]
+ASSETV = {"css": "0", "js": "0"}
 
 
 def build():
@@ -357,6 +358,9 @@ def build():
     (OUT / "assets").mkdir(exist_ok=True)
     shutil.copy(SITE / "assets" / "style.css", OUT / "assets" / "style.css")
     shutil.copy(SITE / "assets" / "site.js", OUT / "assets" / "site.js")
+    import hashlib
+    ASSETV["css"] = hashlib.sha1((SITE / "assets" / "style.css").read_bytes()).hexdigest()[:10]
+    ASSETV["js"] = hashlib.sha1((SITE / "assets" / "site.js").read_bytes()).hexdigest()[:10]
     (OUT / ".nojekyll").write_text("")
 
     summaries = yaml.safe_load((SITE / "summaries.yaml").read_text()) or {}
@@ -421,6 +425,7 @@ def build():
             nav=nav_html(p["slug"], pages, "en"), lang="en",
             langswitch=langswitch_html("en"),
             foot1=UI["en"]["foot1"], foot2=UI["en"]["foot2"],
+            cssv=ASSETV["css"], jsv=ASSETV["js"],
             body=body), encoding="utf-8")
 
     # ---- landing pages, one per language
@@ -483,6 +488,7 @@ def build():
             nav=nav_html(slug, pages, lang), lang=lang,
             langswitch=langswitch_html(lang),
             foot1=u["foot1"], foot2=u["foot2"],
+            cssv=ASSETV["css"], jsv=ASSETV["js"],
             body=body), encoding="utf-8")
 
     total = sum(sum(p["tiers"].values()) for p in pages)
