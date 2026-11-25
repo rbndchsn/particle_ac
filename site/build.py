@@ -39,6 +39,7 @@ SECTIONS = [
     ("07_epistemic_audit", "Known vs assumed"),
     ("08_evidential_audit", "Where proofs fail"),
     ("09_anchoring_gradient", "Anchoring"),
+    ("10_financial_investigation", "Money"),
 ]
 NAV_PRIMARY = {"00_method": "research_frame", "03_hardware_systems": "trigger_data_destruction"}
 TIER_NAMES = {"A": "Documented", "B": "Contested", "C": "Inference", "D": "Rejected"}
@@ -229,9 +230,11 @@ def summary_panel(summ):
     found = "".join(f"<li>{x}</li>" for x in summ.get("key_findings", []))
     struck = "".join(f"<li>{x}</li>" for x in summ.get("rejected", []))
     note = summ.get("note")
-    parts = [f'<div class="found"><h3>What this stream found</h3><ul>{found}</ul></div>']
+    found_label = summ.get("found_label", "What this stream found")
+    struck_label = summ.get("struck_label", "Examined and struck out")
+    parts = [f'<div class="found"><h3>{html.escape(found_label)}</h3><ul>{found}</ul></div>']
     if struck:
-        parts.append(f'<div class="struck"><h3>Examined and struck out</h3><ul>{struck}</ul></div>')
+        parts.append(f'<div class="struck"><h3>{html.escape(struck_label)}</h3><ul>{struck}</ul></div>')
     if note:
         parts.append(f'<div class="note"><b>Note</b>{note}</div>')
     return f'<section class="summary">{"".join(parts)}</section>'

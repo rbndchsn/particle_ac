@@ -102,3 +102,21 @@ argument, and including them would discredit the defensible material by associat
 Standard Model is the most precisely tested theory in the history of physics. The critique
 here concerns what *surrounds* that core: motivation, instrumentation limits, encoded
 assumptions, accountability, and interest.
+
+
+## One standing exception to the Tier D rule
+
+`10_financial_investigation/` is a **collection-phase document** and deliberately carries no
+"Claims Examined and Not Supported" section. It was commissioned on the explicit instruction
+that collection and assessment be separated, and that nothing encountered be dropped — including
+claims from weak or anonymous sources, which are recorded with their provenance rather than
+filtered out.
+
+In place of Tier D it closes with an enumerated list of what could not be established, each
+item naming the document that would answer it. Every entry carries a source class (audit,
+court, official, press, advocacy, anonymous) and a status (verified, reported, alleged,
+unverifiable), so the assessment pass has what it needs.
+
+This is an exception to the frame, not a lapse from it. A later pass should not "fix" it by
+adding a rejection section — the assessment belongs in a separate document, against the
+collected material.
