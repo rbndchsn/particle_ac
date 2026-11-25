@@ -554,19 +554,19 @@ main.home article > .langnote { grid-column: 1; max-width: var(--measure); }
 
 .sectionart { margin: 2.6rem 0 -1rem; }
 .sectionart .vignette {
-  width: 100%; max-width: 12.35rem; height: auto; display: block; overflow: visible;
+  width: 100%; max-width: 19rem; height: auto; display: block; overflow: visible;
 }
 /* On a wide canvas the vignette sits in the right-hand gutter beside its
    heading, so it reads as marginalia rather than interrupting the argument. */
 @media (min-width: 70rem) {
   main.home article > .sectionart {
     grid-column: 2; justify-self: start; align-self: end;
-    margin: 0 0 -2rem 2rem; max-width: 12.35rem;
+    margin: 0 0 -2rem 2rem; max-width: 19rem;
   }
 }
 @media (max-width: 70rem) {
   main.home article > .sectionart { grid-column: 1; }
-  .sectionart .vignette { max-width: 11.05rem; }
+  .sectionart .vignette { max-width: 17rem; }
 }
 
 /* Small vignette in each research document's header. Kept quiet: it sits
@@ -575,7 +575,7 @@ main.home article > .langnote { grid-column: 1; max-width: var(--measure); }
 .docmeta-main { grid-column: 1; }
 .doc-art { display: none; }
 @media (min-width: 58rem) {
-  .docmeta { grid-template-columns: 1fr 7.15rem; column-gap: 2rem; align-items: start; }
+  .docmeta { grid-template-columns: 1fr 11rem; column-gap: 2rem; align-items: start; }
   .docmeta .tierbar { grid-column: 1 / -1; }
   .doc-art { display: block; grid-column: 2; grid-row: 1; align-self: center; opacity: 0.8; }
   .doc-art .vignette { width: 100%; height: auto; display: block; overflow: visible; }
