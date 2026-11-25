@@ -324,7 +324,8 @@ PAGE = """<!DOCTYPE html>
   <div class="shell">
     <p>{foot1}</p>
     <p>{foot2}<br>
-    <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a></p>
+    <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a><br>
+    <span class="buildmark">build {cssv}</span></p>
   </div>
 </footer>
 <script src="assets/site.js?v={jsv}" defer></script>

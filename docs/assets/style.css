@@ -105,10 +105,10 @@ article > .tablewrap, article > figure.fig, article > .stats { max-width: none; 
 /* Landing page: wide content column with a sticky index rail, so the canvas is
    used for structure rather than for longer lines of prose. */
 main.home { max-width: 83.5rem; }
-.home-grid { display: grid; grid-template-columns: minmax(0, 56rem) 19rem; gap: 4.5rem;
+.home-grid { display: grid; grid-template-columns: minmax(0, 61rem) 19rem; gap: 4rem;
   justify-content: center; align-items: start; }
 main.home article { max-width: none; width: 100%;
-  display: grid; grid-template-columns: min(68ch, 100%) 1fr; }
+  display: grid; grid-template-columns: min(62ch, 100%) 1fr; }
 main.home article > * { grid-column: 1; }
 main.home article > figure.fig,
 main.home article > .stats,
@@ -554,19 +554,19 @@ main.home article > .langnote { grid-column: 1; max-width: var(--measure); }
 
 .sectionart { margin: 2.6rem 0 -1rem; }
 .sectionart .vignette {
-  width: 100%; max-width: 19rem; height: auto; display: block; overflow: visible;
+  width: 100%; max-width: 24.7rem; height: auto; display: block; overflow: visible;
 }
 /* On a wide canvas the vignette sits in the right-hand gutter beside its
    heading, so it reads as marginalia rather than interrupting the argument. */
 @media (min-width: 70rem) {
   main.home article > .sectionart {
     grid-column: 2; justify-self: start; align-self: end;
-    margin: 0 0 -2rem 2rem; max-width: 19rem;
+    margin: 0 0 -2rem 2rem; max-width: 24.7rem;
   }
 }
 @media (max-width: 70rem) {
   main.home article > .sectionart { grid-column: 1; }
-  .sectionart .vignette { max-width: 17rem; }
+  .sectionart .vignette { max-width: 22.1rem; }
 }
 
 /* Small vignette in each research document's header. Kept quiet: it sits
@@ -575,8 +575,10 @@ main.home article > .langnote { grid-column: 1; max-width: var(--measure); }
 .docmeta-main { grid-column: 1; }
 .doc-art { display: none; }
 @media (min-width: 58rem) {
-  .docmeta { grid-template-columns: 1fr 11rem; column-gap: 2rem; align-items: start; }
+  .docmeta { grid-template-columns: 1fr 14.3rem; column-gap: 2rem; align-items: start; }
   .docmeta .tierbar { grid-column: 1 / -1; }
   .doc-art { display: block; grid-column: 2; grid-row: 1; align-self: center; opacity: 0.8; }
   .doc-art .vignette { width: 100%; height: auto; display: block; overflow: visible; }
 }
+
+.buildmark { color: var(--rule); font-size: 0.72rem; letter-spacing: 0.08em; }
