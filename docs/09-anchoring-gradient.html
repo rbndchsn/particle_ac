@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Anchoring Gradient — Particle Acceleration: The Instrument and Its Blind Spot</title>
+<meta name="description" content="Whether the external constraint on physics weakens as the stakes rise, whether money and advocacy run the other way, and whether the whole observation is a tautology">
+<meta property="og:title" content="The Anchoring Gradient">
+<meta property="og:description" content="Whether the external constraint on physics weakens as the stakes rise, whether money and advocacy run the other way, and whether the whole observation is a tautology">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="index.html">Particle Acceleration</a>
+    <nav>
+        <a href="index.html">Overview</a>
+        <a href="00-research-frame.html">Method</a>
+        <a href="01-particle-acceleration-research.html">Foundations</a>
+        <a href="02-theoretical-weaknesses.html">Theory</a>
+        <a href="03-trigger-data-destruction.html">Hardware</a>
+        <a href="04-software-stack-bias.html">Software</a>
+        <a href="05-publication-governance.html">Publication</a>
+        <a href="06-legitimacy-confrontations.html">Dissent</a>
+        <a href="07-closed-loop.html">Known vs assumed</a>
+        <a href="08-proof-failure-modes.html">Where proofs fail</a>
+        <a href="09-anchoring-gradient.html" class="active">Anchoring</a>
+    </nav>
+  </div>
+</header>
+<main class="shell"><div class="with-rail"><nav class="toc" aria-label="Contents"><p class="toc-head">Contents</p><ol><li class="lvl-2"><a href="#what-this-document-tests">What This Document Tests</a></li><li class="lvl-2"><a href="#what-an-external-anchor-is">What an External Anchor Is</a></li><li class="lvl-3"><a href="#where-the-definition-could-be-contested-and-what-turns-on-it">Where the Definition Could Be Contested, and What Turns On It</a></li><li class="lvl-2"><a href="#the-gradient-domain-by-domain">The Gradient, Domain by Domain</a></li><li class="lvl-3"><a href="#atomic-physics-and-low-energy-qed">Atomic Physics and Low-Energy QED</a></li><li class="lvl-3"><a href="#nuclear-physics">Nuclear Physics</a></li><li class="lvl-3"><a href="#solid-state-and-semiconductors">Solid State and Semiconductors</a></li><li class="lvl-3"><a href="#accelerator-engineering-and-the-distinction-that-decides-eve">Accelerator Engineering — and the Distinction That Decides Everything</a></li><li class="lvl-3"><a href="#hadron-physics-and-qcd">Hadron Physics and QCD</a></li><li class="lvl-3"><a href="#electroweak-precision">Electroweak Precision</a></li><li class="lvl-3"><a href="#the-higgs-sector">The Higgs Sector</a></li><li class="lvl-3"><a href="#beyond-the-standard-model-searches">Beyond-the-Standard-Model Searches</a></li><li class="lvl-3"><a href="#astrophysical-and-cosmological-particle-claims">Astrophysical and Cosmological Particle Claims</a></li><li class="lvl-2"><a href="#the-gradient-in-one-table">The Gradient in One Table</a></li><li class="lvl-2"><a href="#the-opposing-gradient-money-people-advocacy">The Opposing Gradient: Money, People, Advocacy</a></li><li class="lvl-3"><a href="#spending-does-not-correlate-inversely-with-anchoring">Spending Does Not Correlate Inversely With Anchoring</a></li><li class="lvl-3"><a href="#nor-inside-the-high-energy-programme-on-the-obvious-cut">Nor Inside the High-Energy Programme, On the Obvious Cut</a></li><li class="lvl-3"><a href="#facility-cost-at-the-unanchored-end">Facility Cost at the Unanchored End</a></li><li class="lvl-3"><a href="#what-the-justification-documents-actually-count-the-core-fin">What the Justification Documents Actually Count — the Core Finding</a></li><li class="lvl-3"><a href="#the-demand-asymmetry">The Demand Asymmetry</a></li><li class="lvl-3"><a href="#where-the-sources-do-not-allow-quantification">Where the Sources Do Not Allow Quantification</a></li><li class="lvl-2"><a href="#attempts-to-break-the-claim">Attempts to Break the Claim</a></li><li class="lvl-3"><a href="#spin-offs-one-at-a-time">Spin-offs, One at a Time</a></li><li class="lvl-3"><a href="#the-strongest-counterexample-radiation-to-electronics-and-ma">The Strongest Counterexample: Radiation to Electronics and Machine Protection</a></li><li class="lvl-3"><a href="#the-spallation-and-soft-error-family">The Spallation and Soft-Error Family</a></li><li class="lvl-3"><a href="#did-any-high-energy-result-ever-get-overturned-by-an-externa">Did Any High-Energy Result Ever Get Overturned by an External Constraint?</a></li><li class="lvl-3"><a href="#precision-electroweak-prediction-as-an-anchor-argued-both-wa">Precision Electroweak Prediction as an Anchor — Argued Both Ways</a></li><li class="lvl-3"><a href="#neutrino-physics-through-solar-and-atmospheric-observation-t">Neutrino Physics Through Solar and Atmospheric Observation — the Hardest Case</a></li><li class="lvl-2"><a href="#the-tautology-objection">The Tautology Objection</a></li><li class="lvl-2"><a href="#what-survives-as-register-entries">What Survives, as Register Entries</a></li><li class="lvl-2"><a href="#falsification-conditions">Falsification Conditions</a></li><li class="lvl-2"><a href="#claims-examined-and-not-supported">Claims Examined and Not Supported</a></li><li class="lvl-2"><a href="#version-log">Version Log</a></li><li class="lvl-2"><a href="#references">References</a></li></ol></nav><div><div class="docmeta"><p class="kicker">Anchoring</p><h1>The Anchoring Gradient</h1><p class="sub">Whether the external constraint on physics weakens as the stakes rise, whether money and advocacy run the other way, and whether the whole observation is a tautology</p><div class="facts"><span><b>v1</b></span><span>2026-11-25</span><span><b>70</b> references</span><span>active — capstone; claim tested, partly rejected, narrowed and carried forward as A1–A4</span></div><div class="tierbar"><p class="tierbar-head">Evidence tiers used in this document <span>(82 labelled claims)</span></p><div class="track"><span class="tier-a" style="width:80.49%"></span><span class="tier-b" style="width:3.66%"></span><span class="tier-c" style="width:2.44%"></span><span class="tier-d" style="width:13.41%"></span></div><div class="keys"><span><span class="tier tier-a">A</span> Documented <b>66</b></span><span><span class="tier tier-b">B</span> Contested <b>3</b></span><span><span class="tier tier-c">C</span> Inference <b>2</b></span><span><span class="tier tier-d">D</span> Rejected <b>11</b></span></div></div></div><section class="summary"><div class="found"><h3>What this stream found</h3><ul><li>The gradient is real, but the governing variable is not energy — it is <strong>whether anything in use depends on the observable</strong>. Energy only correlates because usable cross sections fall with it.</li><li>The strongest counterexample found, and it is instructive: LHC radiation-to-electronics and machine protection is a genuine external anchor operating at TeV energies — 80 Run-2 beam dumps from radiation faults, FLUKA dose predictions tested against detectors, 362 MJ of stored beam. But its reach scales with cross section, so it anchors inclusive soft production and <em>provably cannot reach the rare-process tail where discovery claims live</em>.</li><li>The official economic case for the LHC assigns <strong>1.7%</strong> of its €16.4bn benefit to scientific knowledge, and 66% to spillover and human capital. Both it and the UK national evaluation monetise the physics bibliometrically.</li><li>Surviving thesis, narrowed: <strong>accountability does not travel with claim-strength.</strong></li></ul></div><div class="struck"><h3>Examined and struck out</h3><ul><li><strong>That spending runs inversely to anchoring — false, and contradicted by the appropriation table.</strong> NNSA Weapons Activities took $19.3bn in FY2025 against High Energy Physics's $1.22bn; Basic Energy Sciences took 2.1× HEP. Inside HEP, the neutrino programme (~$680M) outspends Energy Frontier, Cosmic Frontier and theory combined (~$435M).</li><li>That unanchored means untested. Electroweak fits predicted the top mass at 140–190 GeV and a light Higgs before measurement; lattice QCD predicted B<sub>c</sub> and f<sub>D+</sub>.</li><li>That technological spin-offs anchor the physics. MRI magnets, hadron therapy, the Web and grid computing anchor the engineering.</li><li>That the gradient is unique to particle physics. The same shape appears in cosmology, string theory and deep-time geology.</li><li>That anchored means known. In the most heavily anchored domain of all, plain density-functional theory underestimates band gaps by around 49%.</li></ul></div><div class="note"><b>Note</b>The tautology objection — that this gradient is simply what “frontier” means — is conceded in full for the gradient's existence. What defeats it for the thesis as a whole is that the spending half was empirically falsifiable and was falsified: a tautology cannot be refuted by an appropriation table.</div></section><article><h2 id="what-this-document-tests">What This Document Tests<a class="anchor" href="#what-this-document-tests" aria-label="Link to section">#</a></h2>
+<p>The archive has been circling one structural claim without stating it. <code>07_epistemic_audit/closed_loop_v1.md</code>
+ends by rejecting the proposition that the closed loop is equally closed everywhere, on the ground that
+"its length and the strength of its external anchors vary enormously between a tandem doing backscattering
+and a collider inferring a short-lived particle." That sentence contains an unexamined thesis. This document
+examines it.</p>
+<p>The claim, stated as sharply as it can be:</p>
+<blockquote>
+<p><strong>The external anchoring of physics is strongest where the stakes are lowest and weakest where they are
+highest. Low-energy domains are pinned by technology that fails visibly and expensively if the physics is
+wrong. High-energy domains are anchored progressively less. Beyond-the-Standard-Model searches have no
+external anchor at all, by construction, because they look for things nothing else in the world interacts
+with. Meanwhile funding, institutional defence and public justification run in the opposite direction from
+the anchoring.</strong></p>
+</blockquote>
+<p>That is three separable claims, and they are not equally interesting:</p>
+<ul>
+<li><strong>A — the gradient exists.</strong> External anchoring declines monotonically with energy scale and with
+  distance from applied physics.</li>
+<li><strong>B — the gradient has a specifiable shape.</strong> What remains anchored at high energy is identifiable, and
+  it is not the part that carries discovery claims.</li>
+<li><strong>C — the opposing gradient exists.</strong> Money, personnel, strategy advocacy and public justification
+  increase as anchoring decreases.</li>
+</ul>
+<p>Claim A is close to a definitional truth and will be treated as such. Claim B is the one with content.
+Claim C is empirical, testable against budget documents, and <strong>it fails at national scale</strong> — a result
+reported in full below, because a claim that cannot be falsified by a budget table is not worth making and
+a claim that is falsified by one must be said to be.</p>
+<h2 id="what-an-external-anchor-is">What an External Anchor Is<a class="anchor" href="#what-an-external-anchor-is" aria-label="Link to section">#</a></h2>
+<p>The definition is the whole argument. A loose definition makes the gradient appear by construction; a tight
+one risks excluding every case and proving nothing. The definition used here is deliberately tight, and the
+places where tightening it does the work are flagged.</p>
+<p><strong>An external anchor on a physical claim is a constraint satisfying all four of the following.</strong></p>
+<ol>
+<li><strong>Foreign origin.</strong> The constraint originates outside the discipline that produced the claim — a
+   different discipline, an industry, a regulator, a clinic, or a natural system nobody in the discipline
+   controls.</li>
+<li><strong>Costly failure.</strong> If the claim is wrong, something in the world fails: a device does not work, a
+   patient is not cured, a clock drifts, a target cracks, a yield is three times the prediction. The failure
+   is visible, expensive and non-negotiable.</li>
+<li><strong>Disinterested arbiter.</strong> Whoever declares the failure has no stake in the claim's survival. A chip
+   either yields or it does not. A reactor either goes critical where predicted or it does not.</li>
+<li><strong>Non-absorbable.</strong> The failure cannot be accommodated by adjusting the claim and keeping the practice.
+   A free parameter that soaks up the discrepancy is not an anchor; it is a hinge.</li>
+</ol>
+<p><strong>Explicitly not anchors</strong>, and these exclusions are where the definition bites:</p>
+<ul>
+<li><strong>Internal consistency.</strong> A theory agreeing with itself.</li>
+<li><strong>Agreement between two measurements inside the same framework.</strong> Two LHC experiments agreeing is not
+  external, however independent their hardware, because the framework, the generators and the correction
+  procedures are shared — this archive has already documented the shared lineage in
+  <code>04_software_algorithmic</code> (claim C1b, SUPPORTED).</li>
+<li><strong>Goodness-of-fit.</strong> A model fitting data it was tuned on, or data within the range it was tuned over.</li>
+<li><strong>Novel prediction.</strong> Argued at length in §5.6 below. A prediction made before measurement is a <em>severe
+  test</em> in Mayo's sense (<a class="cite" href="#ref-6">6</a>) and is epistemically valuable, but both the predicting and the measuring happen
+  inside the discipline, and the cost of failure is a theory, not a device. Severity and externality are
+  different virtues and the archive must not conflate them.</li>
+</ul>
+<p><strong>Classes of anchor.</strong> Not all anchors are the same kind, and the distinction matters for the verdict:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Kind</th>
+<th>Failure signature</th>
+<th>Who pays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E1</strong></td>
+<td>Operational / technological</td>
+<td>a device does not work</td>
+<td>the manufacturer, the operator, the user</td>
+</tr>
+<tr>
+<td><strong>E2</strong></td>
+<td>Safety / clinical</td>
+<td>a patient is harmed, a criticality excursion, a wrong yield</td>
+<td>the patient, the worker, the public</td>
+</tr>
+<tr>
+<td><strong>E3</strong></td>
+<td>Metrological / legal</td>
+<td>a unit, a standard, a trade or regulatory measurement is wrong</td>
+<td>the measurement system and everyone downstream</td>
+</tr>
+<tr>
+<td><strong>E4</strong></td>
+<td>Cross-disciplinary natural</td>
+<td>an independently constrained natural system contradicts the claim</td>
+<td>nobody — a theory dies, nothing breaks</td>
+</tr>
+<tr>
+<td><strong>E0</strong></td>
+<td>None</td>
+<td>the claim's falsity has no consequence outside the discipline</td>
+<td>nobody</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>E1–E3 satisfy all four conditions. E4 satisfies conditions 1, 3 and 4 but not condition 2.</strong> When
+helioseismology constrains the solar model, or Oklo constrains the fine structure constant, or
+non-observation of proton decay kills minimal SU(<a class="cite" href="#ref-5">5</a>), the constraint is genuinely foreign and genuinely
+non-negotiable — but nothing in the world fails. No device stops, no patient is harmed, no money is lost.
+E4 constraints are <strong>epistemically strong and institutionally weak</strong>: they do not impose a cost on being
+wrong, and the claim under test here is ultimately about where the cost of being wrong lands. Calling E4 a
+"foreign constraint" rather than an "external anchor" is this document's most contestable move, and §5.7
+argues it both ways.</p>
+<h3 id="where-the-definition-could-be-contested-and-what-turns-on-it">Where the Definition Could Be Contested, and What Turns On It<a class="anchor" href="#where-the-definition-could-be-contested-and-what-turns-on-it" aria-label="Link to section">#</a></h3>
+<p>Four honest edge cases.</p>
+<p><strong>The transfer problem.</strong> An anchor constrains the specific physical content a device uses, not the whole
+framework in which that content is expressed [C — rests on the case analyses in §3; falsified by one device
+whose operation depends on a high-energy observable]. GPS anchors relativistic time dilation and the
+caesium hyperfine transition. It does not anchor QED at two loops, let alone QCD at a TeV. Someone defending
+the field can say the framework — relativistic quantum field theory, gauge invariance, Lorentz invariance —
+is anchored by every working device. The reply is that the framework is anchored only in the sense that
+nothing built on it has failed, and nothing built on it uses its high-energy content. This is the weakest
+form of support a claim can have while still having some.</p>
+<p><strong>Adequacy, not truth.</strong> An anchor forces the physics to be <em>right enough for the purpose</em>; it does not
+force it to be true. Semiconductor manufacture is the cleanest demonstration (§3.3). This cuts both ways: it
+weakens the inference "anchored, therefore known," and it strengthens the structural point, because what an
+anchor actually disciplines is <em>accountability</em>, not <em>correctness</em>.</p>
+<p><strong>Timing.</strong> An anchor can arrive late. Nuclear physics was unanchored in 1930 and anchored by 1945. A
+detected BSM particle could be exploited a century hence. So "no anchor" is a statement about now, never
+about in principle — with the single exception argued in §3.8.</p>
+<p><strong>Self-service.</strong> The definition was written by someone looking for a gradient. Condition 2 is the one doing
+the work: relax it and the gradient flattens considerably, because E4 constraints are abundant at the high
+end. The defence is that condition 2 is the condition the original claim rested on — "a device that does not
+work, a patient who is not cured, a clock that drifts" — and that §5.7 reports what happens when it is
+relaxed rather than hiding it.</p>
+<p><strong>On the regress.</strong> The definition is a practical answer to Collins's experimenter's regress (<a class="cite" href="#ref-2">2</a>): you cannot
+know an instrument works without knowing the right answer, and you cannot know the right answer without a
+working instrument. Franklin's response is a list of strategies — calibration against known inputs,
+independent confirmation, testing rivals' methods on one's own data, intervention — and his central
+condition is that "calibration of the apparatus is independent of the phenomenon one wants to observe" (<a class="cite" href="#ref-3">3</a>).
+Perović's reply, specifically about the LHC, is that in-situ calibrating and measurement procedures and
+parameters there are "closely and systematically interrelated," so empiricists should "question their
+insistence on the independence of calibration from the outcomes of the experiment" (<a class="cite" href="#ref-4">4</a>) [B — Franklin and
+Perović are the named advocates; Perović does not conclude that the LHC is open to the regress, only that
+the independence assumption is too crude]. Hacking's entity realism — manipulative success as grounds for
+belief (<a class="cite" href="#ref-1">1</a>) — is the strongest available version of the anchoring intuition, and E1 is its operational form.</p>
+<h2 id="the-gradient-domain-by-domain">The Gradient, Domain by Domain<a class="anchor" href="#the-gradient-domain-by-domain" aria-label="Link to section">#</a></h2>
+<h3 id="atomic-physics-and-low-energy-qed">Atomic Physics and Low-Energy QED<a class="anchor" href="#atomic-physics-and-low-energy-qed" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E1 + E3. Failure latency: microseconds to hours. The strongest anchor in physics.</strong></p>
+<p>The second is <em>defined</em> by a caesium hyperfine transition, which makes atomic physics the only domain on
+this list whose correctness is a matter of law rather than of opinion <span class="tier tier-a" title="Tier A — Documented">A</span>. Optical clocks now report
+systematic uncertainties of 1.3 × 10⁻¹⁸ (<a class="cite" href="#ref-7">7</a>), and two clocks of different species have been compared at
+2.08 × 10⁻¹⁸ over a 1,350 km fibre link (<a class="cite" href="#ref-8">8</a>); an international roadmap toward redefining the second on an
+optical transition is in progress (<a class="cite" href="#ref-9">9</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>The anchoring is not the precision — precision alone is internal. The anchoring is that the timing chain is
+load-bearing for systems with no interest in atomic physics. On 26 January 2016, after a decommissioned
+satellite was removed from the GPS constellation, the UTC offset broadcast on some legacy signals was wrong
+by 13 microseconds (<a class="cite" href="#ref-10">10</a>, <a class="cite" href="#ref-11">11</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. One telecommunications operator logged over 2,000 alarms; another generated
+nearly 2,500, with roughly 40 network elements entering holdover because backup inputs were missing; about
+two-thirds of one operator's GPS timing estate was affected; roughly 30% of another's units caused
+downstream switches to enter free run <em>with no visible alarms</em>; clearing one customer's alarms took about
+four hours two days later (<a class="cite" href="#ref-10">10</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>Thirteen microseconds. Not a theory in dispute — an operational event, diagnosed by telecoms engineers, at a
+cost measured in engineer-hours and network risk. That is condition 2 and condition 3 in a single incident.</p>
+<p><strong>What is anchored:</strong> transition frequencies, relativistic time dilation and gravitational redshift,
+systematic shift budgets (blackbody, collisional, Zeeman), and the whole metrological chain. <strong>What is not:</strong>
+QED's loop structure. The electron anomalous magnetic moment agrees with theory at the part-per-trillion
+level, which is the most impressive number in physics, and it is an internal agreement — a calculation and a
+measurement, both inside the discipline, with no device downstream.</p>
+<h3 id="nuclear-physics">Nuclear Physics<a class="anchor" href="#nuclear-physics" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E2 + E1. Failure latency: milliseconds to months. The most consequential anchor.</strong></p>
+<p>The single clearest case in the whole gradient is Castle Bravo, 1 March 1954. The predicted yield was 6
+megatons. The device yielded about 15, roughly 250% above prediction, because the designers assumed only one
+of the two lithium isotopes in the fusion fuel would be reactive and both were (<a class="cite" href="#ref-12">12</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. The consequences:
+fallout over inhabited Marshall Islands atolls after a wind shift, evacuation and long-term health
+monitoring with serious long-term effects among islanders; a Japanese fishing vessel sailing into the plume,
+returning with a sick crew, radioactive tuna and one dead fisherman; a diplomatic crisis with Japan; and the
+first public acknowledgement of multi-megaton capability (<a class="cite" href="#ref-12">12</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>A nuclear cross section was wrong. People died, islands were contaminated, and a government had to explain
+itself. Conditions 1 through 4, without qualification.</p>
+<p>The institutional response is the anchoring regime that now exists. Evaluated nuclear data libraries are
+validated against an international benchmark set of critical and subcritical configurations — the ICSBEP
+Handbook — maintained outside any single laboratory (<a class="cite" href="#ref-13">13</a>), and the libraries are revised against it (<a class="cite" href="#ref-14">14</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.
+The stockpile has been certified annually since 1992 without explosive testing, which makes simulation the
+load-bearing element of a weapons-certification decision (<a class="cite" href="#ref-17">17</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. In inertial confinement, the National
+Ignition Facility missed its ignition goal for a decade after 2009 before achieving target gain above unity
+in December 2022 — a public, expensive, dated failure of a high-energy-density prediction, followed by a
+public, dated success (<a class="cite" href="#ref-18">18</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>Two honest qualifications.</p>
+<p><strong>Tokaimura was not a physics failure.</strong> The 1999 criticality accident killed two workers, exposed 24 others
+to up to 48 mSv, evacuated about 161 people and produced an estimated 13 billion yen liability against a 1
+billion yen insurance limit — and it was caused by a procedural change made three years earlier without
+regulatory permission, workers tipping uranyl nitrate from stainless steel buckets into a precipitation tank
+that bypassed the criticality-safe geometry, with no understanding of the risk at 18.8% enrichment (<a class="cite" href="#ref-16">16</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.
+The IAEA attributed it to "human error and serious breaches of safety principles." The criticality physics
+was right; the practice was not. An anchor disciplines the <em>system</em>, and most of what it catches is
+procedure, not theory. This weakens any simple reading of "anchored, therefore the physics is known."</p>
+<p><strong>The anchored domain corrects itself under measurement, and the correction propagates upward.</strong> Measured
+reactor antineutrino fluxes at short baselines sit about 6% below the Huber+Mueller prediction, with a
+world-average ratio of 0.943 ± 0.008 (experimental) ± 0.023 (model), and several experiments see a localised
+4–6 MeV excess at about 4.4σ local significance in Daya Bay (<a class="cite" href="#ref-15">15</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Daya Bay's fuel-evolution measurement
+found the predicted yield per fission for ²³⁵U significantly too high while ²³⁹Pu agreed, disfavouring a
+uniform deficit at 2.8σ (<a class="cite" href="#ref-15">15</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. The conservative reading is that the <em>nuclear data</em> were wrong, not that
+there is a sterile neutrino (<a class="cite" href="#ref-15">15</a>) [B — the sterile interpretation retains advocates and global fits exist
+that favour revised ²³⁵U plus a sterile state]. Note the direction of travel: a discrepancy in a
+weakly-anchored domain (neutrino oscillation phenomenology) was most plausibly resolved by a correction in a
+strongly-anchored one (fission beta spectra). The gradient has a slope, and information runs down it.</p>
+<h3 id="solid-state-and-semiconductors">Solid State and Semiconductors<a class="anchor" href="#solid-state-and-semiconductors" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E1. Failure latency: one process run. The most economically brutal anchor — and the one
+that proves anchoring is not truth.</strong></p>
+<p>Here the gradient claim meets its most instructive complication. Semiconductor manufacture is the most
+unforgiving E1 anchor in existence: a wrong dopant profile is a dead wafer lot, and the cost is immediate
+and attributable. And yet the first-principles physics used in the domain is known to be wrong by large
+factors.</p>
+<p>Plain semilocal density functional theory underestimates semiconductor band gaps by roughly half: a
+benchmark of 56 compounds gives PBEsol a mean absolute error of 1.99 eV and a mean percentage error of
+−48.8%. Hybrid functionals (HSE06) reduce this to about 0.78 eV MAE and −14.7% mean percentage error, and
+G₀W₀ to about 0.57 eV MAE and −12.5% — still "a noticeable underestimation of the band gaps by about 14% on
+average" (<a class="cite" href="#ref-19">19</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>A 14–50% error in the most basic electronic property of the material, in a domain where errors cost millions
+per lot. The resolution is that production does not use first-principles band structure to set process
+parameters. It uses process simulators calibrated against measured profiles — TCAD calibration of
+ultra-shallow junctions against SIMS data is a documented industrial practice (<a class="cite" href="#ref-20">20</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Implantation range
+distributions are computed with Monte Carlo codes whose parameters are fitted over the ion, energy and
+substrate ranges in use.</p>
+<p><strong>The lesson, and it governs the rest of this document:</strong> an E1 anchor does not force the physics to be
+true. It forces the <em>predictive pipeline</em> to be adequate over the operating range, and it permits — indeed
+rewards — empirical calibration that absorbs theoretical error. What the anchor guarantees is not knowledge.
+It is <strong>accountability</strong>: somebody finds out, fast, at a cost they cannot argue with, and must change
+something [C — rests on the band-gap and TCAD facts above; falsified by a production process whose
+parameters are set from uncalibrated first-principles calculation].</p>
+<p>This is why the gradient matters even though anchoring is not truth. The claim under test is not "high-energy
+physics is wrong." It is that the mechanism which forces anyone to find out and pay for it weakens as the
+stakes rise.</p>
+<h3 id="accelerator-engineering-and-the-distinction-that-decides-eve">Accelerator Engineering — and the Distinction That Decides Everything<a class="anchor" href="#accelerator-engineering-and-the-distinction-that-decides-eve" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E1, strong. Scope: the machine, not the physics done with it.</strong></p>
+<p>Accelerator physics is anchored as hard as semiconductor physics and the failures are on the public record.
+Strong focusing (<a class="cite" href="#ref-21">21</a>) is the enabling theoretical result of the whole field and it works. But the interesting
+material is where predictions failed.</p>
+<p><strong>At the LHC</strong> [A, all from (<a class="cite" href="#ref-22">22</a>)]: the nominal design peak luminosity was 1.0 × 10³⁴ cm⁻²s⁻¹ and the machine
+routinely exceeds twice that, with 2.2 × 10³⁴ tabulated as achieved against 1.0 × 10³⁴ design, and 60 events
+per crossing against 27 nominal. Design energy is 7 TeV; running has been at 3.5, 4, 6.5 and 6.8 TeV,
+limited by magnet retraining. Sectors trained more slowly than expected and <em>lost training memory after
+thermal cycles</em>, which the operations literature calls a surprise; sector 23 needed 54 extra quench events
+to reach 6.8 TeV, each recovery costing 8–12 hours. Arc heat loads ran significantly above what impedance
+and synchrotron radiation predict, attributed mainly to higher secondary electron yield from surface
+chemistry changes, to the point that post-LS2 degradation makes the HL-LHC nominal configuration
+incompatible without surface treatment in LS3; cryogenic capacity is about 10 kW per arc against an 8 kW
+design. Dust-induced beam losses ("UFOs") were the main cause of beam-induced quenches in Runs 2 and 3. The
+original integrated-luminosity design goal was 300 fb⁻¹; Runs 1 and 2 delivered about 160 fb⁻¹ and 2024
+alone delivered 122.2 fb⁻¹ to ATLAS and CMS.</p>
+<p><strong>At LEP</strong>, stray currents from trains running between Geneva Cornavin and French destinations leaked into
+the earth and returned through the LEP tunnel, using the vacuum chamber as a conductor, interacting with the
+dipole field and raising the beam energy by up to 12 MeV over a 14-hour fill (<a class="cite" href="#ref-23">23</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p><strong>At the Spallation Neutron Source</strong>, the mercury target vessel's calculated lifetime was about 5,000 MWh.
+Two vessels failed back-to-back in 2014 after about 100 and about 600 MWh. <strong>None of the 11 targets used
+since 2006 reached the predicted lifetime.</strong> Each cost about $1 million; the failures plus an unrelated
+fault cost 1,000 hours of operating time, about half recovered by rescheduling, with net available operating
+time for the fiscal year down about 10%. The cause was not fully identified: both failed at welds, one at
+the same weld that failed in 2012–13, with cyclic thermal and mechanical fatigue suspected (<a class="cite" href="#ref-24">24</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>These are genuine, documented, expensive failures of prediction in a domain where GeV protons meet matter.
+Which is exactly why the next sentence is the hinge of this document.</p>
+<p><strong>These anchors constrain accelerator physics, not particle physics</strong> [C — rests on the content of the
+predictions that failed; falsified by showing that a machine performance prediction depends on a rare-process
+observable]. The physics in a dynamic aperture calculation, a secondary electron yield, a weld fatigue model
+or a stray-current field perturbation is classical and relativistic electrodynamics, materials science and
+thermomechanics. Whether the collisions at the interaction point are correctly interpreted as Higgs
+production is logically independent of whether the magnets quench where predicted. A machine that reaches
+design luminosity has demonstrated that its builders understand beams. It has demonstrated nothing about
+what the detectors' inferences mean.</p>
+<p>The one serious exception is energy deposition from the collisions themselves, which is a hadronic
+high-energy observable and which <em>does</em> fail visibly. It is treated as the document's strongest
+counterexample in §5.2.</p>
+<h3 id="hadron-physics-and-qcd">Hadron Physics and QCD<a class="anchor" href="#hadron-physics-and-qcd" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E1 and E2 at the low-GeV end, thinning rapidly with energy. The genuine middle of the
+gradient.</strong></p>
+<p>QCD is where the gradient stops being a step function and becomes a slope.</p>
+<p><strong>What is internal.</strong> The lattice calculation of the light hadron spectrum from first principles (<a class="cite" href="#ref-25">25</a>) is one
+of the field's genuine achievements and it is entirely internal — a calculation reproducing measured masses.
+The lattice has also made pre-measurement predictions that could have failed: the B_c mass was calculated as
+6304 ± 12 (+18, −0) MeV and later measured by CDF at 6287 ± 5 MeV, agreeing at slightly over 1σ, with the
+lattice paper posted before the measurement was announced; f_D+ was calculated as 201 ± 3 ± 17 MeV and
+CLEO-c announced 223 ± 17 ± 3 MeV a few days later (<a class="cite" href="#ref-26">26</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. These are severe tests in Mayo's sense (<a class="cite" href="#ref-6">6</a>).
+They are not external anchors: the predicting and measuring communities overlap, and failure would have cost
+a lattice action, not a device.</p>
+<p><strong>What is external, and this is real.</strong> Three independent E1/E2 anchors reach into hadronic physics:</p>
+<ul>
+<li><strong>Hadron therapy.</strong> Carbon-ion treatment planning depends on nuclear fragmentation cross sections, and the
+  models are measurably imperfect. Against reference data, Geant4 overestimates the total inelastic
+  ¹²C + ²⁷Al cross section by about 5–10%; at 300 MeV/u the beryllium partial cross section worsened by
+  roughly 10–15% between releases while boron improved to under 20% model difference; and the authors'
+  recommendation for hadrontherapy is a specific physics list, QGSP_BIC_HP with the Opt4 electromagnetic
+  constructor (<a class="cite" href="#ref-27">27</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Proton range uncertainty propagates directly into clinical margins (<a class="cite" href="#ref-70">70</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Proton
+  therapy centres grew from 52 in 2015 to 128 by early 2026 (<a class="cite" href="#ref-61">61</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. A wrong fragmentation cross section is
+  a wrong dose to a real patient: condition 2, condition 3.</li>
+<li><strong>Atmospheric-neutron single event effects.</strong> Soft error rates in microelectronics from atmospheric
+  neutrons are standardised and measured by industry (<a class="cite" href="#ref-29">29</a>), and the models rest on proton- and
+  neutron-induced nuclear reaction cross sections up to the GeV range (<a class="cite" href="#ref-30">30</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. The arbiter is a data centre
+  or an avionics bay.</li>
+<li><strong>Muon radiography.</strong> Cosmic-ray muon flux and transport models are load-bearing for imaging that has
+  located a large void in Khufu's pyramid (<a class="cite" href="#ref-31">31</a>) and produced three-dimensional images of the interior of a
+  damaged reactor at Fukushima Daiichi (<a class="cite" href="#ref-32">32</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</li>
+</ul>
+<p>Medical isotope production belongs here too: yields depend on charged-particle reaction cross sections, and
+the IAEA runs coordinated data projects precisely because wrong data means no isotope reaches a clinic (<a class="cite" href="#ref-33">33</a>)
+<span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p><strong>The energy ceiling of the anchor.</strong> Every one of these operates at or below roughly a GeV per nucleon.
+Above that, the external constraint thins to energy deposition and shielding — which is where the
+counterexample in §5.2 lives — and the character of what is anchored changes from exclusive to inclusive.</p>
+<h3 id="electroweak-precision">Electroweak Precision<a class="anchor" href="#electroweak-precision" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E0, with one E4 constraint. The first domain with no device downstream.</strong></p>
+<p>Nothing in the world fails if the electroweak global fit is wrong. No clock drifts, no patient is harmed, no
+wafer is scrapped. What pins electroweak precision is the fit's own internal consistency across many
+observables, plus two things worth separating.</p>
+<p><strong>Severe internal tests, which are real.</strong> Global analyses constrained the top mass to roughly 140–190 GeV
+before its 1995 discovery at the Tevatron, against a present value near 172.9 GeV; early fits favoured a
+light Higgs of order 100 GeV rather than order 1 TeV, and later fits made successful predictions of M_H
+before the 2012 observation at 125.1 GeV (<a class="cite" href="#ref-34">34</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. These were risky and they could have failed. They are the
+best evidence in the archive that a domain can be unanchored and still well-tested. §5.6 argues both ways on
+whether they count.</p>
+<p><strong>One E4 constraint.</strong> Big Bang nucleosynthesis bounded the number of light neutrino species from
+primordial abundances before LEP measured the Z invisible width (<a class="cite" href="#ref-38">38</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. A foreign discipline constrained an
+electroweak parameter and agreed. Nothing broke when it did.</p>
+<p><strong>The diagnostic case.</strong> In 2022 CDF reported the W mass as 80,433.5 ± 9.4 MeV, seven standard deviations
+above a Standard Model prediction of 80,353 ± 6 MeV; CMS in 2024 reported 80,360.2 ± 9.9 MeV, consistent
+with the prediction and with previous LHC results (<a class="cite" href="#ref-35">35</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. A 7σ outlier against both theory and the rest of
+the field was adjudicated over years by <em>more measurements of the same kind, by the same discipline</em>. The
+muon anomalous magnetic moment tells the same story from the other side: the Fermilab experiment reached 127
+ppb and the world average 124 ppb (<a class="cite" href="#ref-36">36</a>), while the Standard Model prediction moved under a reassessment of the
+hadronic vacuum polarisation in which lattice and data-driven determinations disagreed (<a class="cite" href="#ref-37">37</a>) [B — the
+lattice/R-ratio dispute has named advocates and the 2025 white paper's resolution is itself a theory-side
+adjudication].</p>
+<p>In an E1 domain the arbiter is the device and the timescale is a production run. Here the arbiter is the
+discipline and the timescale is a decade. That difference, not any claim about correctness, is the gradient.</p>
+<h3 id="the-higgs-sector">The Higgs Sector<a class="anchor" href="#the-higgs-sector" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E0. No anchor exists outside the collider programme.</strong></p>
+<p>The question in the brief is whether there is any anchor outside the collider programme. The answer is no,
+and the field says so itself. Asked in 2012 what the Higgs boson would be used for, Sean Carroll justified
+the expense "by the purely intellectual reward associated with understanding the missing piece of the
+Standard Model," noted the historical pattern that applications follow curiosity-driven work, and invited
+readers to speculate about what a cheap tabletop Higgs would be good for — offering no application himself
+(<a class="cite" href="#ref-39">39</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>There is no metrological role: nothing in the SI depends on the Higgs. No clinical role. No device. The
+Higgs couples to mass, and everything that interacts with the Higgs field already does so whether or not
+anyone understands the mechanism, which is precisely why the mechanism's correctness has no operational
+consequence. Vacuum stability, electroweak phase transition cosmology and the hierarchy problem are
+constraints <em>from other theory</em>, not from the world.</p>
+<p>This is not a criticism of the Higgs discovery, which is the best-tested piece of the last fifty years of
+collider physics. It is a statement about where the cost of being wrong would have landed: nowhere outside
+the discipline.</p>
+<h3 id="beyond-the-standard-model-searches">Beyond-the-Standard-Model Searches<a class="anchor" href="#beyond-the-standard-model-searches" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E0, and uniquely, E0 by construction rather than by circumstance.</strong></p>
+<p>This is the only place in the document where "no anchor" can be argued <em>in principle</em> and not merely as a
+matter of present fact.</p>
+<p>The argument: an E1 anchor requires that something in use depends on the phenomenon. A BSM particle is
+defined by a coupling small enough to have escaped every existing measurement. Any particle feeble enough to
+be undiscovered is, by that same feebleness, too feeble for anything to depend on. <strong>The absence of an
+external anchor on an undetected BSM particle is therefore not contingent; it is entailed by the search
+condition</strong> [C — rests on the definition of the search region; falsified by a technology whose operation
+requires a not-yet-discovered particle, which would be self-contradictory]. The qualifier is temporal:
+anchoring becomes available <em>after</em> detection, never before. Nuclear physics in 1930 was in exactly this
+position.</p>
+<p>The state of the searches <span class="tier tier-a" title="Tier A — Documented">A</span>:</p>
+<ul>
+<li><strong>WIMP direct detection.</strong> LZ's 4.2 tonne-year exposure reports no evidence for an excess over expected
+  backgrounds, with a best-fit WIMP count of zero at every mass tested from 9 GeV to 100 TeV, and a
+  world-leading spin-independent limit of 2.2 × 10⁻⁴⁸ cm² at 40 GeV (<a class="cite" href="#ref-40">40</a>). The irreducible background is now
+  coherent elastic neutrino-nucleus scattering from solar and atmospheric neutrinos (<a class="cite" href="#ref-40">40</a>), and XENONnT has
+  reported a first indication of solar ⁸B neutrinos via that channel (<a class="cite" href="#ref-41">41</a>) — the detectors have become
+  neutrino instruments on the way to their limit.</li>
+<li><strong>Extra dimensions.</strong> Limits only; no signal (<a class="cite" href="#ref-42">42</a>).</li>
+<li><strong>Supersymmetry.</strong> Simplified-model bounds reach about 2.4 TeV for first- and second-generation gluinos and
+  squarks, 1.3 TeV for stops and sbottoms, 1 TeV for electroweakinos — and the interpretation is contested:
+  in the pMSSM, gluinos near 1 TeV and stops near 400 GeV remain viable, and a named body of work (Baer,
+  Barger and Savoy on practical naturalness; Arkani-Hamed and Dimopoulos and Giudice and Romanino on split
+  SUSY; Hall and Nomura on high-scale SUSY) holds that the principle is not excluded and that "no currently
+  feasible collider can definitely exclude SUSY" (<a class="cite" href="#ref-43">43</a>) [B — this is the clearest Tier B in the document, with
+  advocates named in the source].</li>
+</ul>
+<p>Note what the last item shows about condition 4. The exclusion of SUSY parameter space is real work and it
+has cost the theory something. But the response available to the theory — move to a corner of parameter
+space the bound does not cover — is exactly the absorption that condition 4 excludes. An E1 anchor cannot be
+answered that way. A wafer does not yield in a different corner of parameter space.</p>
+<h3 id="astrophysical-and-cosmological-particle-claims">Astrophysical and Cosmological Particle Claims<a class="anchor" href="#astrophysical-and-cosmological-particle-claims" aria-label="Link to section">#</a></h3>
+<p><strong>Anchor class: E4 only — and E4 here is at its strongest anywhere in physics.</strong></p>
+<p>The archive must not understate this. Astrophysics and cosmology have killed particle-physics theories, and
+this is the only part of the high-energy landscape where any outside agency has ever done so.</p>
+<ul>
+<li><strong>Minimal SU(<a class="cite" href="#ref-5">5</a>) is dead, killed from outside the accelerator programme.</strong> Georgi-Glashow minimal SU(<a class="cite" href="#ref-5">5</a>)
+  predicted a proton lifetime of about 10³⁰–10³¹ years. IMB set a limit of 5.5 × 10³² years, Kamiokande
+  2.6 × 10³², and the present Super-Kamiokande limit on p → e⁺π⁰ is 2.4 × 10³⁴ years at 90% CL — the model
+  is ruled out, by a detector in a mine, by non-observation (<a class="cite" href="#ref-44">44</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</li>
+<li><strong>The solar neutrino problem was a conflict between a particle-physics assumption and an astrophysical
+  model, and the astrophysics won.</strong> Helioseismology independently constrained the solar interior, closing
+  the escape route that the Sun was wrong (<a class="cite" href="#ref-45">45</a>), and the resolution was that neutrinos have mass (<a class="cite" href="#ref-46">46</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.
+  This is the single best case in the archive of a foreign discipline overturning a particle-physics
+  assumption.</li>
+<li><strong>SN 1987A bounds axions and other weakly coupled particles</strong> by the cooling argument, and those bounds
+  constrain parameter space no terrestrial experiment reaches (<a class="cite" href="#ref-47">47</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</li>
+<li><strong>Oklo</strong> constrains variation in fundamental constants through the burn-up record of a natural reactor that
+  operated two billion years ago (<a class="cite" href="#ref-48">48</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</li>
+<li><strong>Neutrino mass</strong> is now bounded directly at below 0.45 eV by KATRIN (<a class="cite" href="#ref-49">49</a>) and indirectly, more tightly and
+  more model-dependently, by cosmology <span class="tier tier-a" title="Tier A — Documented">A</span>.</li>
+<li><strong>Dark energy</strong> is the weakest link: the preference for evolving dark energy over a cosmological constant
+  in recent survey data is actively contested on statistical grounds (<a class="cite" href="#ref-50">50</a>) <span class="tier tier-b" title="Tier B — Contested">B</span>.</li>
+</ul>
+<p>Every one of these satisfies conditions 1, 3 and 4. None satisfies condition 2. When minimal SU(<a class="cite" href="#ref-5">5</a>) died,
+nothing stopped working and nobody paid. That is why they sit in E4 and why §5.7 treats the boundary as the
+document's most contestable line.</p>
+<h2 id="the-gradient-in-one-table">The Gradient in One Table<a class="anchor" href="#the-gradient-in-one-table" aria-label="Link to section">#</a></h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Anchor class</th>
+<th>What is actually anchored</th>
+<th>Failure latency</th>
+<th>Arbiter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atomic / low-energy QED</td>
+<td><strong>E1 + E3</strong></td>
+<td>transition frequencies, relativistic corrections, shift budgets</td>
+<td>µs – hours</td>
+<td>telecom and navigation operators; the SI</td>
+</tr>
+<tr>
+<td>Nuclear</td>
+<td><strong>E2 + E1</strong></td>
+<td>cross sections, criticality, yields, decay heat, dose</td>
+<td>ms – months</td>
+<td>regulators, clinics, weapons certifiers, the public</td>
+</tr>
+<tr>
+<td>Solid state</td>
+<td><strong>E1</strong></td>
+<td>calibrated process pipelines (not first-principles band structure)</td>
+<td>one process run</td>
+<td>wafer yield</td>
+</tr>
+<tr>
+<td>Accelerator engineering</td>
+<td><strong>E1</strong></td>
+<td>beam optics, materials, thermomechanics, energy deposition</td>
+<td>hours – years</td>
+<td>the machine's own availability record</td>
+</tr>
+<tr>
+<td>Hadron / QCD ≲ 1 GeV/u</td>
+<td><strong>E2 + E1</strong></td>
+<td>fragmentation and reaction cross sections, muon transport</td>
+<td>days – years</td>
+<td>patients, chip failure rates, imaging results</td>
+</tr>
+<tr>
+<td>Hadron / QCD at TeV</td>
+<td><strong>E1, narrow</strong></td>
+<td>inclusive soft production, shower development, energy deposition</td>
+<td>months – years</td>
+<td>machine downtime (see §5.2)</td>
+</tr>
+<tr>
+<td>Electroweak precision</td>
+<td><strong>E0 + one E4</strong></td>
+<td>nothing operational; BBN agreement on N_ν</td>
+<td>a decade</td>
+<td>the discipline</td>
+</tr>
+<tr>
+<td>Higgs sector</td>
+<td><strong>E0</strong></td>
+<td>nothing outside the collider programme</td>
+<td>—</td>
+<td>the discipline</td>
+</tr>
+<tr>
+<td>BSM searches</td>
+<td><strong>E0 by construction</strong></td>
+<td>nothing, entailed by the search condition</td>
+<td>—</td>
+<td>the discipline</td>
+</tr>
+<tr>
+<td>Astro / cosmo particle claims</td>
+<td><strong>E4</strong></td>
+<td>theories die; nothing breaks</td>
+<td>years – decades</td>
+<td>other disciplines' observations</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Verdict on claim A:</strong> the gradient is real and maps cleanly, with one structural refinement and one
+discontinuity. The refinement is that it is not a function of energy alone — it is a function of <em>whether
+anything in use depends on the observable</em>, which correlates with energy because cross sections for usable
+processes fall with energy. The discontinuity is at TeV-scale QCD, where a narrow E1 anchor survives on
+inclusive observables while exclusive ones have none [A for the domain facts; C for the ordering].</p>
+<h2 id="the-opposing-gradient-money-people-advocacy">The Opposing Gradient: Money, People, Advocacy<a class="anchor" href="#the-opposing-gradient-money-people-advocacy" aria-label="Link to section">#</a></h2>
+<p>Claim C says funding, institutional defence and public justification run opposite to the anchoring. This is
+the empirically testable half of the thesis. It was tested against budget records. <strong>It fails at national
+scale, and it fails inside the high-energy programme on the most obvious cut. What survives is a narrower
+and more interesting claim about what the justification documents actually count.</strong></p>
+<h3 id="spending-does-not-correlate-inversely-with-anchoring">Spending Does Not Correlate Inversely With Anchoring<a class="anchor" href="#spending-does-not-correlate-inversely-with-anchoring" aria-label="Link to section">#</a></h3>
+<p>US Department of Energy appropriations, in thousands of dollars (<a class="cite" href="#ref-51">51</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Programme</th>
+<th>FY2025 enacted</th>
+<th>FY2026 enacted</th>
+<th>FY2027 request</th>
+<th>Anchor class of its core science</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NNSA Weapons Activities (total)</td>
+<td>19,293,000</td>
+<td>20,378,000</td>
+<td>27,441,159</td>
+<td><strong>E2</strong></td>
+</tr>
+<tr>
+<td>Basic Energy Sciences</td>
+<td>2,588,285</td>
+<td>2,678,486</td>
+<td>2,146,137</td>
+<td><strong>E1</strong></td>
+</tr>
+<tr>
+<td>Advanced Scientific Computing Research</td>
+<td>1,036,235</td>
+<td>1,116,328</td>
+<td>1,104,446</td>
+<td>mixed</td>
+</tr>
+<tr>
+<td>High Energy Physics</td>
+<td>1,224,570</td>
+<td>1,235,156</td>
+<td>1,120,458</td>
+<td><strong>E0 / E4</strong></td>
+</tr>
+<tr>
+<td>Nuclear Physics</td>
+<td>825,600</td>
+<td>866,141</td>
+<td>791,434</td>
+<td><strong>E2 / E1</strong></td>
+</tr>
+<tr>
+<td>Fusion Energy Sciences</td>
+<td>790,000</td>
+<td>805,657</td>
+<td>755,251</td>
+<td><strong>E1</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>The most heavily anchored science in the United States — weapons physics, where being wrong means Castle
+Bravo — receives about <strong>16 times</strong> the High Energy Physics appropriation, and the ratio widens in the FY2027
+request to about 24. Basic Energy Sciences, which funds the photon and neutron sources on which materials,
+chemistry and structural biology depend, receives about <strong>2.1 times</strong> HEP. HEP's own appropriation declines
+in the FY2027 request while NNSA's rises by about 35%.</p>
+<p><strong>The claim that spending runs inversely to external anchoring is false</strong> <span class="tier tier-a" title="Tier A — Documented">A</span>. It is not weakly supported or
+contested; it is contradicted by the appropriation table. This is reported as a Tier D rejection in §8 (D4)
+and it is the most important negative result in this document, because it is what proves the overall thesis
+is not a tautology (§7).</p>
+<h3 id="nor-inside-the-high-energy-programme-on-the-obvious-cut">Nor Inside the High-Energy Programme, On the Obvious Cut<a class="anchor" href="#nor-inside-the-high-energy-programme-on-the-obvious-cut" aria-label="Link to section">#</a></h3>
+<p>DOE High Energy Physics by subprogram, FY2025 request, in thousands (<a class="cite" href="#ref-52">52</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Line</th>
+<th>FY2023 enacted</th>
+<th>FY2025 request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy Frontier Experimental Physics (ATLAS/CMS)</td>
+<td>180,833</td>
+<td>150,268</td>
+</tr>
+<tr>
+<td>Intensity Frontier Experimental Physics</td>
+<td>273,199</td>
+<td>275,209</td>
+</tr>
+<tr>
+<td>Cosmic Frontier Experimental Physics</td>
+<td>109,102</td>
+<td>98,011</td>
+</tr>
+<tr>
+<td>Theoretical, Computational and Interdisciplinary Physics</td>
+<td>171,746</td>
+<td>186,714</td>
+</tr>
+<tr>
+<td>Advanced Technology R&amp;D</td>
+<td>133,120</td>
+<td>115,566</td>
+</tr>
+<tr>
+<td>Construction — LBNF/DUNE-US</td>
+<td>176,000</td>
+<td>280,000</td>
+</tr>
+<tr>
+<td>Construction — PIP-II</td>
+<td>120,000</td>
+<td>125,000</td>
+</tr>
+<tr>
+<td>HL-LHC ATLAS detector upgrade (MIE)</td>
+<td>10,000</td>
+<td>16,200</td>
+</tr>
+<tr>
+<td>HL-LHC CMS detector upgrade (MIE)</td>
+<td>10,000</td>
+<td>17,500</td>
+</tr>
+<tr>
+<td><strong>Total, High Energy Physics</strong></td>
+<td><strong>1,166,000</strong></td>
+<td><strong>1,230,768</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Energy Frontier plus Cosmic Frontier plus Theory is about $435M in the FY2025 request. Intensity Frontier
+plus LBNF/DUNE plus PIP-II is about $680M. <strong>The largest single investment in US high energy physics is the
+neutrino programme — the sub-domain with the strongest E4 foreign constraints and the only one with a
+cross-disciplinary record of overturning theory</strong> <span class="tier tier-a" title="Tier A — Documented">A</span>. The HL-LHC detector upgrades, serving the least
+anchored physics, receive about $34M, roughly 2.7% of the programme.</p>
+<p>Two caveats that cut in opposite directions. DUNE is itself substantially a BSM and symmetry-violation
+search, so project-level anchoring is mixed rather than high <span class="tier tier-c" title="Tier C — Inference">C</span>. And the $280M DUNE line is construction of
+a facility rather than exploitation of one, so the comparison mixes capital and operating money. Both
+caveats weaken the cut without rescuing the inverse correlation.</p>
+<h3 id="facility-cost-at-the-unanchored-end">Facility Cost at the Unanchored End<a class="anchor" href="#facility-cost-at-the-unanchored-end" aria-label="Link to section">#</a></h3>
+<p>FCC-ee: an estimated <strong>15 billion Swiss francs</strong> for the electron-positron stage including tunnel and
+infrastructure, a ring of about 90.7 km circumference, costs "distributed over a period of about 12 years
+starting from the early 2030s," with a possible Council decision around 2028, and — the operative sentence —
+"the majority of the funding would come from CERN's current annual budget," as with the LHC (<a class="cite" href="#ref-55">55</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>CERN's 2026 Member State contributions total about <strong>CHF 1,232.15 million</strong> (<a class="cite" href="#ref-54">54</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. The FCC-ee estimate is
+therefore of order <strong>twelve years of the entire Member State contribution</strong>, committed to a programme whose
+anchor class is E0. The European Strategy Group has recommended FCC-ee as the preferred option for CERN's
+next flagship collider, with a descoped FCC-ee — removing the top-quark run, two interaction regions instead
+of four, reduced RF power, about 15% less construction cost — as the preferred fallback, on the grounds that
+other electron-positron options offer "substantially reduced precision programmes and no viable path to 10
+TeV" (<a class="cite" href="#ref-56">56</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. This archive's <code>05_publication_governance</code> file records the descoping savings line by line.</p>
+<p>The P5 process on the US side sets its project thresholds at &gt;$250M for large projects and works within
+scenarios assuming 3% and 2% annual increases, declining to recommend one project (Spec-S5) because its cost
+estimate "was not sufficiently mature" (<a class="cite" href="#ref-57">57</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<h3 id="what-the-justification-documents-actually-count-the-core-fin">What the Justification Documents Actually Count — the Core Finding<a class="anchor" href="#what-the-justification-documents-actually-count-the-core-fin" aria-label="Link to section">#</a></h3>
+<p>This is where claim C survives, and it survives in documented form rather than as inference.</p>
+<p>The published cost-benefit analysis of the LHC decomposes total benefits of €16.4bn against €13.5bn of
+costs, giving a net present value of €2.9bn and a 92% probability that benefits exceed costs, as follows
+(<a class="cite" href="#ref-58">58</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Benefit category</th>
+<th>Mean value (€bn)</th>
+<th>Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scientific knowledge</td>
+<td>0.28</td>
+<td><strong>1.7%</strong></td>
+</tr>
+<tr>
+<td>Technological spillover</td>
+<td>5.4</td>
+<td>32.8%</td>
+</tr>
+<tr>
+<td>Human capital formation</td>
+<td>5.5</td>
+<td>33.3%</td>
+</tr>
+<tr>
+<td>Existence value</td>
+<td>3.2</td>
+<td>19.5%</td>
+</tr>
+<tr>
+<td>Cultural benefits</td>
+<td>2.1</td>
+<td>12.7%</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The field's own economic appraisal of its flagship instrument assigns 1.7% of the benefit to the physics
+and 66.1% to technology transfer and training</strong> <span class="tier tier-a" title="Tier A — Documented">A</span>. The quasi-option value of future discoveries is set to
+zero and applied-research benefits are excluded (<a class="cite" href="#ref-58">58</a>).</p>
+<p>The critique of that appraisal is as important as the numbers. Scientific output is valued at the salaries
+of the researchers who produced it and citations at reading time — so a discovery's value is made
+proportional to the time and wages spent on it; publication and citation counts are unreliable because
+erroneous papers attract citations and per-author metrics are meaningless in multi-thousand-author
+collaborations; only 10% of CERN's general administrative costs are charged to the LHC, and at 75% the total
+would rise by several billion euros, which the author notes is an uncertainty roughly the size of the NPV
+itself; and the conclusion is that the method "cannot really evaluate the benefit of new scientific
+knowledge," nor does any other current method do so quantitatively (<a class="cite" href="#ref-58">58</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>The UK national evaluation shows the same structure independently. UK subscription was about £144m in 2019,
+16% of Member State subscriptions, with total UK investment averaging about £152m a year over the decade;
+about 500 UK firms won roughly £183.3m in CERN contracts over 2009–18, with surveyed suppliers
+self-reporting an average +4% turnover boost extrapolated to about £1.05bn of additional turnover; young UK
+researchers who engaged with CERN earn an estimated 12% more, worth about £489m in wages over the decade;
+public willingness to pay is estimated at about £1.2bn, extrapolated from a French survey. <strong>Knowledge is
+valued at over £495m "based on UK authorship and citation of CERN papers"</strong> (<a class="cite" href="#ref-59">59</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>Both official appraisals value the <em>physics</em> bibliometrically — by authorship, citation and researcher
+salary — and the <em>technology</em> by procurement and wages. In other words, at the unanchored end of the
+gradient, the quantified justification for the instrument is composed almost entirely of things that are not
+the physics claims, and the one component that is the physics claims is measured by an index internal to the
+discipline <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p><strong>That is the defensible form of claim C.</strong> Not "money runs opposite to anchoring" — the budget tables refute
+that. But: <strong>as external anchoring falls, the justification for expenditure shifts from the physics to
+proxies (spillover, training, prestige, existence value), and the physics component is assessed by
+discipline-internal metrics</strong> [C — rests on (<a class="cite" href="#ref-58">58</a>) and (<a class="cite" href="#ref-59">59</a>); falsified by an official appraisal of a major
+collider that monetises the physics knowledge by an external measure and finds it dominant].</p>
+<h3 id="the-demand-asymmetry">The Demand Asymmetry<a class="anchor" href="#the-demand-asymmetry" aria-label="Link to section">#</a></h3>
+<p>A sharper way to put the same point, using user counts. Basic Energy Sciences user facilities reported about
+11,606 users in FY2021 — 7,617 at light sources, 685 at neutron scattering facilities, 3,304 at nanoscale
+science research centres — having peaked near 12,000 at the light sources alone in FY2014 (<a class="cite" href="#ref-53">53</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</p>
+<p>That is comparable in magnitude to the LHC user community. The difference is composition. BES facility users
+are overwhelmingly from outside the discipline that built the facility: chemists, structural biologists,
+materials engineers, industrial crystallographers whose own careers fail if the beamline misreports. LHC
+users <em>are</em> the discipline. <strong>Anchored facilities are funded by external demand; unanchored facilities are
+funded by internal advocacy</strong> [C — rests on the composition of the two user bases; falsified by showing a
+substantial non-particle-physics user base whose work depends on collider data]. This is the structural
+asymmetry the money tables fail to capture, and it is why the money tables refuting claim C do not dispose
+of the thesis.</p>
+<h3 id="where-the-sources-do-not-allow-quantification">Where the Sources Do Not Allow Quantification<a class="anchor" href="#where-the-sources-do-not-allow-quantification" aria-label="Link to section">#</a></h3>
+<p>Stated plainly, as the frame requires.</p>
+<ul>
+<li><strong>Career mass.</strong> No verified current headcount for the ATLAS, CMS or total LHC user communities was
+  obtained for this document; CERN's and the collaborations' own demographic documents were not retrievable.
+  Any figure quoted from memory would be unsourced. The claim that career mass concentrates at the
+  unanchored end is therefore <strong>untested here</strong> and must not be asserted.</li>
+<li><strong>Institutional defence as a measurable quantity.</strong> Strategy-document advocacy can be read (<a class="cite" href="#ref-56">56</a>, <a class="cite" href="#ref-57">57</a>) but
+  not quantified against anchoring on any scale this document could construct. The qualitative dispute is
+  live and has named advocates: Hossenfelder argues that the field has reached the end of a line and that
+  the case for a larger collider is being constructed after the fact (<a class="cite" href="#ref-65">65</a>), and Butterfield's review replies
+  that the diagnosis mistakes a methodological debate about naturalness for institutional self-interest (<a class="cite" href="#ref-66">66</a>)
+  <span class="tier tier-b" title="Tier B — Contested">B</span>. This document takes no side on it, because neither position is settled by anything in the budget
+  records examined here.</li>
+<li><strong>Within-HEP anchoring weights.</strong> Assigning a single anchor class to a budget line like "Intensity
+  Frontier" is a judgement, not a measurement. The §6.2 cut should be read as indicative, not as a
+  correlation coefficient.</li>
+<li><strong>DOE HEP subprogram figures</strong> are FY2023 enacted and FY2025 request; the FY2025 <em>enacted</em> subprogram split
+  was not retrieved, so the subprogram table and the appropriation table in §6.1 are not from the same
+  fiscal vintage.</li>
+</ul>
+<h2 id="attempts-to-break-the-claim">Attempts to Break the Claim<a class="anchor" href="#attempts-to-break-the-claim" aria-label="Link to section">#</a></h2>
+<p>This is the section the document exists for. Each candidate counterexample was run down to the question: does
+it anchor the <em>particle physics claims</em>, or only the engineering?</p>
+<h3 id="spin-offs-one-at-a-time">Spin-offs, One at a Time<a class="anchor" href="#spin-offs-one-at-a-time" aria-label="Link to section">#</a></h3>
+<p><strong>Hadron therapy.</strong> The strongest of the medical cases. CERN hosted the 1996–2000 PIMMS study, which
+produced the optimised proton and carbon-ion synchrotron design behind CNAO in Pavia and the basis for
+MedAustron, and an ultra-compact 750 MHz RFQ built on Linac 4 experience accelerates protons to 5 MeV in
+about 2 m, licensed to a spin-off (<a class="cite" href="#ref-60">60</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Patients are treated; a wrong dose harms them. <strong>Verdict: a
+genuine E2 anchor — on Bethe stopping power, nuclear fragmentation cross sections below about 400 MeV/u, and
+accelerator engineering. Not on TeV-scale particle physics.</strong> The physics it tests is the physics of §3.2 and
+§3.5, which the gradient already places at the anchored end.</p>
+<p><strong>MRI superconducting magnets.</strong> This is the most-repeated claim in the public case for colliders, and it is
+weaker than its reputation. CERN's own review of its impact on medical technology does not claim MRI magnets
+at all; its superconducting magnet work is for ion-therapy facilities, including a toroidal gantry design,
+and its magnetic-field-related medical product is a handheld radiation survey meter usable near PET-MRI
+scanners — explicitly "not an MRI magnet" (<a class="cite" href="#ref-60">60</a>) [A/B — the broader industrial claim that accelerator demand
+built the NbTi wire industry is real but is a claim about superconductor manufacturing capacity, not about
+physics]. <strong>Verdict: anchors materials and magnet engineering. Not particle physics.</strong></p>
+<p><strong>The World Wide Web.</strong> Anchors nothing physical. It was written at a particle physics laboratory; its
+success is independent of whether any particle physics claim is true. The UK evaluation's citation of the
+Web as adding 2.9% to global GDP is a global figure offered as context (<a class="cite" href="#ref-59">59</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. <strong>Verdict: no anchor.</strong></p>
+<p><strong>Grid and distributed computing.</strong> Engineering. <strong>Verdict: no anchor.</strong></p>
+<p><strong>Detector technology in imaging.</strong> Medipix and Timepix hybrid pixel chips derive from LHC tracking
+detectors; Medipix3 sorts photons into energy bins, enabling spectral X-ray imaging, and a MARS Bioimaging
+scanner using Medipix3 produced the first 3D colour X-ray images of human extremities in 2018; Crystal Clear
+crystals feed time-of-flight PET; Charpak's multiwire proportional chamber, invented at CERN in 1968, led to
+a radiography technology used in orthopaedics (<a class="cite" href="#ref-60">60</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. <strong>Verdict: a real E1/E2 anchor on detector
+engineering and on photon-matter interaction at keV energies. The clinical images do not depend on any
+TeV-scale claim being true.</strong></p>
+<p>A general note on this whole family. Every spin-off anchors the layer of physics the device <em>uses</em>, which is
+always lower-energy than the physics the laboratory was built to study. That is not an accident of this
+sample; it follows from the fact that a device must operate at energies and cross sections where effects are
+large enough to exploit [C — rests on the case-by-case verdicts above; falsified by one deployed device whose
+operation depends on a TeV-scale exclusive observable].</p>
+<h3 id="the-strongest-counterexample-radiation-to-electronics-and-ma">The Strongest Counterexample: Radiation to Electronics and Machine Protection<a class="anchor" href="#the-strongest-counterexample-radiation-to-electronics-and-ma" aria-label="Link to section">#</a></h3>
+<p>This is the one that nearly breaks the claim, and it deserves to be stated at full strength before it is
+qualified.</p>
+<p>At the LHC, the physics of the collisions themselves produces a radiation field in the tunnel that destroys
+electronics, and the cost is counted in machine availability. Over Run 2, radiation-to-electronics faults
+caused <strong>80 beam dumps</strong>: 24 in 2015, 8 in 2016, 14 in 2017 and 34 in 2018, attributed to power converters
+(<a class="cite" href="#ref-35">35</a>), the Quench Protection System (<a class="cite" href="#ref-28">28</a>), magnet circuits (<a class="cite" href="#ref-10">10</a>), RF (<a class="cite" href="#ref-4">4</a>) and other systems (<a class="cite" href="#ref-3">3</a>). Each dump costs
+about three hours to re-establish stable beams with collisions. The dump rate stayed below 0.5 per fb⁻¹
+except in 2015. Total ionising dose measured by the RadMon system at IP1 in 2017 and 2018 is reported as "in
+good agreement with the predictions," which are FLUKA Monte Carlo simulations (<a class="cite" href="#ref-62">62</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Separately, the
+machine carries about 362 MJ of stored beam energy at nominal LHC design and about 677 MJ at HL-LHC nominal
+(<a class="cite" href="#ref-22">22</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>, and machine protection depends on getting energy deposition right.</p>
+<p><strong>This satisfies all four conditions.</strong> The constraint is foreign to the physics analysis (it is enforced by
+accelerator operations and equipment groups), the failure is visible and expensive (lost beam time,
+destroyed hardware, in the limit a damaged magnet), the arbiter is disinterested (the availability record),
+and it cannot be absorbed by a parameter.</p>
+<p><strong>And it is an anchor on high-energy hadronic physics.</strong> The radiation field in the tunnel is produced by
+TeV-scale proton-proton collisions. If inelastic particle production at those energies were badly
+mis-modelled, the shielding and the equipment placement would be wrong, and the machine would be unavailable
+in ways its operators could not explain.</p>
+<p><strong>The qualification, which is the crux of this document.</strong> What this anchor constrains is <em>inclusive, bulk,
+high-cross-section</em> observables: minimum-bias multiplicity, forward particle flux, shower development and
+energy deposition. It cannot constrain the rare-process tail, for a reason that is structural rather than
+practical: a process rare enough to require a discovery claim is, by that same rarity, far too rare to
+deposit a measurable dose. The anchor's reach is proportional to cross section, and discovery physics lives
+where the cross section is smallest [C — rests on the proportionality of dose to cross section and on the
+R2E facts in (<a class="cite" href="#ref-62">62</a>); falsified by a machine-protection or shielding calculation whose outcome depends
+materially on a rare-process cross section].</p>
+<p>Supporting evidence on how accurate the anchored part actually is, which is more interesting than either
+extreme would predict: against ATLAS calorimeter beam tests at 20–160 GeV, both Geant4 and the
+Geant4-FLUKA.CERN combination overestimate the pion-to-electron response ratio by "up to a few percent";
+Geant4 with FTFP_BERT reproduces the roughly 10% response difference between pion and proton showers in
+TileCal at 16–30 GeV; and on longitudinal shower length the two codes <strong>disagree in opposite directions</strong>,
+Geant4 underestimating and FLUKA.CERN overestimating, especially above 120 GeV (<a class="cite" href="#ref-28">28</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. So at the anchored
+frontier of high-energy hadronic physics the accuracy is percent-level on bulk response and the two leading
+codes do not agree with each other on shape. That is precisely what a narrow anchor looks like: tight where
+the money is, loose immediately outside it.</p>
+<p>And the SNS targets (§3.4) show what happens when a GeV-scale prediction in this same family is tested
+hard: eleven targets, not one reaching the calculated 5,000 MWh lifetime, two failing at about 100 and 600
+MWh, cause not fully identified (<a class="cite" href="#ref-24">24</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. The anchor fired, the prediction lost, and the field could not
+immediately say why.</p>
+<h3 id="the-spallation-and-soft-error-family">The Spallation and Soft-Error Family<a class="anchor" href="#the-spallation-and-soft-error-family" aria-label="Link to section">#</a></h3>
+<p>Treated in §3.5 and §5.2; the verdict is recorded here for completeness. Atmospheric-neutron single event
+effects (<a class="cite" href="#ref-29">29</a>, <a class="cite" href="#ref-30">30</a>), medical isotope production yields (<a class="cite" href="#ref-33">33</a>) and muon radiography (<a class="cite" href="#ref-31">31</a>, <a class="cite" href="#ref-32">32</a>) are genuine E1/E2
+anchors reaching up to roughly a GeV. They anchor nuclear reaction and transport physics. They do not reach
+the electroweak or Higgs sectors at all, and they reach QCD only in its inclusive, low-energy regime.</p>
+<h3 id="did-any-high-energy-result-ever-get-overturned-by-an-externa">Did Any High-Energy Result Ever Get Overturned by an External Constraint?<a class="anchor" href="#did-any-high-energy-result-ever-get-overturned-by-an-externa" aria-label="Link to section">#</a></h3>
+<p>Searched for specifically. <strong>No case was found in which an E1–E3 anchor overturned a particle-physics
+claim</strong> [C — an absence of evidence, stated as such; falsified by one documented case, which would be a
+major result and should be sought actively]. The nearest candidates and why each falls short:</p>
+<ul>
+<li><strong>OPERA's superluminal neutrino claim of 2011.</strong> Retracted after instrumental faults were identified in the
+  timing chain. The contradicting evidence was a theoretical argument from vacuum-Cherenkov-type energy loss
+  (<a class="cite" href="#ref-64">64</a>) and a measurement by another detector in the same tunnel (<a class="cite" href="#ref-63">63</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Both internal. Nothing in the
+  world failed; the claim failed.</li>
+<li><strong>Minimal SU(<a class="cite" href="#ref-5">5</a>).</strong> Killed by proton-decay non-observation (<a class="cite" href="#ref-44">44</a>) — a genuine foreign constraint, but E4.</li>
+<li><strong>The reactor antineutrino anomaly.</strong> The closest thing to the anchored domain correcting the less-anchored
+  one, and it runs downhill: nuclear fission data correcting neutrino phenomenology (<a class="cite" href="#ref-15">15</a>) [A/B]. Still not a
+  device failing.</li>
+<li><strong>Castle Bravo and the SNS targets.</strong> Real anchored failures of prediction — in nuclear and accelerator
+  physics, not in particle physics (<a class="cite" href="#ref-12">12</a>, <a class="cite" href="#ref-24">24</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</li>
+<li><strong>The pentaquark Θ⁺ and the CDF W mass.</strong> Both corrected, both internally (35, and the Θ⁺ case recorded in
+  <code>05_publication_governance</code>) <span class="tier tier-a" title="Tier A — Documented">A</span>.</li>
+</ul>
+<p>The honest summary: the field self-corrects, repeatedly and on the record, and in no documented case has the
+correcting agent been something outside it that stopped working.</p>
+<h3 id="precision-electroweak-prediction-as-an-anchor-argued-both-wa">Precision Electroweak Prediction as an Anchor — Argued Both Ways<a class="anchor" href="#precision-electroweak-prediction-as-an-anchor-argued-both-wa" aria-label="Link to section">#</a></h3>
+<p>The brief asks whether pre-measurement predictions of the W and Z masses, the top mass from loop
+corrections, and the Higgs mass range count as anchors. The question deserves both answers in full.</p>
+<p><strong>The case that they do count.</strong> These predictions were risky and specific. The top mass was constrained to
+roughly 140–190 GeV before the particle existed as an observation, and came in near 172.9 GeV; fits favoured
+a light Higgs of order 100 GeV against the then-live alternative of order 1 TeV, and the boson arrived at
+125.1 GeV (<a class="cite" href="#ref-34">34</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. On Mayo's severity criterion, a test is severe when the hypothesis would probably have
+failed it if false (<a class="cite" href="#ref-6">6</a>), and these qualify. Worrall's use-novelty criterion is also satisfied: the top and
+Higgs masses were not used to construct the theory being tested (<a class="cite" href="#ref-5">5</a>). Under predictivism in any of its
+versions — Maher's reliable-method argument, Worrall's conditional-versus-unconditional confirmation,
+Hitchcock and Sober's overfitting guard (<a class="cite" href="#ref-5">5</a>) — this is strong confirmation, and much stronger than "the model
+fits." A critic who dismisses it is not being rigorous; they are being hostile.</p>
+<p><strong>The case that they do not count, which is this document's position.</strong> Three reasons, each tied to a
+condition.</p>
+<p><em>Condition 1, foreign origin, fails.</em> The predicting and the measuring were done by one discipline with
+overlapping personnel, shared software lineage, shared systematic-uncertainty conventions and shared
+correction procedures. This archive has documented the shared lineage quantitatively (claims C1a′, C1b,
+SUPPORTED, in <code>04_software_algorithmic</code> and <code>08_evidential_audit</code>). An agreement between two parts of one
+community is not a foreign constraint, however severe it is.</p>
+<p><em>Condition 2, costly failure, fails.</em> Had the top mass come in at 400 GeV, the cost would have been borne by
+a theory and by some careers. No clock would have drifted and no patient would have been harmed. There is no
+price signal.</p>
+<p><em>Condition 4, non-absorbability, fails.</em> The electroweak framework has designed-in latitude for exactly this
+contingency: S, T and U parameters, and now effective-field-theory operators, exist to parameterise
+deviations. A discrepancy becomes a measurement of a new coefficient. That is the correct scientific
+response and it is also precisely the absorption condition 4 excludes.</p>
+<p><strong>Resolution.</strong> Severe internal testing and external anchoring are distinct virtues and electroweak physics
+has the first in abundance and the second not at all. <strong>The archive must therefore never write "unanchored"
+and mean "untested."</strong> Making that slide would be the single fastest way to discredit the defensible
+material here, and §8 records it as a rejected claim (D2). What the distinction buys is a sharper question
+than "is it true?": <em>who finds out, how fast, and at whose expense?</em> In the electroweak sector the answer is
+the discipline, over a decade, at its own expense — as the W mass episode demonstrates in detail (<a class="cite" href="#ref-35">35</a>).</p>
+<h3 id="neutrino-physics-through-solar-and-atmospheric-observation-t">Neutrino Physics Through Solar and Atmospheric Observation — the Hardest Case<a class="anchor" href="#neutrino-physics-through-solar-and-atmospheric-observation-t" aria-label="Link to section">#</a></h3>
+<p>The brief asks whether neutrino physics is anchored through astrophysical cross-checks produced outside
+accelerator laboratories. This is the document's most contestable line and both readings are stated.</p>
+<p><strong>The case for calling it anchored.</strong> The solar neutrino problem was resolved against a particle-physics
+assumption. The Sun's interior was independently constrained by helioseismology, which removed the option of
+blaming the astrophysical model (<a class="cite" href="#ref-45">45</a>); detectors in mines, built and operated by a community that was not the
+accelerator community, measured a deficit; and the resolution was that neutrinos have mass (<a class="cite" href="#ref-46">46</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Proton
+decay non-observation killed minimal SU(<a class="cite" href="#ref-5">5</a>) outright (<a class="cite" href="#ref-44">44</a>). Big Bang nucleosynthesis counted neutrino species
+before LEP did (<a class="cite" href="#ref-38">38</a>). SN 1987A bounds axion couplings no laboratory reaches (<a class="cite" href="#ref-47">47</a>). Oklo bounds constant
+variation over two billion years (<a class="cite" href="#ref-48">48</a>). These constraints are foreign in origin, disinterested, and
+non-absorbable — three of four conditions, and the three that matter most epistemically. On any ordinary
+usage, neutrino physics <em>is</em> externally constrained, and more so than any other part of high-energy physics.</p>
+<p><strong>The case for calling it a foreign constraint rather than an anchor.</strong> Condition 2 fails in every case.
+When minimal SU(<a class="cite" href="#ref-5">5</a>) died, nothing stopped working. No manufacturer lost a lot, no patient was mistreated, no
+operator logged 2,000 alarms. The arbiter was disinterested but also <em>unharmed</em>, and an arbiter who bears no
+cost imposes no cost. The claim under test is about where the price of error lands, and E4 constraints send
+no invoice.</p>
+<p><strong>Verdict.</strong> Neutrino physics occupies a genuine intermediate class — E4-strong, E1-absent — and it is the
+reason the gradient is a slope and not a cliff. Calling it unanchored full stop would be false. Calling it
+anchored in the sense that semiconductor physics is anchored would also be false. The archive should carry
+both facts: <strong>neutrino physics has the strongest foreign constraints and none of the operational ones</strong>, and
+the funding data (§6.2) show it is also the best-funded part of US high energy physics, which is a point
+<em>against</em> claim C and is recorded as such.</p>
+<h2 id="the-tautology-objection">The Tautology Objection<a class="anchor" href="#the-tautology-objection" aria-label="Link to section">#</a></h2>
+<p>The strongest counterargument to this entire document, stated without softening:</p>
+<blockquote>
+<p>The gradient is simply what "frontier" means. A frontier is by definition the region where nothing yet
+built depends on the phenomenon, because if something depended on it, it would be applied physics. You
+cannot have external technological anchors for phenomena nobody can yet exploit. So "external anchoring is
+weakest at the frontier" is true the way "the newest thing is the least established thing" is true — a
+definition wearing the clothes of a critique. Worse, it is a critique that would have condemned nuclear
+physics in 1930, semiconductor physics in 1945 and laser cooling in 1975, each of which later became the
+anchored domain the argument now uses as its standard.</p>
+</blockquote>
+<p>This objection is correct about claim A and must be conceded in full. <strong>The existence of the gradient is
+near-tautological and is not presented here as a finding.</strong> The historical point is also conceded: every
+anchored domain in §3 was unanchored once, and the document's own §2 edge case on timing says so. Anyone
+reading claim A as a criticism of high-energy physics has read it wrong.</p>
+<p>Three things survive the objection, and they are the document's actual content.</p>
+<p><strong>First, the opposing gradient is empirical and it was falsified.</strong> A tautology cannot be refuted by an
+appropriation table. Claim C was tested against DOE appropriations and <strong>failed</strong>: the most anchored science
+is the best funded, by a factor of 16 (<a class="cite" href="#ref-51">51</a>), and inside HEP the best-funded line is the sub-domain with the
+strongest foreign constraints (<a class="cite" href="#ref-52">52</a>). A thesis whose second half can be — and was — destroyed by budget
+records is not a tautology. It is a conjunction of a near-definitional observation with a contingent
+empirical claim, and the empirical claim lost. That result is worth more than the thesis would have been if
+it had won.</p>
+<p><strong>Second, the shape of the surviving anchor is not tautological.</strong> That TeV-scale physics retains a narrow E1
+anchor on inclusive soft production through radiation-to-electronics and machine protection (<a class="cite" href="#ref-62">62</a>), that this
+anchor's reach is proportional to cross section and therefore cannot extend to discovery physics, and that at
+its own frontier the two leading simulation codes disagree in opposite directions on shower shape (<a class="cite" href="#ref-28">28</a>) —
+none of that follows from the meaning of "frontier." It is a specific, checkable claim about which
+observables are disciplined by cost and which are not, and it is falsifiable by a single counterexample
+(§5.2).</p>
+<p><strong>Third, what the justification documents count is not tautological.</strong> That the official cost-benefit
+analysis of the LHC assigns 1.7% of benefit to scientific knowledge and 66% to spillover and human capital
+(<a class="cite" href="#ref-58">58</a>), and that both it and the UK national evaluation monetise the physics by authorship and citation (<a class="cite" href="#ref-58">58</a>, <a class="cite" href="#ref-59">59</a>), is a documented property of the appraisal literature. A field could have been anchored only weakly and
+still have justified itself primarily by its physics. These ones do not.</p>
+<p><strong>Does the claim survive?</strong> <strong>Partly, and not in the form it was stated.</strong> As stated — "anchoring is weakest
+where the stakes are highest, and funding runs the other way" — it does not survive: the first half is
+near-definitional and the second half is false at national scale. What survives is narrower and sharper:</p>
+<blockquote>
+<p><strong>Accountability does not travel with claim-strength.</strong> As external anchoring falls, the entity that
+determines whether a claim was wrong converges on the entity that made it; the anchoring that remains at
+the high-energy end covers bulk inclusive observables and, for structural reasons tied to cross section,
+cannot cover the rare-process claims that carry discovery weight; and the quantified public justification
+for instruments at that end rests on proxies for the physics rather than on the physics, with the physics
+component itself assessed by discipline-internal metrics.</p>
+</blockquote>
+<p>That formulation is testable, partly documented, partly inferential, and it is not a tautology. It is also
+considerably less dramatic than the claim this document was asked to test, which is the usual outcome when
+a structural intuition is made to meet budget tables and primary literature.</p>
+<h2 id="what-survives-as-register-entries">What Survives, as Register Entries<a class="anchor" href="#what-survives-as-register-entries" aria-label="Link to section">#</a></h2>
+<p>Proposed for <code>00_method/claims_register_v1.md</code>. Nothing below should be carried into a published synthesis
+in any other wording.</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Claim</th>
+<th>Tier</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>External anchoring, defined as a foreign, costly, disinterested and non-absorbable constraint, declines monotonically across the domains surveyed, and the ordering tracks whether anything in use depends on the observable rather than energy scale as such</td>
+<td>C</td>
+<td>SUPPORTED-AS-INFERENCE — near-definitional; must never be presented as a finding</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>The external anchoring that survives at TeV energies operates on inclusive, high-cross-section observables (particle production, shower development, energy deposition) via radiation-to-electronics and machine protection, and its reach is proportional to cross section, so it cannot extend to the rare-process claims that carry discovery weight</td>
+<td>C</td>
+<td>SUPPORTED-AS-INFERENCE — falsified by one shielding or machine-protection calculation whose outcome turns on a rare-process cross section</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Both official economic appraisals of CERN's programme value scientific knowledge at a small fraction of total benefit (1.7% of €16.4bn in the LHC CBA) and assess that fraction by discipline-internal bibliometrics, with technology transfer and human capital carrying two-thirds of the quantified case</td>
+<td>A</td>
+<td>SUPPORTED</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>No case exists in the record searched in which a particle-physics claim was overturned by an operational, clinical or metrological failure outside the discipline; corrections have come from within the discipline or from cross-disciplinary observation that imposes no cost</td>
+<td>C</td>
+<td>SUPPORTED-AS-INFERENCE — an absence; falsified by one documented case</td>
+</tr>
+<tr>
+<td>A5</td>
+<td><del>Funding, facility cost and institutional defence run inversely to external anchoring</del></td>
+<td>—</td>
+<td><strong>REJECTED</strong> — see §6.1 and D4</td>
+</tr>
+<tr>
+<td>A6</td>
+<td><del>Accelerator and detector technology spin-offs anchor the particle-physics claims</del></td>
+<td>—</td>
+<td><strong>REJECTED</strong> — see §5.1 and D6</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Precision electroweak prediction constitutes severe internal testing and not external anchoring, and the two must be held apart</td>
+<td>C</td>
+<td>SUPPORTED-AS-INFERENCE — definitional, argued both ways in §5.6</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>Neutrino physics occupies an intermediate class: the strongest foreign constraints in high-energy physics (solar, atmospheric, proton decay, BBN, SN 1987A, Oklo) and no operational ones</td>
+<td>A/C</td>
+<td>SUPPORTED — the classification is an inference, the constraints are documented</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="falsification-conditions">Falsification Conditions<a class="anchor" href="#falsification-conditions" aria-label="Link to section">#</a></h2>
+<p>Each is a genuine test and some may be passed.</p>
+<ul>
+<li><strong>A1 fails</strong> if a deployed technology is identified whose operation depends on a TeV-scale exclusive
+  observable, or if the ordering in §4 can be inverted by a defensible alternative anchor definition that
+  still excludes internal consistency, inter-experiment agreement and goodness-of-fit.</li>
+<li><strong>A2 fails</strong> if a machine-protection, shielding or radiation-to-electronics calculation is shown to depend
+  materially on a rare-process cross section, or if the dose-to-cross-section proportionality argument is
+  shown to be wrong.</li>
+<li><strong>A3 fails</strong> if an official appraisal of a major collider monetises the physics knowledge by a measure
+  external to the discipline and finds it dominant among the benefit categories.</li>
+<li><strong>A4 fails</strong> on one documented case. This should be actively sought, not assumed absent.</li>
+<li><strong>The whole document fails as a critique</strong> if the tautology objection in §7 is judged to defeat the
+  narrowed formulation as well as the original — in which case the correct conclusion is that the gradient
+  is a description of frontier science and nothing more, and the archive should say so.</li>
+</ul>
+<h2 id="claims-examined-and-not-supported">Claims Examined and Not Supported<a class="anchor" href="#claims-examined-and-not-supported" aria-label="Link to section">#</a></h2>
+<p><strong>D1 — That weak external anchoring implies a claim is false, fabricated, or probably wrong.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>.
+There is no inferential route from "nothing outside the discipline would break if this were wrong" to "this
+is wrong." The Higgs discovery, the electroweak fit and the measured exclusion of large volumes of SUSY
+parameter space are unanchored in this document's sense and also, as far as any evidence shows, correct.
+This archive's binding scope boundary already excludes fabrication claims (<code>00_method/research_frame_v1.md</code>)
+and nothing here reopens them.</p>
+<p><strong>D2 — That unanchored means unjustified, or untested.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>, and this is the most important rejection
+in the document. Electroweak physics predicted the top mass in a 140–190 GeV window before the particle was
+observed and favoured a light Higgs against a heavy one before 125 GeV was measured (<a class="cite" href="#ref-34">34</a>). Those are severe
+tests on Mayo's own criterion (<a class="cite" href="#ref-6">6</a>) and satisfy use-novelty (<a class="cite" href="#ref-5">5</a>). Lattice QCD predicted the B_c mass and f_D+
+before measurement (<a class="cite" href="#ref-26">26</a>). A domain can be unanchored and rigorously tested, and conflating the two would
+discredit everything defensible in this file. §5.6 argues the point at length precisely so that it cannot be
+read any other way.</p>
+<p><strong>D3 — That this gradient is unique to particle physics.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>. Tested honestly against three other
+frontier fields.</p>
+<p><em>Cosmology.</em> The same gradient, steeper. Nothing in the world depends on dark energy's equation of state;
+the preference for an evolving one over a cosmological constant is contested on statistical grounds (<a class="cite" href="#ref-50">50</a>)
+<span class="tier tier-b" title="Tier B — Contested">B</span>. Cosmology's constraints are E4 throughout, and its appeal to a disinterested arbiter is weaker than
+neutrino physics's, because its independent probes share systematics and a single sky.</p>
+<p><em>String theory.</em> E0 everywhere, and the field has produced an explicit methodological response rather than
+denying the problem: a sustained argument over whether a research programme with no risky prediction can be
+assessed non-empirically at all, conducted in the open between the programme's methodologists and its
+critics (<a class="cite" href="#ref-67">67</a>) [B — the dispute has named advocates on both sides and is not resolved].
+The gradient's endpoint is therefore occupied not by particle physics but by a neighbouring field that has
+openly argued for changing the standard of evidence in response.</p>
+<p><em>Deep-time geology.</em> This one is instructive because it is anchored at its shallow end and not at its deep
+end — the same shape, driven by the same mechanism. Radiocarbon is calibrated against dendrochronology and
+tied to absolutely dated cosmogenic spikes in tree rings at 774 and 993 CE (<a class="cite" href="#ref-68">68</a>, <a class="cite" href="#ref-69">69</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>, and basin and
+petroleum-system modelling is paid for in dry wells, which is as clean an E1 anchor as semiconductor yield
+(70-adjacent industrial practice) <span class="tier tier-c" title="Tier C — Inference">C</span>. Hadean geology has no such anchor at all. Nobody drills for the
+Hadean.</p>
+<p><strong>Conclusion: the gradient is a general feature of frontier science, not a pathology of particle physics.</strong>
+Particle physics is distinctive only in the <em>ratio of expenditure to anchor</em> at the unanchored end — a CHF
+15bn instrument (<a class="cite" href="#ref-55">55</a>) against an E0 anchor class — and even that distinction is partly beaten by cosmology
+per unit of anchor, and entirely beaten by string theory on anchor though not on cost.</p>
+<p><strong>D4 — That funding, facility cost and institutional defence run inversely to external anchoring.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>,
+with numbers. NNSA Weapons Activities, the most heavily anchored physics in the United States, received
+$19.293bn in FY2025 against High Energy Physics's $1.225bn, and the FY2027 request widens the ratio from
+about 16 to about 24; Basic Energy Sciences received about 2.1 times HEP (<a class="cite" href="#ref-51">51</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. Inside HEP, the
+neutrino programme — the sub-domain with the strongest foreign constraints — is the largest single
+investment, at roughly $680M against about $435M for Energy Frontier, Cosmic Frontier and theory combined
+(<a class="cite" href="#ref-52">52</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. The narrower claim that survives concerns the <em>composition of the justification</em>, not the
+magnitude of the spend (A3), and the demand asymmetry between externally-populated and internally-populated
+user communities (§6.6) is an inference, not a measurement.</p>
+<p><strong>D5 — That accelerator engineering's anchors extend to the particle physics done with the machines.</strong>
+Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>, but with a carved-out exception that must travel with the rejection. Beam optics, magnet training,
+electron-cloud heat loads, stray-current field perturbations and target fatigue are anchored hard and have
+demonstrably failed against prediction (<a class="cite" href="#ref-22">22</a>, <a class="cite" href="#ref-23">23</a>, <a class="cite" href="#ref-24">24</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>, and none of that bears on the interpretation of
+collision data. The exception is radiation-to-electronics and machine protection (<a class="cite" href="#ref-62">62</a>), which genuinely
+anchor inclusive high-energy hadronic production (A2). Stating the rejection without the exception would
+misrepresent the evidence.</p>
+<p><strong>D6 — That spin-offs anchor the physics.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>, case by case (§5.1). Hadron therapy, Medipix, PET
+crystals, the multiwire chamber, the Web, grid computing and superconducting magnet technology each anchor
+either engineering or a layer of physics below the one the laboratory was built to study. CERN's own review
+of its medical impact does not even claim MRI magnets (<a class="cite" href="#ref-60">60</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>, which is worth noting given how often the
+public argument does.</p>
+<p><strong>D7 — That BSM searches' lack of an external anchor is a defect of those searches, or a reason not to
+fund them.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>. An undetected particle's feebleness is the search condition; anchoring is
+structurally unavailable before detection, not withheld (§3.8). The honest reading is that BSM searches
+must be justified on grounds other than anchoring, which is what the field does, and the archive's question
+is whether those grounds are stated candidly — a question for
+<code>02_theory_critique</code> and <code>05_publication_governance</code>, not for this file.</p>
+<p><strong>D8 — That novel prediction is an external anchor.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span> as definitional (§5.6, A7). Recorded here so
+it is not re-litigated: predictive success is a severe test and a real epistemic virtue, and it is not what
+condition 2 asks for.</p>
+<p><strong>D9 — That the LHC has no external anchor at all.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>. 80 radiation-induced beam dumps in Run 2,
+FLUKA dose predictions tested against RadMon measurements, 362 MJ of stored beam requiring correct energy
+deposition (<a class="cite" href="#ref-62">62</a>, <a class="cite" href="#ref-22">22</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>. The LHC is externally anchored on bulk inclusive observables. The claim is about
+the reach of that anchor, not its existence, and overstating it would have been the easiest error in this
+document to make.</p>
+<p><strong>D10 — That the claim as originally stated is a finding of this archive.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>. It is near-tautological
+in its first half (§7) and false in its second (D4). Only the narrowed formulation at the end of §7 and the
+register entries A1–A4, A7 and A8 may be carried forward.</p>
+<p><strong>D11 — That the anchored domains are therefore "known" in a way the unanchored ones are not.</strong> Rejected <span class="tier tier-d" title="Tier D — Rejected">D</span>, and
+this is the subtlest of the rejections. Plain DFT underestimates semiconductor band gaps by about 49%, and
+even G₀W₀ by about 14% on average (<a class="cite" href="#ref-19">19</a>) <span class="tier tier-a" title="Tier A — Documented">A</span>, in the most ruthlessly anchored domain in science. Eleven of
+eleven SNS targets missed their calculated lifetime (<a class="cite" href="#ref-24">24</a>). Castle Bravo was off by 250% (<a class="cite" href="#ref-12">12</a>). What an anchor
+produces is not correctness but <strong>accountability under cost</strong> — somebody finds out quickly, at a price they
+cannot argue with, and must change something. The gradient is a gradient of accountability, and saying
+otherwise would make the archive claim far more than its evidence supports.</p>
+<h2 id="version-log">Version Log<a class="anchor" href="#version-log" aria-label="Link to section">#</a></h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Status</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1</td>
+<td>2026-11-25</td>
+<td>active</td>
+<td>Claim stated, anchor definition built with E0–E4 classes, gradient mapped over nine domains, opposing gradient tested against DOE and CERN budget records and <strong>rejected at national scale</strong>, counterexamples run down individually with radiation-to-electronics identified as the strongest, tautology objection given full weight and conceded for claim A, claim narrowed to accountability rather than anchoring, eleven claims recorded as not supported.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="references">References<a class="anchor" href="#references" aria-label="Link to section">#</a></h2>
+<p>Entries were retrieved and read between 2026-11-24 and 2026-11-25 except where noted. Entries 9, 13, 14, 17,
+21, 29, 33, 63 and 68 were identified by title and bibliographic record but their full text was not
+retrieved for this version; claims resting on them are limited to what the title or record states and are
+marked where load-bearing.</p>
+<ol class="refs">
+<li id="ref-1">Hacking, I. (1983). <em>Representing and Intervening: Introductory Topics in the Philosophy of Natural Science</em>. Cambridge University Press. See also: Entity realism. https://en.wikipedia.org/wiki/Entity_realism</li>
+<li id="ref-2">Collins, H. M. (1985). <em>Changing Order: Replication and Induction in Scientific Practice</em>. London: Sage.</li>
+<li id="ref-3">Franklin, A. (1994). How to avoid the experimenters' regress. <em>Studies in History and Philosophy of Science</em> 25(3), 463–491. https://physics.yale.edu/sites/default/files/files/3_1%20franklin.pdf</li>
+<li id="ref-4">Perović, S. (2017). Experimenter's regress argument, empiricism, and the calibration of the Large Hadron Collider. <em>Synthese</em> 194. https://doi.org/10.1007/s11229-015-0749-6</li>
+<li id="ref-5">Stanford Encyclopedia of Philosophy. Prediction versus Accommodation. https://plato.stanford.edu/entries/prediction-accommodation/</li>
+<li id="ref-6">Mayo, D. G. (1991). Novel evidence and severe tests. <em>Philosophy of Science</em> 58(4), 523–552. https://errorstatistics.com/wp-content/uploads/2021/02/mayo-1991_novel-evid-severe-tests.pdf</li>
+<li id="ref-7">Ytterbium lattice clock with systematic uncertainty of 1.3×10⁻¹⁸ and instability at the 10⁻¹⁹ level. arXiv:2606.10514. https://arxiv.org/html/2606.10514v2</li>
+<li id="ref-8">Yb/Sr optical clock comparison at 2.08×10⁻¹⁸ uncertainty over a 1350-km fibre link. arXiv:2610.34250. https://arxiv.org/pdf/2610.34250</li>
+<li id="ref-9">Dimarcq, N. et al. (2024). Roadmap towards the redefinition of the second. <em>Metrologia</em> 61, 012001. https://doi.org/10.1088/1681-7575/ad17d2 (title and record only; site blocked automated retrieval)</li>
+<li id="ref-10">Chronos Technology / Resilient Navigation and Timing Foundation. Case study: the 26 January 2016 GPS event. https://rntfnd.org/wp-content/uploads/26-January-2016-GPS-Event.pdf</li>
+<li id="ref-11">NIST. The effects of the January 2016 UTC offset anomaly on GPS-controlled clocks. https://tf.nist.gov/general/pdf/2886.pdf</li>
+<li id="ref-12">Wellerstein, A. (2014). Castle Bravo at 60. <em>Restricted Data: The Nuclear Secrecy Blog</em>. https://blog.nuclearsecrecy.com/2014/02/28/castle-bravo-at-60/</li>
+<li id="ref-13">OECD Nuclear Energy Agency. International Criticality Safety Benchmark Evaluation Project (ICSBEP) Handbook. https://oecd-nea.org/jcms/pl_20291/international-criticality-safety-benchmark-evaluation-project-icsbep-handbook</li>
+<li id="ref-14">ENDF/B-VIII.1: updated nuclear reaction data library for science and applications. arXiv:2511.03564. https://arxiv.org/pdf/2511.03564</li>
+<li id="ref-15">Roskovec, B. (2018). Reactor neutrino spectrum and flux. NuPhys2017 proceedings. arXiv:1804.00027. https://arxiv.org/pdf/1804.00027</li>
+<li id="ref-16">World Nuclear Association. Tokaimura criticality accident, 1999. https://world-nuclear.org/information-library/safety-and-security/safety-of-plants/tokaimura-criticality-accident</li>
+<li id="ref-17">US National Nuclear Security Administration. Fiscal Year 2025 Stockpile Stewardship and Management Plan. https://www.energy.gov/sites/default/files/2024-10/FY2025%20Stockpile%20Stewardship%20and%20Management%20Plan.pdf</li>
+<li id="ref-18">American Institute of Physics FYI (2022). National Ignition Facility achieves long-sought fusion goal. https://www.aip.org/fyi/2022/national-ignition-facility-achieves-long-sought-fusion-goal</li>
+<li id="ref-19">A benchmark of first-principles methods for accurate prediction of semiconductor band gaps. arXiv:2211.14644. https://arxiv.org/pdf/2211.14644</li>
+<li id="ref-20">TCAD calibration of ultra-shallow-junction profiles for advanced deep sub-µm CMOS processes. <em>Nuclear Instruments and Methods in Physics Research B</em>. https://www.sciencedirect.com/science/article/abs/pii/S0168583X01009090</li>
+<li id="ref-21">Courant, E. D., Livingston, M. S. &amp; Snyder, H. S. (1952). The strong-focusing synchrotron — a new high-energy accelerator. <em>Physical Review</em> 88, 1190. https://doi.org/10.1103/PhysRev.88.1190</li>
+<li id="ref-22">LHC operation and the High-Luminosity LHC upgrade project. arXiv:2505.03535. https://arxiv.org/html/2505.03535v1</li>
+<li id="ref-23">A newly observed effect affects the LEP beam energy. EPAC96 proceedings, THP022G. https://proceedings.jacow.org/e96/PAPERS/THPG/THP022G.PDF</li>
+<li id="ref-24"><em>Physics Today</em>. Oak Ridge officials are puzzled by failure of targets at Spallation Neutron Source. https://physicstoday.aip.org/news/oak-ridge-officials-are-puzzled-by-failure-of-targets-at-spallation-neutron-source</li>
+<li id="ref-25">Dürr, S. et al. (2008). Ab initio determination of light hadron masses. <em>Science</em> 322, 1224. arXiv:0906.3599. https://arxiv.org/pdf/0906.3599</li>
+<li id="ref-26">Predictions from lattice QCD. FERMILAB-CONF-05-428-T, arXiv:hep-lat/0509169. https://arxiv.org/html/hep-lat/0509169</li>
+<li id="ref-27">Experimental validation of Geant4 nuclear interaction models in dose calculations of therapeutic carbon ion beams. <em>Medical Physics</em> (2025). https://www.osti.gov/pages/servlets/purl/2575025</li>
+<li id="ref-28">Validating Geant4 and its FLUKA.CERN interface against calorimeter beam tests. CALOR2024, <em>EPJ Web of Conferences</em>. https://www.epj-conferences.org/articles/epjconf/pdf/2025/05/epjconf_calor2024_00027.pdf</li>
+<li id="ref-29">JEDEC JESD89. Measurement and reporting of alpha particle and terrestrial cosmic ray-induced soft errors in semiconductor devices. http://gpc.pnpi.nrcki.ru/images/files/docs/JEDEC_Standart.pdf</li>
+<li id="ref-30">Proton and neutron induced SEU cross section modelling and simulation: a unified analytical approach. arXiv:2402.12983. https://arxiv.org/pdf/2402.12983</li>
+<li id="ref-31">Morishima, K. et al. (2017). Discovery of a big void in Khufu's Pyramid by observation of cosmic-ray muons. arXiv:1711.01576. https://arxiv.org/pdf/1711.01576</li>
+<li id="ref-32">3D imaging of a nuclear reactor using muography measurements. <em>Science Advances</em>. https://doi.org/10.1126/sciadv.abq8431</li>
+<li id="ref-33">International Atomic Energy Agency. ISOTOPIA: simulation of medical isotope production with accelerators. https://nds.iaea.org/talys/tutorials/isotopia.pdf</li>
+<li id="ref-34">Electroweak precision tests of the Standard Model after the discovery of the Higgs boson. arXiv:1902.05142. https://arxiv.org/pdf/1902.05142</li>
+<li id="ref-35"><em>CERN Courier</em>. W mass snaps back. https://cerncourier.com/a/w-mass-snaps-back/</li>
+<li id="ref-36">Muon g−2 Collaboration. Final report on the measurement of the positive muon anomalous magnetic moment at Fermilab to 127 ppb. arXiv:2606.17323. https://arxiv.org/pdf/2606.17323</li>
+<li id="ref-37">Muon g−2 Theory Initiative. White Paper (2025). https://muon-gm2-theory.illinois.edu/white-paper-25/</li>
+<li id="ref-38">The Big-Bang nucleosynthesis limit to the number of neutrino species. arXiv:astro-ph/9606059. https://arxiv.org/abs/astro-ph/9606059</li>
+<li id="ref-39">Carroll, S. (2012). Technological applications of the Higgs boson. <em>Preposterous Universe</em>. https://www.preposterousuniverse.com/blog/2012/03/20/technological-applications-of-the-higgs-boson/</li>
+<li id="ref-40">LZ Collaboration. Dark matter search results from 4.2 tonne-years of exposure of the LUX-ZEPLIN experiment. arXiv:2410.17036. https://arxiv.org/html/2410.17036v3</li>
+<li id="ref-41">XENON Collaboration. First indication of solar ⁸B neutrinos via coherent elastic neutrino-nucleus scattering with XENONnT. arXiv:2408.02877. https://arxiv.org/pdf/2408.02877</li>
+<li id="ref-42">Particle Data Group (2025). Extra dimensions listing. https://pdg.lbl.gov/2025/listings/rpp2025-list-extra-dimensions.pdf</li>
+<li id="ref-43">The LHC has ruled out supersymmetry — really? arXiv:2505.11251. https://arxiv.org/pdf/2505.11251</li>
+<li id="ref-44">Ohlsson, T. (2023). Proton decay. arXiv:2306.02401. https://arxiv.org/pdf/2306.02401</li>
+<li id="ref-45">Helioseismology and solar neutrinos: an update. arXiv:astro-ph/0012239. https://arxiv.org/html/astro-ph/0012239</li>
+<li id="ref-46">The Sun, neutrinos and Super-Kamiokande. https://pmc.ncbi.nlm.nih.gov/articles/PMC7298169/</li>
+<li id="ref-47">Raffelt, G. (1997). Astrophysical axion bounds: an update. arXiv:astro-ph/9707268. https://arxiv.org/pdf/astro-ph/9707268</li>
+<li id="ref-48">Investigation of the stability of fundamental constants based on the Oklo reactor burn-up analysis. arXiv:1010.6299. https://arxiv.org/html/1010.6299</li>
+<li id="ref-49">Max Planck Institute for Nuclear Physics (2025). KATRIN sets new limit for the neutrino mass: below 0.45 eV. https://www.mpi-hd.mpg.de/mpi/en/public-relations/news/news-item/katrin-sets-new-limit-for-neutrino-mass</li>
+<li id="ref-50">A Bayesian perspective on evidence for evolving dark energy. arXiv:2511.10631. https://arxiv.org/abs/2511.10631</li>
+<li id="ref-51">US Department of Energy. FY 2027 statistical table by appropriation (FY2025 and FY2026 enacted, FY2027 request). https://www.energy.gov/documents/doe-fy-2027-statistical-table-appropriation</li>
+<li id="ref-52">US Department of Energy Office of Science. High Energy Physics FY 2025 congressional justification. https://science.osti.gov/-/media/budget/pdf/sc-budget-request-to-congress/2025/High-Energy-Physics-3_15_24---Final.pdf</li>
+<li id="ref-53">US Department of Energy Office of Science. Number of users reported by BES user facilities. https://science.osti.gov/-/media/bes/suf/pdf/BES_Facilities_Number_of_Users.pdf</li>
+<li id="ref-54">CERN Finance and Administrative Processes. 2026 annual contributions to the CERN budget. https://fap-dep.web.cern.ch/2026-annual-contributions-to-cern-budget/</li>
+<li id="ref-55">CERN (2025). CERN releases report on the feasibility of a possible Future Circular Collider. https://home.cern/cern-releases-report-feasibility-possible-future-circular-collider/</li>
+<li id="ref-56"><em>CERN Courier</em>. European Strategy Group recommends FCC-ee. https://cerncourier.com/european-strategy-group-recommends-fcc-ee/</li>
+<li id="ref-57">Particle Physics Project Prioritization Panel (2023). <em>Exploring the Quantum Universe</em>, Section 8: Budgetary considerations. https://www.usparticlephysics.org/2023-p5-report/budgetary-considerations.html</li>
+<li id="ref-58">Some remarks concerning the cost/benefit analysis applied to the LHC at CERN. arXiv:1511.05477. https://arxiv.org/pdf/1511.05477 (reports and critiques Florio, Forte &amp; Sirtori's CBA)</li>
+<li id="ref-59">UK Research and Innovation / STFC (2021). Evaluation of the benefits that the UK has derived from CERN: main report. https://www.ukri.org/wp-content/uploads/2021/12/091221-STFC-EvaluationOfBenefitsUKDerivesFromCERN-MainReport.pdf</li>
+<li id="ref-60"><em>CERN Courier</em>. CERN's impact on medical technology. https://cerncourier.com/a/cerns-impact-on-medical-technology/</li>
+<li id="ref-61">Particle Therapy Co-Operative Group. Global development of particle therapy centres. https://ptcog.online/global-development-of-particle-therapy-centers/</li>
+<li id="ref-62">Radiation to electronics impact on CERN LHC operation: Run 2 overview and HL-LHC outlook. https://inspirehep.net/files/8364ca66e5b626a7b7ac03d696693d29</li>
+<li id="ref-63"><em>MIT Press Reader</em>. The OPERA experiment and the value of high-profile scientific blunders. https://thereader.mitpress.mit.edu/when-science-fails-opera-neutrinos/ (title and record only)</li>
+<li id="ref-64">Constraint on superluminal neutrinos from vacuum Cherenkov processes. arXiv:1111.2725. https://arxiv.org/pdf/1111.2725</li>
+<li id="ref-65">Hossenfelder, S. (2019). Particle physics may have reached the end of the line. <em>Backreaction</em>. http://backreaction.blogspot.com/2019/01/particle-physics-may-have-reached-end.html</li>
+<li id="ref-66">Butterfield, J. (2019). Lost in Math? arXiv:1902.03480. https://arxiv.org/pdf/1902.03480</li>
+<li id="ref-67">String theory and general methodology: a reciprocal evaluation. arXiv:0912.3160. https://arxiv.org/pdf/0912.3160</li>
+<li id="ref-68">Reimer, P. J. et al. (2020). The IntCal20 Northern Hemisphere radiocarbon age calibration curve (0–55 cal kBP). <em>Radiocarbon</em> 62(4), 725–757. https://doi.org/10.1017/RDC.2020.41</li>
+<li id="ref-69">Tree rings reveal globally coherent signature of cosmogenic radiocarbon events in 774 and 993 CE. <em>Nature Communications</em> 9, 3605. https://www.nature.com/articles/s41467-018-06036-0</li>
+<li id="ref-70">Dosimetric impact of range uncertainty in passive scattering proton therapy. https://pmc.ncbi.nlm.nih.gov/articles/PMC8130244/</li>
+</ol></article></div></div></main>
+<footer>
+  <div class="shell">
+    <p>Every claim in this archive carries an evidence tier. Claims examined and rejected are
+    kept on the record rather than removed — including both hypotheses the project began with.</p>
+    <p>Source, data and full revision history:<br>
+    <a href="https://github.com/rbndchsn/particle_ac">github.com/rbndchsn/particle_ac</a></p>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

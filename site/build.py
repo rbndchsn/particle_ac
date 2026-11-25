@@ -38,6 +38,7 @@ SECTIONS = [
     ("06_dissent_register", "Dissent"),
     ("07_epistemic_audit", "Known vs assumed"),
     ("08_evidential_audit", "Where proofs fail"),
+    ("09_anchoring_gradient", "Anchoring"),
 ]
 NAV_PRIMARY = {"00_method": "research_frame", "03_hardware_systems": "trigger_data_destruction"}
 TIER_NAMES = {"A": "Documented", "B": "Contested", "C": "Inference", "D": "Rejected"}

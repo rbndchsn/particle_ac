@@ -113,3 +113,17 @@
     - "That ATLAS and CMS agreement is worthless. The combinations publish their correlation assignments, state that no category was identified at ρ=1, and scan them."
     - "That the experimenter's regress makes instrumental knowledge impossible. It is a question to ask of each case, not a general impossibility result."
   note: "Strongest anchoring was found at the Higgs — spurious-signal criterion, blinding, independent teams — and at jets, where the parton inference rests on inclusive deep-inelastic and neutrino data that excluded three named alternatives, not on jets at all."
+
+09_anchoring_gradient/anchoring_gradient_v1.md:
+  key_findings:
+    - "The gradient is real, but the governing variable is not energy — it is <strong>whether anything in use depends on the observable</strong>. Energy only correlates because usable cross sections fall with it."
+    - "The strongest counterexample found, and it is instructive: LHC radiation-to-electronics and machine protection is a genuine external anchor operating at TeV energies — 80 Run-2 beam dumps from radiation faults, FLUKA dose predictions tested against detectors, 362 MJ of stored beam. But its reach scales with cross section, so it anchors inclusive soft production and <em>provably cannot reach the rare-process tail where discovery claims live</em>."
+    - "The official economic case for the LHC assigns <strong>1.7%</strong> of its €16.4bn benefit to scientific knowledge, and 66% to spillover and human capital. Both it and the UK national evaluation monetise the physics bibliometrically."
+    - "Surviving thesis, narrowed: <strong>accountability does not travel with claim-strength.</strong>"
+  rejected:
+    - "<strong>That spending runs inversely to anchoring — false, and contradicted by the appropriation table.</strong> NNSA Weapons Activities took $19.3bn in FY2025 against High Energy Physics's $1.22bn; Basic Energy Sciences took 2.1× HEP. Inside HEP, the neutrino programme (~$680M) outspends Energy Frontier, Cosmic Frontier and theory combined (~$435M)."
+    - "That unanchored means untested. Electroweak fits predicted the top mass at 140–190 GeV and a light Higgs before measurement; lattice QCD predicted B<sub>c</sub> and f<sub>D+</sub>."
+    - "That technological spin-offs anchor the physics. MRI magnets, hadron therapy, the Web and grid computing anchor the engineering."
+    - "That the gradient is unique to particle physics. The same shape appears in cosmology, string theory and deep-time geology."
+    - "That anchored means known. In the most heavily anchored domain of all, plain density-functional theory underestimates band gaps by around 49%."
+  note: "The tautology objection — that this gradient is simply what “frontier” means — is conceded in full for the gradient's existence. What defeats it for the thesis as a whole is that the spending half was empirically falsifiable and was falsified: a tautology cannot be refuted by an appropriation table."
